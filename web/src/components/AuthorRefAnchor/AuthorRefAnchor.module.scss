@@ -2,6 +2,7 @@
 
 .text {
   @extend .sub3;
+  text-decoration: none;
   position: absolute;
   line-height: normal;
   top: 1rem;

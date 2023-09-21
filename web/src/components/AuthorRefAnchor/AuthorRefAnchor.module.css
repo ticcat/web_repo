@@ -32,6 +32,7 @@
 }
 
 .text {
+  text-decoration: none;
   position: absolute;
   line-height: normal;
   top: 1rem;
