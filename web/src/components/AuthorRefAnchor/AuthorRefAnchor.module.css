@@ -1,0 +1,42 @@
+.subtitle, .sub3, .text, .sub2, .sub1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.sub1 {
+  font-size: 25px;
+}
+
+.sub2 {
+  font-size: 20px;
+}
+
+.sub3, .text {
+  font-size: 18px;
+}
+
+.body, .b2, .b1 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: rgb(var(--body-rgb));
+}
+
+.b1 {
+  font-size: 16px;
+}
+
+.b2 {
+  font-size: 14px;
+}
+
+.text {
+  position: absolute;
+  line-height: normal;
+  top: 1rem;
+  left: 1.5rem;
+}
+.text .heart {
+  color: rgb(var(--accent-1-rgb));
+}/*# sourceMappingURL=AuthorRefAnchor.module.css.map */
