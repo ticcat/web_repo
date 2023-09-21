@@ -1,4 +1,4 @@
-import AuthorRefAnchor from "@/components/AuthorRefAnchor/AuthorRefAnchor";
+import MainLayout from "@/components/MainLayout/MainLayout";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 
@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="root-layout">
-          <AuthorRefAnchor></AuthorRefAnchor>
+          <MainLayout></MainLayout>
           {children}
         </div>
       </body>

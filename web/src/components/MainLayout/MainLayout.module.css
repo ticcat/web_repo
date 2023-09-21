@@ -1,4 +1,4 @@
-.subtitle, .sub3, .text, .sub2, .sub1 {
+.subtitle, .sub3, .authorRefText, .sub2, .sub1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -13,7 +13,7 @@
   font-size: 20px;
 }
 
-.sub3, .text {
+.sub3, .authorRefText {
   font-size: 18px;
 }
 
@@ -31,13 +31,13 @@
   font-size: 14px;
 }
 
-.text {
+.authorRefText {
   text-decoration: none;
   position: absolute;
   line-height: normal;
   top: 1rem;
   left: 1.5rem;
 }
-.text .heart {
+.authorRefText .heart {
   color: rgb(var(--accent-1-rgb));
-}/*# sourceMappingURL=AuthorRefAnchor.module.css.map */
+}/*# sourceMappingURL=MainLayout.module.css.map */
