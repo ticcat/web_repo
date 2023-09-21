@@ -1,4 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat:wght@600;700&display=swap");
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../public/fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../../public/fonts/Manrope-VariableFont_wght.ttf");
+}
 
 :root {
   --accent-1-rgb: 176, 132, 205;
@@ -40,7 +48,7 @@ h4,
 h5 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  letter-spacing: 0.015em;
+  letter-spacing: 0.015rem;
   color: rgb(var(--head-sub-rgb));
 }
 
@@ -64,33 +72,9 @@ h5 {
   font-size: 25px;
 }
 
-.subtitle {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: rgb(var(--head-sub-rgb));
-}
-
-.subtitle.sub1 {
-  font-size: 25px;
-}
-
-.subtitle.sub2 {
-  font-size: 20px;
-}
-
-.body {
-  font-family: "Manrope", sans-serif;
-  font-weight: 400;
-  color: rgb(var(--body-rgb));
-}
-
-.body.b1 {
-  font-size: 16px;
-}
-
-.body.b2 {
-  font-size: 14px;
+.root-layout {
+  position: relative;
+  padding: 30px;
 }
 
 @media (prefers-color-scheme: dark) {
