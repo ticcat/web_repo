@@ -1,0 +1,37 @@
+.subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.sub1 {
+  @extend .subtitle;
+  font-size: 25px;
+}
+
+.sub2 {
+  @extend .subtitle;
+  font-size: 20px;
+}
+
+.sub3 {
+  @extend .subtitle;
+  font-size: 18px;
+}
+
+.body {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: rgb(var(--body-rgb));
+}
+
+.b1 {
+  @extend .body;
+  font-size: 16px;
+}
+
+.b2 {
+  @extend .body;
+  font-size: 14px;
+}
