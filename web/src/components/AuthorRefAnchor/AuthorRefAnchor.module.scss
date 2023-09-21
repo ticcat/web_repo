@@ -1,0 +1,13 @@
+@use "../../styles/globalClasses";
+
+.text {
+  @extend .sub3;
+  position: absolute;
+  line-height: normal;
+  top: 1rem;
+  left: 1.5rem;
+
+  .heart {
+    color: rgb(var(--accent-1-rgb));
+  }
+}
