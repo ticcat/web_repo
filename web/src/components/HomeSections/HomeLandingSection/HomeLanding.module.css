@@ -86,9 +86,9 @@
 }
 
 .nameCarousel {
-  position: relative;
   height: -moz-max-content;
   height: max-content;
+  transform: translateX(-50%);
 }
 .nameCarousel .name {
   width: 100%;
@@ -96,6 +96,7 @@
   font-family: "Montserrat";
   font-weight: 500;
   text-wrap: nowrap;
+  letter-spacing: 1rem;
   line-height: 1em;
 }
 
@@ -105,6 +106,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 32px 55px 0px 55px;
 }
 .homeSection .topInfo {
   display: flex;
