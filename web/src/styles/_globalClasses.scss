@@ -1,3 +1,35 @@
+.header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.015rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.h1 {
+  @extend .header;
+  font-size: 108px;
+}
+
+.h2 {
+  @extend .header;
+  font-size: 70px;
+}
+
+.h3 {
+  @extend .header;
+  font-size: 55px;
+}
+
+.h4 {
+  @extend .header;
+  font-size: 35px;
+}
+
+.h5 {
+  @extend .header;
+  font-size: 25px;
+}
+
 .subtitle {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;

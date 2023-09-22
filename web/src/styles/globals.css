@@ -42,37 +42,6 @@ body {
   background: rgb(var(--background-rgb));
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.015rem;
-  color: rgb(var(--head-sub-rgb));
-}
-
-h1 {
-  font-size: 108px;
-}
-
-h2 {
-  font-size: 70px;
-}
-
-h3 {
-  font-size: 55px;
-}
-
-h4 {
-  font-size: 35px;
-}
-
-h5 {
-  font-size: 25px;
-}
-
 .root-layout {
   position: relative;
   width: 100%;
