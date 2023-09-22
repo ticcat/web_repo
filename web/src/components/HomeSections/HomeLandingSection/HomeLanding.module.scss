@@ -46,6 +46,15 @@
     }
 
     .nameCarousel {
+      position: relative;
+      height: max-content;
+
+      .logo {
+        position: absolute;
+        bottom: 20%;
+        z-index: -1;
+      }
+
       .name {
         width: 100%;
         font-size: 8rem;

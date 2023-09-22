@@ -97,6 +97,16 @@
 .homeSection .botInfo .workInProgress {
   align-self: flex-end;
 }
+.homeSection .botInfo .nameCarousel {
+  position: relative;
+  height: -moz-max-content;
+  height: max-content;
+}
+.homeSection .botInfo .nameCarousel .logo {
+  position: absolute;
+  bottom: 20%;
+  z-index: -1;
+}
 .homeSection .botInfo .nameCarousel .name {
   width: 100%;
   font-size: 8rem;

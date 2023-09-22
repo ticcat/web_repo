@@ -32,6 +32,13 @@ function NameCarousel() {
       <span className={styles.name}>SERGIO RICO ALFONSO</span>
       <span className={styles.name}> // </span>
       <span className={styles.name}>SERGIO RICO ALFONSO</span>
+      <Image
+        className={styles.logo}
+        src={"/logo.svg"}
+        alt="My logo"
+        width={950}
+        height={245}
+      ></Image>
     </div>
   );
 }
