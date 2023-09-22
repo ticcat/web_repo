@@ -1,0 +1,58 @@
+@use "../../../globalStyles/globalClasses";
+
+.homeSection {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .topInfo {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    gap: 25px;
+    height: max-content;
+    width: max-content;
+
+    .email {
+      @extend .sub1;
+    }
+
+    .socialMedia {
+      display: flex;
+      flex-direction: row;
+      align-self: flex-end;
+      gap: 25px;
+      width: max-content;
+    }
+  }
+
+  .botInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: max-content;
+
+    .locationRole {
+      @extend .sub1;
+      align-self: flex-start;
+      margin-bottom: 153px;
+    }
+
+    .workInProgress {
+      @extend .sub1;
+      align-self: flex-end;
+    }
+
+    .nameCarousel {
+      .name {
+        width: 100%;
+        font-size: 8rem;
+        font-family: "Montserrat";
+        font-weight: 500;
+        text-wrap: nowrap;
+      }
+    }
+  }
+}
