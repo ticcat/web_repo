@@ -58,6 +58,40 @@
   font-size: 14px;
 }
 
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  gap: 25px;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.logo {
+  position: absolute;
+  width: clamp(40vw, 945px, 50vw);
+  height: -moz-max-content;
+  height: max-content;
+  bottom: 0.9em;
+  opacity: 50%;
+  fill: rgba(var(--accent-1-rgb));
+  z-index: -1;
+}
+
+.nameCarousel {
+  position: relative;
+  height: -moz-max-content;
+  height: max-content;
+}
+.nameCarousel .name {
+  width: 100%;
+  font-size: 8rem;
+  font-family: "Montserrat";
+  font-weight: 500;
+  text-wrap: nowrap;
+  line-height: 1em;
+}
+
 .homeSection {
   position: relative;
   height: 100%;
@@ -75,14 +109,6 @@
   width: -moz-max-content;
   width: max-content;
 }
-.homeSection .topInfo .socialMedia {
-  display: flex;
-  flex-direction: row;
-  align-self: flex-end;
-  gap: 25px;
-  width: -moz-max-content;
-  width: max-content;
-}
 .homeSection .botInfo {
   display: flex;
   flex-direction: column;
@@ -92,25 +118,9 @@
 }
 .homeSection .botInfo .locationRole {
   align-self: flex-start;
-  margin-bottom: 153px;
+  margin-bottom: 70px;
 }
 .homeSection .botInfo .workInProgress {
   align-self: flex-end;
-}
-.homeSection .botInfo .nameCarousel {
-  position: relative;
-  height: -moz-max-content;
-  height: max-content;
-}
-.homeSection .botInfo .nameCarousel .logo {
-  position: absolute;
-  bottom: 20%;
-  z-index: -1;
-}
-.homeSection .botInfo .nameCarousel .name {
-  width: 100%;
-  font-size: 8rem;
-  font-family: "Montserrat";
-  font-weight: 500;
-  text-wrap: nowrap;
+  margin-bottom: 30px;
 }/*# sourceMappingURL=HomeLanding.module.css.map */

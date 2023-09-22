@@ -1,5 +1,37 @@
 @use "../../../globalStyles/globalClasses";
 
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  gap: 25px;
+  width: max-content;
+}
+
+.logo {
+  position: absolute;
+  width: clamp(40vw, 945px, 50vw);
+  height: max-content;
+  bottom: 0.9em;
+  opacity: 50%;
+  fill: rgba(var(--accent-1-rgb));
+  z-index: -1;
+}
+
+.nameCarousel {
+  position: relative;
+  height: max-content;
+
+  .name {
+    width: 100%;
+    font-size: 8rem;
+    font-family: "Montserrat";
+    font-weight: 500;
+    text-wrap: nowrap;
+    line-height: 1em;
+  }
+}
+
 .homeSection {
   position: relative;
   height: 100%;
@@ -18,14 +50,6 @@
     .email {
       @extend .sub1;
     }
-
-    .socialMedia {
-      display: flex;
-      flex-direction: row;
-      align-self: flex-end;
-      gap: 25px;
-      width: max-content;
-    }
   }
 
   .botInfo {
@@ -37,31 +61,13 @@
     .locationRole {
       @extend .sub1;
       align-self: flex-start;
-      margin-bottom: 153px;
+      margin-bottom: 70px;
     }
 
     .workInProgress {
       @extend .sub1;
       align-self: flex-end;
-    }
-
-    .nameCarousel {
-      position: relative;
-      height: max-content;
-
-      .logo {
-        position: absolute;
-        bottom: 20%;
-        z-index: -1;
-      }
-
-      .name {
-        width: 100%;
-        font-size: 8rem;
-        font-family: "Montserrat";
-        font-weight: 500;
-        text-wrap: nowrap;
-      }
+      margin-bottom: 30px;
     }
   }
 }
