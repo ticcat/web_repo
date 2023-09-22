@@ -6,6 +6,14 @@
   align-self: flex-end;
   gap: 25px;
   width: max-content;
+
+  .socialMediaLogo {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    fill: rgb(var(--head-sub-rgb));
+  }
 }
 
 .logo {
@@ -14,7 +22,7 @@
   height: max-content;
   bottom: 0.9em;
   opacity: 50%;
-  fill: rgba(var(--accent-1-rgb));
+  fill: rgb(var(--accent-1-rgb));
   z-index: -1;
 }
 

@@ -66,6 +66,13 @@
   width: -moz-max-content;
   width: max-content;
 }
+.socialMedia .socialMediaLogo {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  width: 45px;
+  fill: rgb(var(--head-sub-rgb));
+}
 
 .logo {
   position: absolute;
@@ -74,7 +81,7 @@
   height: max-content;
   bottom: 0.9em;
   opacity: 50%;
-  fill: rgba(var(--accent-1-rgb));
+  fill: rgb(var(--accent-1-rgb));
   z-index: -1;
 }
 
