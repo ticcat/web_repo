@@ -1,3 +1,23 @@
 .container {
-  border: 2px solid red;
+  position: relative;
+  overflow: hidden;
+}
+.container .fill, .container .fill2, .container .fill1 {
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  transform: translateY(-100%);
+  will-change: transform;
+  z-index: -1;
+}
+.container .fill1 {
+  background-color: rgb(var(--accent-2-rgb));
+  transition: transform 0.5s ease-out;
+}
+.container .fill2 {
+  background-color: rgb(var(--accent-1-rgb));
+  transition: transform 0.5s 0.1s ease-out;
+}
+.container:hover .fill, .container:hover .fill1, .container:hover .fill2 {
+  transform: translateY(0%);
 }/*# sourceMappingURL=Button.module.css.map */

@@ -1,3 +1,31 @@
 .container {
-  border: 2px solid red;
+  position: relative;
+  overflow: hidden;
+
+  .fill {
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    transform: translateY(-100%);
+    will-change: transform;
+    z-index: -1;
+  }
+
+  .fill1 {
+    @extend .fill;
+    background-color: rgb(var(--accent-2-rgb));
+    transition: transform 0.5s ease-out;
+  }
+
+  .fill2 {
+    @extend .fill;
+    background-color: rgb(var(--accent-1-rgb));
+    transition: transform 0.5s 0.1s ease-out;
+  }
+
+  &:hover {
+    .fill {
+      transform: translateY(0%);
+    }
+  }
 }
