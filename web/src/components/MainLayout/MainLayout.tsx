@@ -1,4 +1,5 @@
 import styles from "./MainLayout.module.css";
+import Button from "@/components/Button/Button";
 
 function AuthorRefAnchor() {
   return (
@@ -23,7 +24,11 @@ export default function MainLayout({
       <div className={styles.topLine}></div>
       <div className={styles.content}>{children}</div>
       <div className={styles.botLine}></div>
-      <AuthorRefAnchor></AuthorRefAnchor>
+      <div className={styles.authorRefButton}>
+        <Button>
+          <AuthorRefAnchor></AuthorRefAnchor>
+        </Button>
+      </div>
     </div>
   );
 }

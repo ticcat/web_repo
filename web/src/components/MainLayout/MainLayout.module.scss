@@ -76,16 +76,19 @@ $corner-square-size: 4px;
     }
   }
 
-  .authorRefText {
-    @extend .sub3;
-    text-decoration: none;
+  .authorRefButton {
     position: absolute;
-    line-height: normal;
     top: var(--root-layout-padding);
     left: var(--root-layout-padding);
 
-    .heart {
-      color: rgb(var(--accent-1-rgb));
+    .authorRefText {
+      @extend .sub3;
+      text-decoration: none;
+      line-height: normal;
+
+      .heart {
+        color: rgb(var(--accent-1-rgb));
+      }
     }
   }
 }
