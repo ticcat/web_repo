@@ -31,7 +31,8 @@ $section-side-padding: 55px;
 .carouselContainer {
   display: flex;
   flex-direction: row;
-  margin: 0 calc(calc(var(--root-layout-padding) + $section-side-padding) * -1);
+  margin: 0 calc(calc(var(--root-layout-padding) + $section-side-padding) * -1)
+    15px;
 
   .nameCarousel {
     position: relative;

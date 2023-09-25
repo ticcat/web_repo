@@ -88,7 +88,7 @@
 .carouselContainer {
   display: flex;
   flex-direction: row;
-  margin: 0 calc((var(--root-layout-padding) + 55px) * -1);
+  margin: 0 calc((var(--root-layout-padding) + 55px) * -1) 15px;
 }
 .carouselContainer .nameCarousel {
   position: relative;
