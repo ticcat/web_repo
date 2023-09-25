@@ -60,10 +60,17 @@ function Logo() {
 
 function NameCarousel() {
   return (
-    <div className={styles.nameCarousel}>
-      <span className={styles.name}>SERGIO RICO ALFONSO</span>
-      <span className={styles.name}> // </span>
-      <span className={styles.name}>SERGIO RICO ALFONSO</span>
+    <div className={styles.carouselContainer}>
+      <div className={styles.nameCarousel}>
+        <span className={styles.name}>
+          <span className={styles.spacer}>//</span>SERGIO RICO ALFONSO
+        </span>
+      </div>
+      <div className={styles.nameCarousel}>
+        <span className={styles.name}>
+          <span className={styles.spacer}>//</span>SERGIO RICO ALFONSO
+        </span>
+      </div>
     </div>
   );
 }
@@ -72,7 +79,7 @@ export default function HomeLandingSection() {
   return (
     <section id="homeLanding" className={styles.homeSection}>
       <div id="topInfo" className={styles.topInfo}>
-        <div className={styles.email}>// serialticcatl@gmail.com //</div>
+        <div className={styles.email}>// serialticcat@gmail.com //</div>
         <SocialMediaButtons></SocialMediaButtons>
       </div>
       <div id="botInfo" className={styles.botInfo}>

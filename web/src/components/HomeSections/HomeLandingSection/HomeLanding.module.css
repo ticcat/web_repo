@@ -85,12 +85,18 @@
   z-index: -1;
 }
 
-.nameCarousel {
+.carouselContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 0 calc((var(--root-layout-padding) + 55px) * -1);
+}
+.carouselContainer .nameCarousel {
+  position: relative;
   height: -moz-max-content;
   height: max-content;
-  transform: translateX(-50%);
+  animation: nameSlide 15s linear infinite;
 }
-.nameCarousel .name {
+.carouselContainer .nameCarousel .name {
   width: 100%;
   font-size: 8rem;
   font-family: "Montserrat";
@@ -99,6 +105,18 @@
   letter-spacing: 1rem;
   line-height: 1em;
 }
+.carouselContainer .nameCarousel .name .spacer {
+  margin: 0 2vw;
+  font-size: 9rem;
+}
+@keyframes nameSlide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
 .homeSection {
   position: relative;
@@ -106,7 +124,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 32px 55px 0px 55px;
+  padding: var(--root-layout-padding) 55px 0px 55px;
 }
 .homeSection .topInfo {
   display: flex;

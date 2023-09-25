@@ -1,5 +1,7 @@
 @use "../../../globalStyles/globalClasses";
 
+$section-side-padding: 55px;
+
 .socialMedia {
   display: flex;
   flex-direction: row;
@@ -26,18 +28,39 @@
   z-index: -1;
 }
 
-.nameCarousel {
-  height: max-content;
-  transform: translateX(-50%);
+.carouselContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 0 calc(calc(var(--root-layout-padding) + $section-side-padding) * -1);
 
-  .name {
-    width: 100%;
-    font-size: 8rem;
-    font-family: "Montserrat";
-    font-weight: 500;
-    text-wrap: nowrap;
-    letter-spacing: 1rem;
-    line-height: 1em;
+  .nameCarousel {
+    position: relative;
+    height: max-content;
+    animation: nameSlide 15s linear infinite;
+
+    .name {
+      width: 100%;
+      font-size: 8rem;
+      font-family: "Montserrat";
+      font-weight: 500;
+      text-wrap: nowrap;
+      letter-spacing: 1rem;
+      line-height: 1em;
+
+      .spacer {
+        margin: 0 2vw;
+        font-size: 9rem;
+      }
+    }
+
+    @keyframes nameSlide {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
   }
 }
 
@@ -47,7 +70,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 32px 55px 0px 55px;
+  padding: var(--root-layout-padding) $section-side-padding 0px
+    $section-side-padding;
 
   .topInfo {
     display: flex;
