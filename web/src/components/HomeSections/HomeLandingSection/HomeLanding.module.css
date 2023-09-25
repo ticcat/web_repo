@@ -62,15 +62,15 @@
   display: flex;
   flex-direction: row;
   align-self: flex-end;
-  gap: 25px;
   width: -moz-max-content;
   width: max-content;
 }
 .socialMedia .socialMediaLogo {
   display: flex;
   align-items: center;
-  height: 45px;
-  width: 45px;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
   fill: rgb(var(--head-sub-rgb));
 }
 

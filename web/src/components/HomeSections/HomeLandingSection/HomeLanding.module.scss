@@ -6,14 +6,14 @@ $section-side-padding: 55px;
   display: flex;
   flex-direction: row;
   align-self: flex-end;
-  gap: 25px;
   width: max-content;
 
   .socialMediaLogo {
     display: flex;
     align-items: center;
-    height: 45px;
-    width: 45px;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
     fill: rgb(var(--head-sub-rgb));
   }
 }

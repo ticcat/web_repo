@@ -88,6 +88,13 @@ $corner-square-size: 4px;
 
       .heart {
         color: rgb(var(--accent-1-rgb));
+        transition: color 0.2s ease-out;
+      }
+    }
+
+    &:hover {
+      .heart {
+        color: rgb(var(--body-rgb));
       }
     }
   }

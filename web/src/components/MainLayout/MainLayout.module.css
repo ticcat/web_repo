@@ -130,4 +130,8 @@
 }
 .container .authorRefButton .authorRefText .heart {
   color: rgb(var(--accent-1-rgb));
+  transition: color 0.2s ease-out;
+}
+.container .authorRefButton:hover .heart {
+  color: rgb(var(--body-rgb));
 }/*# sourceMappingURL=MainLayout.module.css.map */
