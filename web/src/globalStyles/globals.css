@@ -14,6 +14,8 @@
   --head-sub-rgb: 35, 31, 32;
   --body-rgb: 51, 45, 47;
   --background-rgb: 244, 244, 237;
+
+  --root-layout-padding: clamp(1vw, 32px, 3.5vw);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,7 +48,7 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  padding: clamp(1vw, 32px, 3.5vw);
+  padding: var(--root-layout-padding);
 }
 
 @media (prefers-color-scheme: dark) {
