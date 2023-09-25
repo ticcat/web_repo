@@ -25,7 +25,7 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .authorRefText, .sub2, .sub1 {
+.subtitle, .sub3, .container .authorRefText, .sub2, .sub1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -40,7 +40,7 @@
   font-size: 20px;
 }
 
-.sub3, .authorRefText {
+.sub3, .container .authorRefText {
   font-size: 18px;
 }
 
@@ -58,13 +58,74 @@
   font-size: 14px;
 }
 
-.authorRefText {
+.container {
+  width: 100%;
+  height: 100%;
+}
+.container .content {
+  width: 100%;
+  height: 100%;
+}
+.container .content::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: var(--root-layout-padding);
+  bottom: var(--root-layout-padding);
+  height: 85vh;
+  width: 1px;
+  background-color: rgb(var(--accent-1-rgb));
+  z-index: 1;
+}
+.container .content::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: var(--root-layout-padding);
+  top: var(--root-layout-padding);
+  height: 85vh;
+  width: 1px;
+  background-color: rgb(var(--accent-1-rgb));
+  z-index: 1;
+}
+.container .line, .container .botLine, .container .topLine {
+  position: absolute;
+  height: 1px;
+  width: 80vw;
+  background-color: rgb(var(--accent-1-rgb));
+}
+.container .corner-square, .container .botLine::before, .container .topLine::after {
+  position: absolute;
+  display: block;
+  border: 8px solid rgb(var(--background-rgb));
+  width: 4px;
+  height: 4px;
+  background-color: rgb(var(--accent-1-rgb));
+  z-index: 2;
+}
+.container .topLine {
+  right: var(--root-layout-padding);
+}
+.container .topLine::after {
+  content: "";
+  right: -8px;
+  top: -8px;
+}
+.container .botLine {
+  left: var(--root-layout-padding);
+}
+.container .botLine::before {
+  content: "";
+  left: -8px;
+  bottom: -8px;
+}
+.container .authorRefText {
   text-decoration: none;
   position: absolute;
   line-height: normal;
-  top: 1rem;
-  left: 1.5rem;
+  top: var(--root-layout-padding);
+  left: var(--root-layout-padding);
 }
-.authorRefText .heart {
+.container .authorRefText .heart {
   color: rgb(var(--accent-1-rgb));
 }/*# sourceMappingURL=MainLayout.module.css.map */

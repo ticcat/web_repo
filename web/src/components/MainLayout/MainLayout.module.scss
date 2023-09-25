@@ -1,14 +1,91 @@
 @use "../../globalStyles/globalClasses";
 
-.authorRefText {
-  @extend .sub3;
-  text-decoration: none;
-  position: absolute;
-  line-height: normal;
-  top: 1rem;
-  left: 1.5rem;
+$corner-square-size: 4px;
 
-  .heart {
-    color: rgb(var(--accent-1-rgb));
+.container {
+  width: 100%;
+  height: 100%;
+
+  .content {
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: var(--root-layout-padding);
+      bottom: var(--root-layout-padding);
+      height: 85vh;
+      width: 1px;
+      background-color: rgb(var(--accent-1-rgb));
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: var(--root-layout-padding);
+      top: var(--root-layout-padding);
+      height: 85vh;
+      width: 1px;
+      background-color: rgb(var(--accent-1-rgb));
+      z-index: 1;
+    }
+  }
+
+  .line {
+    position: absolute;
+    height: 1px;
+    width: 80vw;
+    background-color: rgb(var(--accent-1-rgb));
+  }
+
+  .corner-square {
+    position: absolute;
+    display: block;
+    border: calc($corner-square-size * 2) solid rgb(var(--background-rgb));
+    width: $corner-square-size;
+    height: $corner-square-size;
+    background-color: rgb(var(--accent-1-rgb));
+    z-index: 2;
+  }
+
+  .topLine {
+    @extend .line;
+    right: var(--root-layout-padding);
+
+    &::after {
+      @extend .corner-square;
+      content: "";
+      right: calc(calc($corner-square-size * 2) * -1);
+      top: calc(calc($corner-square-size * 2) * -1);
+    }
+  }
+
+  .botLine {
+    @extend .line;
+    left: var(--root-layout-padding);
+
+    &::before {
+      @extend .corner-square;
+      content: "";
+      left: calc(calc($corner-square-size * 2) * -1);
+      bottom: calc(calc($corner-square-size * 2) * -1);
+    }
+  }
+
+  .authorRefText {
+    @extend .sub3;
+    text-decoration: none;
+    position: absolute;
+    line-height: normal;
+    top: var(--root-layout-padding);
+    left: var(--root-layout-padding);
+
+    .heart {
+      color: rgb(var(--accent-1-rgb));
+    }
   }
 }
