@@ -18,24 +18,10 @@
   --root-layout-padding: clamp(1vw, 32px, 3.5vw);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --head-sub-rgb: 244, 244, 237;
-    --body-rgb: 219, 219, 213;
-    --background-rgb: 35, 31, 32;
-  }
-}
-
 [color-theme="dark"] {
   --head-sub-rgb: 244, 244, 237;
   --body-rgb: 219, 219, 213;
   --background-rgb: 35, 31, 32;
-}
-
-[color-theme="light"] {
-  --head-sub-rgb: 35, 31, 32;
-  --body-rgb: 51, 45, 47;
-  --background-rgb: 244, 244, 237;
 }
 
 * {

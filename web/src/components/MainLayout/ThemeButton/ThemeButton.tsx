@@ -44,7 +44,7 @@ export default function ThemeButton() {
           changeTheme(event.matches ? "dark" : "light");
         });
     };
-  }, [currentTheme, changeTheme]);
+  });
 
   return (
     <button className={styles.themeButton} onClick={() => changeTheme()}>
