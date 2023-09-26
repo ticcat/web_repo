@@ -14,10 +14,14 @@ function detectColorScheme() {
   }
 }
 
+function changeTheme(newTheme: string) {
+  document.documentElement.setAttribute("color-theme", newTheme);
+}
+
 export default function ThemeButton() {
   const [currentTheme, setCurrentTheme] = useState(detectColorScheme());
 
-  const changeTheme = useCallback(
+  const changeThemeCallback = useCallback(
     (newTheme?: string) => {
       const theme = newTheme
         ? newTheme
@@ -25,7 +29,7 @@ export default function ThemeButton() {
         ? "dark"
         : "light";
 
-      document.documentElement.setAttribute("color-theme", theme);
+      changeTheme(theme);
       setCurrentTheme(theme);
     },
     [currentTheme]
@@ -35,19 +39,27 @@ export default function ThemeButton() {
     window
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener("change", (event) => {
-        changeTheme(event.matches ? "dark" : "light");
+        changeThemeCallback(event.matches ? "dark" : "light");
       });
     return () => {
       window
         .matchMedia("(prefers-color-scheme: dark)")
         .removeEventListener("change", (event) => {
-          changeTheme(event.matches ? "dark" : "light");
+          changeThemeCallback(event.matches ? "dark" : "light");
         });
     };
-  });
+  }, [changeThemeCallback, currentTheme]);
+
+  useEffect(() => {
+    //Manual color theme setter to execute on first mount
+    changeTheme(detectColorScheme());
+  }, []);
 
   return (
-    <button className={styles.themeButton} onClick={() => changeTheme()}>
+    <button
+      className={styles.themeButton}
+      onClick={() => changeThemeCallback()}
+    >
       {currentTheme === "light" ? "Dark mode" : "Light mode"}
     </button>
   );
