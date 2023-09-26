@@ -12,8 +12,8 @@ $section-side-padding: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     fill: rgb(var(--head-sub-rgb));
   }
 }
@@ -78,7 +78,7 @@ $section-side-padding: 55px;
     display: flex;
     flex-direction: column;
     align-self: flex-end;
-    gap: 25px;
+    gap: 15px;
     height: max-content;
     width: max-content;
 
