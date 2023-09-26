@@ -14,13 +14,13 @@
   .fill1 {
     @extend .fill;
     background-color: rgb(var(--accent-2-rgb));
-    transition: transform 0.5s 0.1s ease-out;
+    transition: transform 0.3s 0.05s ease-out;
   }
 
   .fill2 {
     @extend .fill;
     background-color: rgb(var(--accent-1-rgb));
-    transition: transform 0.5s ease-out;
+    transition: transform 0.3s ease-out;
   }
 
   &:hover {

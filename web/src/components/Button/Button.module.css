@@ -12,11 +12,11 @@
 }
 .container .fill1 {
   background-color: rgb(var(--accent-2-rgb));
-  transition: transform 0.5s 0.1s ease-out;
+  transition: transform 0.3s 0.05s ease-out;
 }
 .container .fill2 {
   background-color: rgb(var(--accent-1-rgb));
-  transition: transform 0.5s ease-out;
+  transition: transform 0.3s ease-out;
 }
 .container:hover .fill, .container:hover .fill1, .container:hover .fill2 {
   transform: translateY(0%);
