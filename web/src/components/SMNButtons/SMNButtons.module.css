@@ -1,0 +1,15 @@
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  width: -moz-max-content;
+  width: max-content;
+}
+.socialMedia .socialMediaLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  fill: rgb(var(--head-sub-rgb));
+}/*# sourceMappingURL=SMNButtons.module.css.map */
