@@ -25,7 +25,7 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .container .authorRefButton .authorRefText, .sub2, .sub1 {
+.subtitle, .sub3, .sub2, .sub1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -40,7 +40,7 @@
   font-size: 20px;
 }
 
-.sub3, .container .authorRefButton .authorRefText {
+.sub3 {
   font-size: 18px;
 }
 
@@ -123,16 +123,4 @@
   position: absolute;
   top: var(--root-layout-padding);
   left: var(--root-layout-padding);
-}
-.container .authorRefButton .authorRefText {
-  text-decoration: none;
-  line-height: normal;
-}
-.container .authorRefButton .authorRefText .heart {
-  color: rgb(var(--accent-1-rgb));
-  transition: color 0.1s 0.2s linear;
-}
-.container .authorRefButton:hover .heart {
-  color: rgb(var(--body-rgb));
-  transition: color 0.1s linear;
 }/*# sourceMappingURL=MainLayout.module.css.map */
