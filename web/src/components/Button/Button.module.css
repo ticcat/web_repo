@@ -13,18 +13,18 @@
 }
 .container .fill1 {
   background-color: rgb(var(--accent-2-rgb));
-  transition: transform 0.3s 0.05s ease-out;
+  transition: transform 0.35s 0.05s cubic-bezier(0.37, 0, 0.02, 1);
 }
 .container .fill2 {
   background-color: rgb(var(--accent-1-rgb));
-  transition: transform 0.3s ease-out;
+  transition: transform 0.35s cubic-bezier(0.37, 0, 0.02, 1);
 }
 .container:hover .fill, .container:hover .fill1, .container:hover .fill2 {
   transform: translateY(0%);
 }
 .container:hover .fill1 {
-  transition: transform 0.5s ease-out;
+  transition: transform 0.5s cubic-bezier(0.37, 0, 0.02, 1);
 }
 .container:hover .fill2 {
-  transition: transform 0.5s 0.1s ease-out;
+  transition: transform 0.5s 0.1s cubic-bezier(0.37, 0, 0.02, 1);
 }/*# sourceMappingURL=Button.module.css.map */
