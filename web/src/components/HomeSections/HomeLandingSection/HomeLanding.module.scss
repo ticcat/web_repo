@@ -2,22 +2,6 @@
 
 $section-side-padding: 55px;
 
-.socialMedia {
-  display: flex;
-  flex-direction: row;
-  align-self: flex-end;
-  width: max-content;
-
-  .socialMediaLogo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-    width: 60px;
-    fill: rgb(var(--head-sub-rgb));
-  }
-}
-
 .logo {
   position: absolute;
   width: clamp(40vw, 945px, 50vw);
