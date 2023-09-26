@@ -1,6 +1,7 @@
 .container {
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .container .fill, .container .fill2, .container .fill1 {
   position: absolute;
