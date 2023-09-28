@@ -1,25 +1,14 @@
 "use client";
 
 import styles from "./ThemeButton.module.css";
-import { useCallback, useEffect, useState } from "react";
-
-function detectColorScheme() {
-  if (
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  ) {
-    return "dark";
-  } else {
-    return "light";
-  }
-}
+import { useCallback, useState } from "react";
 
 function changeTheme(newTheme: string) {
   document.documentElement.setAttribute("color-theme", newTheme);
 }
 
 export default function ThemeButton() {
-  const [currentTheme, setCurrentTheme] = useState(detectColorScheme());
+  const [currentTheme, setCurrentTheme] = useState("dark");
 
   const changeThemeCallback = useCallback(
     (newTheme?: string) => {
@@ -34,26 +23,6 @@ export default function ThemeButton() {
     },
     [currentTheme]
   );
-
-  useEffect(() => {
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (event) => {
-        changeThemeCallback(event.matches ? "dark" : "light");
-      });
-    return () => {
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .removeEventListener("change", (event) => {
-          changeThemeCallback(event.matches ? "dark" : "light");
-        });
-    };
-  }, [changeThemeCallback, currentTheme]);
-
-  useEffect(() => {
-    //Manual color theme setter to execute on first mount
-    changeTheme(detectColorScheme());
-  }, []);
 
   return (
     <button

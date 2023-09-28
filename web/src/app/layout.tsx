@@ -13,7 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    // eslint-disable-next-line react/no-unknown-property
+    <html lang="en" color-theme="dark">
       <body>
         <div className="root-layout">
           <MainLayout>{children}</MainLayout>
