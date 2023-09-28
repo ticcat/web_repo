@@ -58,6 +58,31 @@
   font-size: 14px;
 }
 
+.side-line, .container .content::after, .container .content::before {
+  display: block;
+  position: absolute;
+  height: 85vh;
+  width: 1px;
+  background-color: rgb(var(--accent-1-rgb));
+}
+
+.top-bot-line, .container .botLine, .container .topLine {
+  position: absolute;
+  height: 1px;
+  width: 80vw;
+  background-color: rgb(var(--accent-1-rgb));
+}
+
+.corner-square, .container .botLine::before, .container .topLine::after {
+  position: absolute;
+  display: block;
+  border: 8px solid rgb(var(--background-rgb));
+  width: 4px;
+  height: 4px;
+  background-color: rgb(var(--accent-1-rgb));
+  z-index: 1;
+}
+
 .container {
   width: 100%;
   height: 100%;
@@ -68,40 +93,13 @@
 }
 .container .content::before {
   content: "";
-  display: block;
-  position: absolute;
   left: var(--root-layout-padding);
   bottom: var(--root-layout-padding);
-  height: 85vh;
-  width: 1px;
-  background-color: rgb(var(--accent-1-rgb));
-  z-index: 1;
 }
 .container .content::after {
   content: "";
-  display: block;
-  position: absolute;
   right: var(--root-layout-padding);
   top: var(--root-layout-padding);
-  height: 85vh;
-  width: 1px;
-  background-color: rgb(var(--accent-1-rgb));
-  z-index: 1;
-}
-.container .line, .container .botLine, .container .topLine {
-  position: absolute;
-  height: 1px;
-  width: 80vw;
-  background-color: rgb(var(--accent-1-rgb));
-}
-.container .corner-square, .container .botLine::before, .container .topLine::after {
-  position: absolute;
-  display: block;
-  border: 8px solid rgb(var(--background-rgb));
-  width: 4px;
-  height: 4px;
-  background-color: rgb(var(--accent-1-rgb));
-  z-index: 2;
 }
 .container .topLine {
   right: var(--root-layout-padding);
