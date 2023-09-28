@@ -1,5 +1,5 @@
 import styles from "./HomeLanding.module.css";
-import Button from "@/components/Button/Button";
+import EmailButton from "@/components/EmailButton/EmailButton";
 import SocialMediaButtons from "@/components/SMNButtons/SMNButtons";
 
 function Logo() {
@@ -44,9 +44,7 @@ export default function HomeLandingSection() {
   return (
     <section id="homeLanding" className={styles.homeSection}>
       <div id="topInfo" className={styles.topInfo}>
-        <div className={styles.email}>
-          <Button>// serialticcat@gmail.com //</Button>
-        </div>
+        <EmailButton></EmailButton>
         <SocialMediaButtons></SocialMediaButtons>
       </div>
       <div id="botInfo" className={styles.botInfo}>

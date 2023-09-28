@@ -65,10 +65,6 @@ $section-side-padding: 55px;
     gap: 15px;
     height: max-content;
     width: max-content;
-
-    .email {
-      @extend .sub1;
-    }
   }
 
   .botInfo {

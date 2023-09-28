@@ -1,0 +1,66 @@
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.015rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.h1 {
+  font-size: 108px;
+}
+
+.h2 {
+  font-size: 70px;
+}
+
+.h3 {
+  font-size: 55px;
+}
+
+.h4 {
+  font-size: 35px;
+}
+
+.h5 {
+  font-size: 25px;
+}
+
+.sub1, .email,
+.sub2,
+.sub3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.sub1, .email {
+  font-size: 25px;
+}
+
+.sub2 {
+  font-size: 20px;
+}
+
+.sub3 {
+  font-size: 18px;
+}
+
+.b1,
+.b2 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: rgb(var(--body-rgb));
+}
+
+.b1 {
+  font-size: 16px;
+}
+
+.b2 {
+  font-size: 14px;
+}/*# sourceMappingURL=EmailButton.module.css.map */

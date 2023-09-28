@@ -25,14 +25,14 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .sub1, .homeSection .topInfo .email, .homeSection .botInfo .locationRole, .homeSection .botInfo .workInProgress {
+.subtitle, .sub3, .sub2, .sub1, .homeSection .botInfo .locationRole, .homeSection .botInfo .workInProgress {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
   color: rgb(var(--head-sub-rgb));
 }
 
-.sub1, .homeSection .topInfo .email, .homeSection .botInfo .locationRole, .homeSection .botInfo .workInProgress {
+.sub1, .homeSection .botInfo .locationRole, .homeSection .botInfo .workInProgress {
   font-size: 25px;
 }
 
