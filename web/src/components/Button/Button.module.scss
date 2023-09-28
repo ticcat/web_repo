@@ -2,6 +2,7 @@ $fill-function: cubic-bezier(0.37, 0, 0.02, 1);
 
 .container {
   position: relative;
+  width: max-content;
   overflow: hidden;
   cursor: pointer;
 
