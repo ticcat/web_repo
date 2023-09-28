@@ -7,7 +7,7 @@ $fill-function: cubic-bezier(0.37, 0, 0.02, 1);
 
   .fill {
     position: absolute;
-    height: 200%;
+    height: 100%;
     width: 100%;
     transform: translateY(-100%);
     will-change: transform;
@@ -17,13 +17,13 @@ $fill-function: cubic-bezier(0.37, 0, 0.02, 1);
   .fill1 {
     @extend .fill;
     background-color: rgb(var(--accent-2-rgb));
-    transition: transform 0.35s 0.05s $fill-function;
+    transition: transform 0.25s 0.05s $fill-function;
   }
 
   .fill2 {
     @extend .fill;
     background-color: rgb(var(--accent-1-rgb));
-    transition: transform 0.35s $fill-function;
+    transition: transform 0.25s $fill-function;
   }
 
   &:hover {
@@ -32,11 +32,11 @@ $fill-function: cubic-bezier(0.37, 0, 0.02, 1);
     }
 
     .fill1 {
-      transition: transform 0.5s $fill-function;
+      transition: transform 0.35s $fill-function;
     }
 
     .fill2 {
-      transition: transform 0.5s 0.1s $fill-function;
+      transition: transform 0.35s 0.1s $fill-function;
     }
   }
 }
