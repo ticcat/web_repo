@@ -1,34 +1,24 @@
 "use client";
 
 import styles from "./ThemeButton.module.css";
-import { useCallback, useState } from "react";
-
-function changeTheme(newTheme: string) {
-  document.documentElement.setAttribute("color-theme", newTheme);
-}
+import { useState } from "react";
 
 export default function ThemeButton() {
   const [currentTheme, setCurrentTheme] = useState("dark");
 
-  const changeThemeCallback = useCallback(
-    (newTheme?: string) => {
-      const theme = newTheme
-        ? newTheme
-        : currentTheme === "light"
-        ? "dark"
-        : "light";
+  function changeTheme(newTheme?: string) {
+    const theme = newTheme
+      ? newTheme
+      : currentTheme === "light"
+      ? "dark"
+      : "light";
 
-      changeTheme(theme);
-      setCurrentTheme(theme);
-    },
-    [currentTheme]
-  );
+    document.documentElement.setAttribute("color-theme", theme);
+    setCurrentTheme(theme);
+  }
 
   return (
-    <button
-      className={styles.themeButton}
-      onClick={() => changeThemeCallback()}
-    >
+    <button className={styles.themeButton} onClick={() => changeTheme()}>
       {currentTheme === "light" ? "Dark mode" : "Light mode"}
     </button>
   );
