@@ -1,19 +1,23 @@
 @use "../../../globalStyles/globalClasses";
 
-.authorRefText {
-  @extend .sub3;
-  text-decoration: none;
-  line-height: normal;
+.authorRefButton {
+  width: max-content;
 
-  .heart {
-    color: rgb(var(--accent-1-rgb));
-    transition: color 0.1s 0.2s linear;
-  }
+  .authorRefText {
+    @extend .sub3;
+    text-decoration: none;
+    line-height: normal;
 
-  &:hover {
     .heart {
-      color: rgb(var(--body-rgb));
-      transition: color 0.1s linear;
+      color: rgb(var(--accent-1-rgb));
+      transition: color 0.1s 0.2s linear;
+    }
+
+    &:hover {
+      .heart {
+        color: rgb(var(--body-rgb));
+        transition: color 0.1s linear;
+      }
     }
   }
 }
