@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./ThemeButton.module.css";
+import styles from "./ThemeToggle.module.css";
 import { useState } from "react";
 
 function LightIcon() {

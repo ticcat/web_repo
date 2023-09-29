@@ -1,6 +1,6 @@
 import styles from "./MainLayout.module.css";
 import AuthorRefButton from "./AuthorRefButton/AuthorRefButton";
-import ThemeToggle from "./ThemeButton/ThemeButton";
+import ThemeToggle from "./ThemeToggle/ThemeButton";
 
 export default function MainLayout({
   children,
