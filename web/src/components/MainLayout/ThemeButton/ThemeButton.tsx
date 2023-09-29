@@ -3,7 +3,7 @@
 import styles from "./ThemeButton.module.css";
 import { useState } from "react";
 
-export default function ThemeButton() {
+export default function ThemeToggle() {
   const [currentTheme, setCurrentTheme] = useState("dark");
 
   function changeTheme(newTheme?: string) {
