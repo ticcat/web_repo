@@ -10,13 +10,13 @@
 
     .heart {
       color: rgb(var(--accent-1-rgb));
-      transition: color 0.1s 0.2s linear;
+      transition: color 0.1s ease;
     }
 
     &:hover {
       .heart {
         color: rgb(var(--body-rgb));
-        transition: color 0.1s linear;
+        transition: color 0.2s ease;
       }
     }
   }
