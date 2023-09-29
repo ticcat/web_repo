@@ -1,3 +1,79 @@
-.themeButton {
+$icon-size: 1.8rem;
+$fill-function: cubic-bezier(0.37, 0, 0.02, 1);
+
+.toggleContainer {
+  position: relative;
+  width: calc($icon-size * 2.25);
+  height: $icon-size;
   margin-top: 15px;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: $icon-size;
+    height: $icon-size;
+    will-change: left, transform;
+    z-index: -1;
+  }
+
+  &::after {
+    background-color: rgb(var(--accent-1-rgb));
+    transition: left 0.25s $fill-function, transform 0.15s $fill-function;
+  }
+
+  &::before {
+    background-color: rgb(var(--accent-2-rgb));
+    transition: left 0.25s $fill-function, transform 0.15s $fill-function;
+  }
+
+  &:hover {
+    &.light {
+      &::before {
+        transform: translateX(15%);
+      }
+    }
+    &.dark {
+      &::before {
+        transform: translateX(-15%);
+      }
+    }
+  }
+
+  &.dark {
+    &::before,
+    &::after {
+      left: calc($icon-size * 1.25);
+    }
+  }
+
+  &.light {
+    &::before,
+    &::after {
+      left: 0rem;
+    }
+  }
+
+  .iconSpan {
+    position: absolute;
+    fill: rgb(var(--body-rgb));
+  }
+
+  .light {
+    @extend .iconSpan;
+    left: 0;
+  }
+
+  .dark {
+    @extend .iconSpan;
+    right: 0;
+  }
+}
+
+.icon {
+  padding: 0.2rem;
+  width: $icon-size;
+  height: $icon-size;
 }

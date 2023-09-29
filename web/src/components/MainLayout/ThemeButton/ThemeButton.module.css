@@ -1,3 +1,52 @@
-.themeButton {
+.toggleContainer {
+  position: relative;
+  width: 4.05rem;
+  height: 1.8rem;
   margin-top: 15px;
+  cursor: pointer;
+}
+.toggleContainer::before, .toggleContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  will-change: left, transform;
+  z-index: -1;
+}
+.toggleContainer::after {
+  background-color: rgb(var(--accent-1-rgb));
+  transition: left 0.25s cubic-bezier(0.37, 0, 0.02, 1), transform 0.15s cubic-bezier(0.37, 0, 0.02, 1);
+}
+.toggleContainer::before {
+  background-color: rgb(var(--accent-2-rgb));
+  transition: left 0.25s cubic-bezier(0.37, 0, 0.02, 1), transform 0.15s cubic-bezier(0.37, 0, 0.02, 1);
+}
+.toggleContainer:hover.light::before {
+  transform: translateX(15%);
+}
+.toggleContainer:hover.dark::before {
+  transform: translateX(-15%);
+}
+.toggleContainer.dark::before, .toggleContainer.dark::after {
+  left: 2.25rem;
+}
+.toggleContainer.light::before, .toggleContainer.light::after {
+  left: 0rem;
+}
+.toggleContainer .iconSpan, .toggleContainer .dark, .toggleContainer .light {
+  position: absolute;
+  fill: rgb(var(--body-rgb));
+}
+.toggleContainer .light {
+  left: 0;
+}
+.toggleContainer .dark {
+  right: 0;
+}
+
+.icon {
+  padding: 0.2rem;
+  width: 1.8rem;
+  height: 1.8rem;
 }/*# sourceMappingURL=ThemeButton.module.css.map */
