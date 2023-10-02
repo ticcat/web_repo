@@ -1,3 +1,4 @@
+import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
 import MainLayout from "@/components/MainLayout/MainLayout";
 import "@/globalStyles/globals.css";
 import type { Metadata } from "next";
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <div className="root-layout">
           <MainLayout>{children}</MainLayout>
+          <LoadingScreen></LoadingScreen>
         </div>
       </body>
     </html>
