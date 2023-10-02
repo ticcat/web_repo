@@ -1,4 +1,4 @@
-$fill-function: cubic-bezier(0.37, 0, 0.02, 1);
+$fill-function: var(--fill-anim-timing-func);
 
 .container {
   position: relative;
