@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./SMNButtons.module.css";
-import Button from "@/components/Button/Button";
+import Button from "@/components/Buttons/Button/Button";
 
 export default function SocialMediaButtons() {
   return (

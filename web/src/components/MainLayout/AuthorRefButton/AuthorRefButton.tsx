@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./AuthorRefButton.module.css";
-import Button from "@/components/Button/Button";
+import Button from "@/components/Buttons/Button/Button";
 
 export default function AuthorRefButton() {
   return (

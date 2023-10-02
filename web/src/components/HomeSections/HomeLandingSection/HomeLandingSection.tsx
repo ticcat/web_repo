@@ -1,6 +1,6 @@
 import styles from "./HomeLanding.module.css";
-import EmailButton from "@/components/EmailButton/EmailButton";
-import SocialMediaButtons from "@/components/SMNButtons/SMNButtons";
+import EmailButton from "@/components/Buttons/EmailButton/EmailButton";
+import SocialMediaButtons from "@/components/Buttons/SMNButtons/SMNButtons";
 
 function Logo() {
   return (
