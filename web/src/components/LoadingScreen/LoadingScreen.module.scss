@@ -24,6 +24,11 @@ $show-anim-params: show 0.5s $fill-function forwards;
     .screen {
       animation-delay: 0.3s;
       opacity: 0;
+
+      .title h1 {
+        transform: translateY(100%);
+        animation-delay: 0.75s;
+      }
     }
 
     .fill1 {

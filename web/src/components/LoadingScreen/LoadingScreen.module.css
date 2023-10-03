@@ -77,6 +77,10 @@
   animation-delay: 0.3s;
   opacity: 0;
 }
+.container.show .screen .title h1 {
+  transform: translateY(100%);
+  animation-delay: 0.75s;
+}
 .container.show .fill1 {
   animation-delay: 0.25s;
   opacity: 0;
