@@ -9,7 +9,11 @@
       "request": "launch",
       "name": "Launch Chrome against localhost",
       "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}/web"
+      "webRoot": "${workspaceFolder}/web",
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/web",
+        "!/node_modules/**"
+      ]
     }
   ]
 }
