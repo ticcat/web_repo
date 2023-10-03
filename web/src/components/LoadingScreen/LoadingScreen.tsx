@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 export default function LoadingScreen({ show }: { show?: boolean }) {
   const path = usePathname();
-  const loadingTitle = path === "/" ? "Home" : path;
+  const loadingTitle = path === "/" ? "Home" : path.substring(1);
 
   return (
     <div className={`${styles.container} ${show ? styles.show : styles.hide}`}>
