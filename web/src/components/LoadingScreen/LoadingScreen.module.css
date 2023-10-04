@@ -91,15 +91,15 @@
 }
 .container.hide * {
   will-change: transform;
-  animation: hide 0.7s var(--fill-anim-timing-func) forwards;
-  animation-delay: 1s;
+  animation: hide 1s var(--fill-anim-timing-func) forwards;
+  animation-delay: 2.2s;
   top: 0;
 }
 .container.hide .fill1 {
-  animation-delay: 1.15s;
+  animation-delay: 2.5s;
 }
 .container.hide .fill2 {
-  animation-delay: 1.25s;
+  animation-delay: 2.6s;
 }
 .container .screen {
   position: absolute;
@@ -117,7 +117,7 @@
 .container .screen .title h1 {
   letter-spacing: 7rem;
   margin-right: -7rem;
-  animation: showTitle 0.2s ease-out forwards;
+  animation: showTitle 2s var(--fill-anim-timing-func) forwards;
 }
 .container .fill, .container .fill2, .container .fill1 {
   position: absolute;
@@ -136,7 +136,7 @@
     opacity: 0;
     transform: translateY(100%);
   }
-  90% {
+  80% {
     opacity: 1;
   }
   100% {
