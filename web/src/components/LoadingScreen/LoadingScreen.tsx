@@ -15,9 +15,7 @@ export default function LoadingScreen({
     >
       <div className={styles.screen}>
         <div className={styles.title}>
-          <h1>
-            {`${title === "/" ? "home" : title.substring(1)}`.toUpperCase()}
-          </h1>
+          <h1>{`${title === "" ? "home" : title}`.toUpperCase()}</h1>
         </div>
       </div>
       <div className={styles.fill2}></div>
