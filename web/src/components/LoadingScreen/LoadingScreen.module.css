@@ -1,0 +1,165 @@
+.header, .h5, .h4, .h3, .h2, .h1, .container .screen .title h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.015rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.h1, .container .screen .title h1 {
+  font-size: 108px;
+}
+
+.h2 {
+  font-size: 70px;
+}
+
+.h3 {
+  font-size: 55px;
+}
+
+.h4 {
+  font-size: 35px;
+}
+
+.h5 {
+  font-size: 25px;
+}
+
+.subtitle, .sub3, .sub2, .sub1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.sub1 {
+  font-size: 25px;
+}
+
+.sub2 {
+  font-size: 20px;
+}
+
+.sub3 {
+  font-size: 18px;
+}
+
+.body, .b2, .b1 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: rgb(var(--body-rgb));
+}
+
+.b1 {
+  font-size: 16px;
+}
+
+.b2 {
+  font-size: 14px;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  pointer-events: none;
+  z-index: 10;
+}
+.container.show * {
+  will-change: transform;
+  animation: show 0.5s var(--fill-anim-timing-func) forwards;
+  bottom: 0;
+}
+.container.show .screen {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+.container.show .screen .title h1 {
+  transform: translateY(100%);
+  animation-delay: 0.75s;
+}
+.container.show .fill1 {
+  animation-delay: 0.25s;
+  opacity: 0;
+}
+.container.show .fill2 {
+  animation-delay: 0.15s;
+  opacity: 0;
+}
+.container.hide * {
+  will-change: transform;
+  animation: hide 1s var(--fill-anim-timing-func) forwards;
+  animation-delay: 2.2s;
+  top: 0;
+}
+.container.hide .fill1 {
+  animation-delay: 2.5s;
+}
+.container.hide .fill2 {
+  animation-delay: 2.6s;
+}
+.container .screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(var(--background-rgb));
+  z-index: 11;
+}
+.container .screen .title {
+  overflow: hidden;
+}
+.container .screen .title h1 {
+  letter-spacing: 7rem;
+  margin-right: -7rem;
+  animation: showTitle 2s var(--fill-anim-timing-func) forwards;
+}
+.container .fill, .container .fill2, .container .fill1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+.container .fill1 {
+  background-color: rgb(var(--accent-1-rgb));
+}
+.container .fill2 {
+  background-color: rgb(var(--accent-2-rgb));
+}
+@keyframes showTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes hide {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes show {
+  0% {
+    transform: translateY(-100%);
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=LoadingScreen.module.css.map */

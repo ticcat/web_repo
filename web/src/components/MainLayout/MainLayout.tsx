@@ -1,6 +1,7 @@
 import styles from "./MainLayout.module.css";
 import AuthorRefButton from "./AuthorRefButton/AuthorRefButton";
 import ThemeToggle from "./ThemeToggle/ThemeButton";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 export default function MainLayout({
   children,
@@ -9,8 +10,9 @@ export default function MainLayout({
 }) {
   return (
     <div className={styles.container}>
+      <LoadingScreen loading={false} title={"welcome"}></LoadingScreen>
       <div className={styles.topLine}></div>
-      <div className={styles.content}>{children}</div>
+      <main className={styles.content}>{children}</main>
       <div className={styles.botLine}></div>
       <div className={styles.authorRefButton}>
         <AuthorRefButton></AuthorRefButton>
