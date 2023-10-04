@@ -2,40 +2,26 @@
 
 import { useRouter } from "next/navigation";
 import Button from "../Button/Button";
-import { useEffect } from "react";
 
 export default function LinkButton({
   href,
   setLoading,
-  setNextPage,
+  setNextPageName,
   children,
 }: {
   href: string;
   setLoading: (state: boolean) => void;
-  setNextPage: (pageName: string) => void;
+  setNextPageName: (pageName: string) => void;
   children: React.ReactNode;
 }) {
   const router = useRouter();
 
   const clickHandler = () => {
     setLoading(true);
-    setNextPage(href);
+    setNextPageName(href.substring(1));
     setTimeout(() => router.push(href), 500);
     setTimeout(() => setLoading(false), 750);
   };
-
-  useEffect(() => {
-    function onPageLoad() {
-      console.log(href + " loaded");
-    }
-
-    if (document.readyState === "complete") {
-      onPageLoad();
-    } else {
-      window.addEventListener("load", onPageLoad, false);
-      return () => window.removeEventListener("load", onPageLoad);
-    }
-  }, [href]);
 
   return (
     <div onMouseEnter={() => router.prefetch(href)}>

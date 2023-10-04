@@ -13,11 +13,11 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   const [loading, setLoading] = useState(false);
-  const [nextPage, setNextPage] = useState("");
+  const [nextPageName, setNextPageName] = useState("");
 
   return (
     <div className={styles.container}>
-      <LoadingScreen loading={loading} title={nextPage}></LoadingScreen>
+      <LoadingScreen loading={loading} title={nextPageName}></LoadingScreen>
       <div className={styles.topLine}></div>
       <main className={styles.content}>{children}</main>
       <div className={styles.botLine}></div>
@@ -25,11 +25,15 @@ export default function MainLayout({
         <LinkButton
           href="/about"
           setLoading={setLoading}
-          setNextPage={setNextPage}
+          setNextPageName={setNextPageName}
         >
           About
         </LinkButton>
-        <LinkButton href="/" setLoading={setLoading} setNextPage={setNextPage}>
+        <LinkButton
+          href="/"
+          setLoading={setLoading}
+          setNextPageName={setNextPageName}
+        >
           Home
         </LinkButton>
         <AuthorRefButton></AuthorRefButton>
