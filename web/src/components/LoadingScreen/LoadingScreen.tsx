@@ -1,17 +1,23 @@
 "use client";
 
 import styles from "./LoadingScreen.module.css";
-import { usePathname } from "next/navigation";
 
-export default function LoadingScreen({ show }: { show?: boolean }) {
-  const path = usePathname();
-  const loadingTitle = path === "/" ? "Home" : path.substring(1);
-
+export default function LoadingScreen({
+  loading,
+  title,
+}: {
+  loading?: boolean;
+  title: string;
+}) {
   return (
-    <div className={`${styles.container} ${show ? styles.show : styles.hide}`}>
+    <div
+      className={`${styles.container} ${loading ? styles.show : styles.hide}`}
+    >
       <div className={styles.screen}>
         <div className={styles.title}>
-          <h1>{loadingTitle.toUpperCase()}</h1>
+          <h1>
+            {`${title === "/" ? "home" : title.substring(1)}`.toUpperCase()}
+          </h1>
         </div>
       </div>
       <div className={styles.fill2}></div>
