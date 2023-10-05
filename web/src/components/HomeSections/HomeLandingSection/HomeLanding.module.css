@@ -60,11 +60,15 @@
 
 .logo {
   position: absolute;
-  width: clamp(40vw, 945px, 50vw);
+  width: clamp(40vw, 1100px, 100%);
   height: -moz-max-content;
   height: max-content;
-  bottom: 0.9em;
+  bottom: 1em;
+  left: 0;
   opacity: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 30px 0;
   fill: rgb(var(--accent-1-rgb));
   z-index: 5;
 }
@@ -78,12 +82,12 @@
   position: relative;
   height: -moz-max-content;
   height: max-content;
-  animation: nameSlide 15s linear infinite;
+  animation: nameSlide 20s linear infinite;
   z-index: 10;
 }
 .carouselContainer .nameCarousel .name {
   width: 100%;
-  font-size: 8rem;
+  font-size: 10rem;
   font-family: "Montserrat";
   font-weight: 500;
   text-wrap: nowrap;
@@ -92,7 +96,6 @@
 }
 .carouselContainer .nameCarousel .name .spacer {
   margin: 0 2vw;
-  font-size: 9rem;
 }
 @keyframes nameSlide {
   0% {
@@ -113,14 +116,17 @@
 }
 .homeSection .me {
   position: absolute;
-  background-image: url("../../../../public/imgs/home_v0.1.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   top: 0;
-  z-index: -1;
+  left: 0;
+  margin: 0 auto 0;
+  z-index: -10;
+}
+.homeSection .me * {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .homeSection .topInfo {
   display: flex;

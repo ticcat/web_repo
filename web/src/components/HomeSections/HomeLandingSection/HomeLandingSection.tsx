@@ -1,4 +1,5 @@
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
+import Image from "next/image";
 import styles from "./HomeLanding.module.css";
 import EmailButton from "@/components/Buttons/EmailButton/EmailButton";
 import SocialMediaButtons from "@/components/Buttons/SMNButtons/SMNButtons";
@@ -29,16 +30,16 @@ function NameCarousel() {
     <div className={styles.carouselContainer}>
       <div className={styles.nameCarousel}>
         <AnimatedElement>
-        <span className={styles.name}>
-          <span className={styles.spacer}>//</span>SERGIO RICO ALFONSO
-        </span>
+          <span className={styles.name}>
+            <span className={styles.spacer}>//</span>SERGIO RICO ALFONSO
+          </span>
         </AnimatedElement>
       </div>
       <div className={styles.nameCarousel}>
         <AnimatedElement>
-        <span className={styles.name}>
-          <span className={styles.spacer}>//</span>SERGIO RICO ALFONSO
-        </span>
+          <span className={styles.name}>
+            <span className={styles.spacer}>//</span>SERGIO RICO ALFONSO
+          </span>
         </AnimatedElement>
       </div>
     </div>
@@ -48,7 +49,9 @@ function NameCarousel() {
 export default function HomeLandingSection() {
   return (
     <section id="homeLanding" className={styles.homeSection}>
-      <div className={styles.me}></div>
+      <div className={styles.me}>
+        <Image src="/imgs/home_v0.1.jpg" alt="me" fill={true}></Image>
+      </div>
       <div id="topInfo" className={styles.topInfo}>
         <EmailButton></EmailButton>
         <SocialMediaButtons></SocialMediaButtons>
@@ -56,7 +59,7 @@ export default function HomeLandingSection() {
       <div id="botInfo" className={styles.botInfo}>
         <div className={styles.locationRole}>
           <AnimatedElement>
-          FRONT END DEVELOPER // <br></br> VALENCIA, SPAIN
+            FRONT END DEVELOPER // <br></br> VALENCIA, SPAIN
           </AnimatedElement>
         </div>
         <div className={styles.workInProgress}>
