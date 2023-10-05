@@ -1,0 +1,17 @@
+.animate {
+  overflow: hidden;
+}
+.animate .child {
+  display: block;
+  transform: translateY(100%);
+  animation: show 0.5s ease-out 2.8s forwards;
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=AnimatedElement.module.css.map */
