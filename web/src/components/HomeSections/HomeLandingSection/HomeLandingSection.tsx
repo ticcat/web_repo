@@ -1,3 +1,4 @@
+import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import styles from "./HomeLanding.module.css";
 import EmailButton from "@/components/Buttons/EmailButton/EmailButton";
 import SocialMediaButtons from "@/components/Buttons/SMNButtons/SMNButtons";
@@ -27,14 +28,18 @@ function NameCarousel() {
   return (
     <div className={styles.carouselContainer}>
       <div className={styles.nameCarousel}>
+        <AnimatedElement>
         <span className={styles.name}>
           <span className={styles.spacer}>//</span>SERGIO RICO ALFONSO
         </span>
+        </AnimatedElement>
       </div>
       <div className={styles.nameCarousel}>
+        <AnimatedElement>
         <span className={styles.name}>
           <span className={styles.spacer}>//</span>SERGIO RICO ALFONSO
         </span>
+        </AnimatedElement>
       </div>
     </div>
   );
@@ -50,9 +55,13 @@ export default function HomeLandingSection() {
       </div>
       <div id="botInfo" className={styles.botInfo}>
         <div className={styles.locationRole}>
+          <AnimatedElement>
           FRONT END DEVELOPER // <br></br> VALENCIA, SPAIN
+          </AnimatedElement>
         </div>
-        <div className={styles.workInProgress}>// WORK IN PROGRESS //</div>
+        <div className={styles.workInProgress}>
+          <AnimatedElement>// WORK IN PROGRESS //</AnimatedElement>
+        </div>
         <div>
           <NameCarousel></NameCarousel>
           <Logo></Logo>
