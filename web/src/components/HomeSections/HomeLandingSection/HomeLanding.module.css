@@ -66,7 +66,7 @@
   bottom: 0.9em;
   opacity: 50%;
   fill: rgb(var(--accent-1-rgb));
-  z-index: 2;
+  z-index: 5;
 }
 
 .carouselContainer {
@@ -104,16 +104,23 @@
 }
 
 .homeSection {
-  background-image: url("../../../../public/imgs/home_v0.1.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: var(--root-layout-padding) 55px 0px 55px;
+}
+.homeSection .me {
+  position: absolute;
+  background-image: url("../../../../public/imgs/home_v0.1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -1;
 }
 .homeSection .topInfo {
   display: flex;

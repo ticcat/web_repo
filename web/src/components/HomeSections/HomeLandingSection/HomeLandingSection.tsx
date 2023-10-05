@@ -43,6 +43,7 @@ function NameCarousel() {
 export default function HomeLandingSection() {
   return (
     <section id="homeLanding" className={styles.homeSection}>
+      <div className={styles.me}></div>
       <div id="topInfo" className={styles.topInfo}>
         <EmailButton></EmailButton>
         <SocialMediaButtons></SocialMediaButtons>
