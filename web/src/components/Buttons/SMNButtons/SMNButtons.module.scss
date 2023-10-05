@@ -8,8 +8,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px;
-    width: 60px;
+    font-size: 0rem;
+    margin: clamp(0rem, 0.546875rem + -0.625vw, 0.3125rem);
+    height: clamp(1.875rem, 0.46875rem + 3.75vw, 3.75rem);
+    width: clamp(1.875rem, 0.46875rem + 3.75vw, 3.75rem);
     fill: rgb(var(--head-sub-rgb));
   }
 }

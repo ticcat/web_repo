@@ -6,7 +6,8 @@
 }
 
 .h1 {
-  font-size: 108px;
+  font-size: 3.125rem;
+  font-size: clamp(3.125rem, 0.40625rem + 7.25vw, 6.75rem);
 }
 
 .h2 {
@@ -33,11 +34,13 @@
 }
 
 .sub1, .homeSection .botInfo .locationRole, .homeSection .botInfo .workInProgress {
-  font-size: 25px;
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
 .sub2 {
-  font-size: 20px;
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
 
 .sub3 {
@@ -60,23 +63,26 @@
 
 .logo {
   position: absolute;
-  width: clamp(40vw, 1100px, 100%);
+  width: 1100px;
   height: -moz-max-content;
   height: max-content;
   bottom: 1em;
   left: 0;
   opacity: 50%;
-  margin-left: auto;
-  margin-right: auto;
   padding: 0 30px 0;
   fill: rgb(var(--accent-1-rgb));
-  z-index: 5;
+  z-index: -1;
+}
+@media screen and (max-width: 1160px) {
+  .logo {
+    display: none;
+  }
 }
 
 .carouselContainer {
   display: flex;
   flex-direction: row;
-  margin: 0 calc((var(--root-layout-padding) + 55px) * -1) 15px;
+  margin: 0 calc((var(--root-layout-padding) + clamp(0.9375rem, 0.234375rem + 1.875vw, 1.875rem)) * -1) 15px;
 }
 .carouselContainer .nameCarousel {
   position: relative;
@@ -87,7 +93,8 @@
 }
 .carouselContainer .nameCarousel .name {
   width: 100%;
-  font-size: 10rem;
+  font-size: 9rem;
+  font-size: clamp(9rem, 8.25rem + 2vw, 10rem);
   font-family: "Montserrat";
   font-weight: 500;
   text-wrap: nowrap;
@@ -112,7 +119,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: var(--root-layout-padding) 55px 0px 55px;
+  padding: var(--root-layout-padding) clamp(0.9375rem, 0.234375rem + 1.875vw, 1.875rem) 0px clamp(0.9375rem, 0.234375rem + 1.875vw, 1.875rem);
 }
 .homeSection .me {
   position: absolute;
@@ -132,7 +139,7 @@
   display: flex;
   flex-direction: column;
   align-self: flex-end;
-  gap: 15px;
+  gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
   height: -moz-max-content;
   height: max-content;
   width: -moz-max-content;
@@ -144,12 +151,19 @@
   width: 100%;
   height: -moz-max-content;
   height: max-content;
+  z-index: 1;
 }
 .homeSection .botInfo .locationRole {
   align-self: flex-start;
-  margin-bottom: 70px;
+  margin-bottom: clamp(1vh, 70px, 5vh);
 }
 .homeSection .botInfo .workInProgress {
   align-self: flex-end;
   margin-bottom: 30px;
+}
+@media screen and (max-width: 600px) {
+  .homeSection .botInfo .locationRole,
+  .homeSection .botInfo .workInProgress {
+    align-self: center;
+  }
 }/*# sourceMappingURL=HomeLanding.module.css.map */

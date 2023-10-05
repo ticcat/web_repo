@@ -7,7 +7,8 @@
 
 .h1 {
   @extend .header;
-  font-size: 108px;
+  font-size: 3.125rem;
+  font-size: clamp(3.125rem, 0.40625rem + 7.249999999999999vw, 6.75rem);
 }
 
 .h2 {
@@ -39,12 +40,14 @@
 
 .sub1 {
   @extend .subtitle;
-  font-size: 25px;
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
 .sub2 {
   @extend .subtitle;
-  font-size: 20px;
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
 
 .sub3 {

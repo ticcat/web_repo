@@ -74,8 +74,8 @@ $show-anim-params: show 0.5s $fill-function forwards;
 
       h1 {
         @extend .h1;
-        letter-spacing: 7rem;
-        margin-right: -7rem;
+        letter-spacing: clamp(1rem, -3.5rem + 12vw, 7rem);
+        margin-right: calc(clamp(1rem, -3.5rem + 12vw, 7rem) * -1);
         animation: showTitle 2s $fill-function forwards;
       }
     }

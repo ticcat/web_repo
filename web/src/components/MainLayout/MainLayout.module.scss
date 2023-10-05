@@ -15,7 +15,7 @@ $corner-square-size: 4px;
 .top-bot-line {
   position: fixed;
   height: $line-width;
-  width: 80vw;
+  width: clamp(65vw, -9.84375rem + 91.25vw, 80vw);
   background-color: rgb(var(--accent-1-rgb));
 }
 
