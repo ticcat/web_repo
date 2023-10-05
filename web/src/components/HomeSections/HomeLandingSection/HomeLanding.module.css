@@ -64,6 +64,7 @@
 .logo {
   position: absolute;
   width: 1100px;
+  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   bottom: 1em;
@@ -80,15 +81,22 @@
 }
 
 .carouselContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin: 0 calc((var(--root-layout-padding) + clamp(0.9375rem, 0.234375rem + 1.875vw, 1.875rem)) * -1) 15px;
 }
 .carouselContainer .nameCarousel {
   position: relative;
+  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  animation: nameSlide 20s linear infinite;
+  -webkit-animation: nameSlide 20s linear infinite;
+          animation: nameSlide 20s linear infinite;
   z-index: 10;
 }
 .carouselContainer .nameCarousel .name {
@@ -104,21 +112,40 @@
 .carouselContainer .nameCarousel .name .spacer {
   margin: 0 2vw;
 }
-@keyframes nameSlide {
+@-webkit-keyframes nameSlide {
   0% {
-    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+@keyframes nameSlide {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
 }
 
 .homeSection {
   position: relative;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: var(--root-layout-padding) clamp(0.9375rem, 0.234375rem + 1.875vw, 1.875rem) 0px clamp(0.9375rem, 0.234375rem + 1.875vw, 1.875rem);
 }
 .homeSection .me {
@@ -136,34 +163,51 @@
      object-fit: contain;
 }
 .homeSection .topInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-self: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
+  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
 .homeSection .botInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
+  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   z-index: 1;
 }
 .homeSection .botInfo .locationRole {
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   margin-bottom: clamp(1vh, 70px, 5vh);
 }
 .homeSection .botInfo .workInProgress {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   margin-bottom: 30px;
 }
 @media screen and (max-width: 600px) {
   .homeSection .botInfo .locationRole,
   .homeSection .botInfo .workInProgress {
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
 }/*# sourceMappingURL=HomeLanding.module.css.map */

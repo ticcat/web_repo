@@ -16,17 +16,25 @@
 }
 .toggleContainer::after {
   background-color: rgb(var(--accent-1-rgb));
+  -webkit-transition: left 0.25s var(--fill-anim-timing-func), -webkit-transform 0.15s var(--fill-anim-timing-func);
+  transition: left 0.25s var(--fill-anim-timing-func), -webkit-transform 0.15s var(--fill-anim-timing-func);
   transition: left 0.25s var(--fill-anim-timing-func), transform 0.15s var(--fill-anim-timing-func);
+  transition: left 0.25s var(--fill-anim-timing-func), transform 0.15s var(--fill-anim-timing-func), -webkit-transform 0.15s var(--fill-anim-timing-func);
 }
 .toggleContainer::before {
   background-color: rgb(var(--accent-2-rgb));
+  -webkit-transition: left 0.25s var(--fill-anim-timing-func), -webkit-transform 0.15s var(--fill-anim-timing-func);
+  transition: left 0.25s var(--fill-anim-timing-func), -webkit-transform 0.15s var(--fill-anim-timing-func);
   transition: left 0.25s var(--fill-anim-timing-func), transform 0.15s var(--fill-anim-timing-func);
+  transition: left 0.25s var(--fill-anim-timing-func), transform 0.15s var(--fill-anim-timing-func), -webkit-transform 0.15s var(--fill-anim-timing-func);
 }
 .toggleContainer:hover.light::before {
-  transform: translateX(15%);
+  -webkit-transform: translateX(15%);
+          transform: translateX(15%);
 }
 .toggleContainer:hover.dark::before {
-  transform: translateX(-15%);
+  -webkit-transform: translateX(-15%);
+          transform: translateX(-15%);
 }
 .toggleContainer.dark::before, .toggleContainer.dark::after {
   left: 2.25rem;
