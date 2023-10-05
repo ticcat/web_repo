@@ -60,14 +60,15 @@
 
 .side-line, .container .content::after, .container .content::before {
   display: block;
-  position: absolute;
+  position: fixed;
   height: 85vh;
   width: 1px;
   background-color: rgb(var(--accent-1-rgb));
+  z-index: -1;
 }
 
 .top-bot-line, .container .botLine, .container .topLine {
-  position: absolute;
+  position: fixed;
   height: 1px;
   width: 80vw;
   background-color: rgb(var(--accent-1-rgb));
@@ -80,7 +81,7 @@
   width: 4px;
   height: 4px;
   background-color: rgb(var(--accent-1-rgb));
-  z-index: 1;
+  z-index: 10;
 }
 
 .container {
@@ -117,8 +118,8 @@
   left: -8px;
   bottom: -8px;
 }
-.container .authorRefButton {
-  position: absolute;
+.container .authorNTheme {
+  position: fixed;
   top: var(--root-layout-padding);
   left: var(--root-layout-padding);
 }/*# sourceMappingURL=MainLayout.module.css.map */

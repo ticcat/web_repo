@@ -14,7 +14,7 @@ export default function MainLayout({
       <div className={styles.topLine}></div>
       <main className={styles.content}>{children}</main>
       <div className={styles.botLine}></div>
-      <div className={styles.authorRefButton}>
+      <div className={styles.authorNTheme}>
         <AuthorRefButton></AuthorRefButton>
         <ThemeToggle></ThemeToggle>
       </div>

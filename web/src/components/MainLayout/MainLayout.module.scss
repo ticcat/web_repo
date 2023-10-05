@@ -5,14 +5,15 @@ $corner-square-size: 4px;
 
 .side-line {
   display: block;
-  position: absolute;
+  position: fixed;
   height: 85vh;
   width: $line-width;
   background-color: rgb(var(--accent-1-rgb));
+  z-index: -1;
 }
 
 .top-bot-line {
-  position: absolute;
+  position: fixed;
   height: $line-width;
   width: 80vw;
   background-color: rgb(var(--accent-1-rgb));
@@ -25,7 +26,7 @@ $corner-square-size: 4px;
   width: $corner-square-size;
   height: $corner-square-size;
   background-color: rgb(var(--accent-1-rgb));
-  z-index: 1;
+  z-index: 10;
 }
 
 .container {
@@ -75,8 +76,8 @@ $corner-square-size: 4px;
     }
   }
 
-  .authorRefButton {
-    position: absolute;
+  .authorNTheme {
+    position: fixed;
     top: var(--root-layout-padding);
     left: var(--root-layout-padding);
   }
