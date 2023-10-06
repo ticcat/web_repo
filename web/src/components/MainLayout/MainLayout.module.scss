@@ -3,6 +3,35 @@
 $line-width: 1px;
 $corner-square-size: 4px;
 
+// Solution for deco lines looking bad on Safari/Chrome mobile. Test once picture is finished.
+// @media screen and (min-width: 600px) {
+//   .side-line {
+//     display: block;
+//     position: fixed;
+//     height: 85vh;
+//     width: $line-width;
+//     background-color: rgb(var(--accent-1-rgb));
+//     z-index: -1;
+//   }
+
+//   .top-bot-line {
+//     position: fixed;
+//     height: $line-width;
+//     width: clamp(65vw, -9.84375rem + 91.25vw, 80vw);
+//     background-color: rgb(var(--accent-1-rgb));
+//   }
+
+//   .corner-square {
+//     position: absolute;
+//     display: block;
+//     border: calc($corner-square-size * 2) solid rgb(var(--background-rgb));
+//     width: $corner-square-size;
+//     height: $corner-square-size;
+//     background-color: rgb(var(--accent-1-rgb));
+//     z-index: 10;
+//   }
+// }
+
 .side-line {
   display: block;
   position: fixed;
