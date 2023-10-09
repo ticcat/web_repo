@@ -63,26 +63,28 @@ $corner-square-size: 4px;
   height: 100%;
 
   .content {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+  }
 
-    &::before {
-      @extend .side-line;
-      content: "";
-      left: var(--root-layout-padding);
-      bottom: var(--root-layout-padding);
-    }
+  &::before {
+    @extend .side-line;
+    content: "";
+    left: var(--root-layout-padding);
+    bottom: var(--root-layout-padding);
+  }
 
-    &::after {
-      @extend .side-line;
-      content: "";
-      right: var(--root-layout-padding);
-      top: var(--root-layout-padding);
-    }
+  &::after {
+    @extend .side-line;
+    content: "";
+    right: var(--root-layout-padding);
+    top: var(--root-layout-padding);
   }
 
   .topLine {
     @extend .top-bot-line;
+    top: var(--root-layout-padding);
     right: var(--root-layout-padding);
 
     &::after {
@@ -95,6 +97,7 @@ $corner-square-size: 4px;
 
   .botLine {
     @extend .top-bot-line;
+    bottom: var(--root-layout-padding);
     left: var(--root-layout-padding);
 
     &::before {

@@ -61,7 +61,7 @@
   font-size: 14px;
 }
 
-.side-line, .container .content::after, .container .content::before {
+.side-line, .container::after, .container::before {
   display: block;
   position: fixed;
   height: 85vh;
@@ -92,20 +92,22 @@
   height: 100%;
 }
 .container .content {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
 }
-.container .content::before {
+.container::before {
   content: "";
   left: var(--root-layout-padding);
   bottom: var(--root-layout-padding);
 }
-.container .content::after {
+.container::after {
   content: "";
   right: var(--root-layout-padding);
   top: var(--root-layout-padding);
 }
 .container .topLine {
+  top: var(--root-layout-padding);
   right: var(--root-layout-padding);
 }
 .container .topLine::after {
@@ -114,6 +116,7 @@
   top: -8px;
 }
 .container .botLine {
+  bottom: var(--root-layout-padding);
   left: var(--root-layout-padding);
 }
 .container .botLine::before {
