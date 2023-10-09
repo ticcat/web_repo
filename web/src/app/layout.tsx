@@ -8,22 +8,24 @@ const description = "Front end web developer located in Valencia, Spain";
 export const metadata: Metadata = {
   title: title,
   description: description,
-  // TODO Finish when picture service chosen
-  // metadataBase: new URL(""),
-  // openGraph: {
-  //   siteName: "Sergio Rico Alfonso",
-  //   type: "website",
-  //   title: title,
-  //   description: description,
-  //   locale: "en",
-  //   images: "",
-  // },
-  // twitter: {
-  //   title: title,
-  //   description: description,
-  //   images: "",
-  //   card: "summary_large_image",
-  // },
+  metadataBase: new URL("https://sergiori.co"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    siteName: "Sergio Rico Alfonso",
+    type: "website",
+    title: title,
+    description: description,
+    locale: "en",
+    images: "/home2_v0.1.jpg",
+  },
+  twitter: {
+    title: title,
+    description: description,
+    images: "/home2_v0.1.jpg",
+    card: "summary_large_image",
+  },
   viewport: "width=device-width, initial-scale=1",
 };
 
