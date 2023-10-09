@@ -36,8 +36,7 @@ $home-subtitle-rgb: 51 45 47;
     .name {
       overflow: visible;
       width: 100%;
-      font-size: 7rem;
-      font-size: clamp(7rem, 4.75rem + 6vw, 10rem);
+      font-size: 12rem;
       font-family: "Montserrat";
       font-weight: 500;
       white-space: nowrap;
@@ -131,7 +130,7 @@ $home-subtitle-rgb: 51 45 47;
     @media screen and (max-width: 600px) {
       .locationRole,
       .workInProgress {
-        align-self: center;
+        align-self: flex-start;
       }
     }
   }
