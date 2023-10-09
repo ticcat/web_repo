@@ -117,12 +117,16 @@ $home-subtitle-rgb: 51 45 47;
 
     .locationRole {
       @extend .sub1;
+      font-size: 1.875rem;
+      font-size: clamp(1.875rem, 1.40625rem + 1.25vw, 2.5rem);
       align-self: flex-start;
       margin-bottom: clamp(1vh, 70px, 5vh);
     }
 
     .workInProgress {
       @extend .sub1;
+      font-size: 1.875rem;
+      font-size: clamp(1.875rem, 1.40625rem + 1.25vw, 2.5rem);
       align-self: flex-end;
       margin-bottom: 30px;
     }
