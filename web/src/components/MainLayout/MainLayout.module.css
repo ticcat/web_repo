@@ -67,7 +67,7 @@
   height: 85vh;
   width: 1px;
   background-color: rgb(var(--accent-1-rgb));
-  z-index: -1;
+  z-index: 15;
 }
 
 .top-bot-line, .container .botLine, .container .topLine {
@@ -75,6 +75,7 @@
   height: 1px;
   width: clamp(65vw, -9.84375rem + 91.25vw, 80vw);
   background-color: rgb(var(--accent-1-rgb));
+  z-index: 15;
 }
 
 .corner-square, .container .botLine::before, .container .topLine::after {
@@ -85,7 +86,6 @@
   width: 4px;
   height: 4px;
   background-color: rgb(var(--accent-1-rgb));
-  z-index: 10;
 }
 
 .container {

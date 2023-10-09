@@ -128,7 +128,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   background-color: rgb(var(--background-rgb));
-  z-index: 11;
+  z-index: 10;
 }
 .container .screen .title {
   overflow: hidden;
@@ -143,7 +143,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 10;
+  z-index: 5;
 }
 .container .fill1 {
   background-color: rgb(var(--accent-1-rgb));

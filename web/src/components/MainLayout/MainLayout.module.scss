@@ -39,7 +39,7 @@ $corner-square-separation: calc($corner-square-size * 3);
   height: 85vh;
   width: $line-width;
   background-color: rgb(var(--accent-1-rgb));
-  z-index: -1;
+  z-index: 15;
 }
 
 .top-bot-line {
@@ -47,6 +47,7 @@ $corner-square-separation: calc($corner-square-size * 3);
   height: $line-width;
   width: clamp(65vw, -9.84375rem + 91.25vw, 80vw);
   background-color: rgb(var(--accent-1-rgb));
+  z-index: 15;
 }
 
 .corner-square {
@@ -56,7 +57,6 @@ $corner-square-separation: calc($corner-square-size * 3);
   width: $corner-square-size;
   height: $corner-square-size;
   background-color: rgb(var(--accent-1-rgb));
-  z-index: 10;
 }
 
 .container {
