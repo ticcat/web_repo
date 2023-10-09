@@ -2,6 +2,7 @@
 
 $line-width: 1px;
 $corner-square-size: 4px;
+$corner-square-separation: calc($corner-square-size * 3);
 
 // Solution for deco lines looking bad on Safari/Chrome mobile. Test once picture is finished.
 // @media screen and (min-width: 600px) {
@@ -50,8 +51,8 @@ $corner-square-size: 4px;
 
 .corner-square {
   position: absolute;
+  box-sizing: border-box;
   display: block;
-  border: calc($corner-square-size * 2) solid rgb(var(--background-rgb));
   width: $corner-square-size;
   height: $corner-square-size;
   background-color: rgb(var(--accent-1-rgb));
@@ -71,6 +72,7 @@ $corner-square-size: 4px;
   &::before {
     @extend .side-line;
     content: "";
+    transform: translateY(calc($corner-square-separation * -1));
     left: var(--root-layout-padding);
     bottom: var(--root-layout-padding);
   }
@@ -78,6 +80,7 @@ $corner-square-size: 4px;
   &::after {
     @extend .side-line;
     content: "";
+    transform: translateY($corner-square-separation);
     right: var(--root-layout-padding);
     top: var(--root-layout-padding);
   }
@@ -86,12 +89,14 @@ $corner-square-size: 4px;
     @extend .top-bot-line;
     top: var(--root-layout-padding);
     right: var(--root-layout-padding);
+    transform: translateX(calc($corner-square-separation * -1));
 
     &::after {
       @extend .corner-square;
       content: "";
-      right: calc(calc($corner-square-size * 2) * -1);
-      top: calc(calc($corner-square-size * 2) * -1);
+      right: 0;
+      top: 0;
+      transform: translateX($corner-square-separation);
     }
   }
 
@@ -99,12 +104,14 @@ $corner-square-size: 4px;
     @extend .top-bot-line;
     bottom: var(--root-layout-padding);
     left: var(--root-layout-padding);
+    transform: translateX($corner-square-separation);
 
     &::before {
       @extend .corner-square;
       content: "";
-      left: calc(calc($corner-square-size * 2) * -1);
-      bottom: calc(calc($corner-square-size * 2) * -1);
+      left: 0;
+      bottom: 0;
+      transform: translateX(calc($corner-square-separation * -1));
     }
   }
 

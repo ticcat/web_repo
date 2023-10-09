@@ -79,8 +79,9 @@
 
 .corner-square, .container .botLine::before, .container .topLine::after {
   position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: block;
-  border: 8px solid rgb(var(--background-rgb));
   width: 4px;
   height: 4px;
   background-color: rgb(var(--accent-1-rgb));
@@ -98,31 +99,43 @@
 }
 .container::before {
   content: "";
+  -webkit-transform: translateY(-12px);
+          transform: translateY(-12px);
   left: var(--root-layout-padding);
   bottom: var(--root-layout-padding);
 }
 .container::after {
   content: "";
+  -webkit-transform: translateY(12px);
+          transform: translateY(12px);
   right: var(--root-layout-padding);
   top: var(--root-layout-padding);
 }
 .container .topLine {
   top: var(--root-layout-padding);
   right: var(--root-layout-padding);
+  -webkit-transform: translateX(-12px);
+          transform: translateX(-12px);
 }
 .container .topLine::after {
   content: "";
-  right: -8px;
-  top: -8px;
+  right: 0;
+  top: 0;
+  -webkit-transform: translateX(12px);
+          transform: translateX(12px);
 }
 .container .botLine {
   bottom: var(--root-layout-padding);
   left: var(--root-layout-padding);
+  -webkit-transform: translateX(12px);
+          transform: translateX(12px);
 }
 .container .botLine::before {
   content: "";
-  left: -8px;
-  bottom: -8px;
+  left: 0;
+  bottom: 0;
+  -webkit-transform: translateX(-12px);
+          transform: translateX(-12px);
 }
 .container .authorNTheme {
   position: fixed;
