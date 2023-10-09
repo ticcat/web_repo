@@ -1,6 +1,5 @@
 import styles from "./MainLayout.module.css";
 import AuthorRefButton from "./AuthorRefButton/AuthorRefButton";
-import ThemeToggle from "./ThemeToggle/ThemeButton";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 export default function MainLayout({
@@ -16,7 +15,7 @@ export default function MainLayout({
       <div className={styles.botLine}></div>
       <div className={styles.authorNTheme}>
         <AuthorRefButton></AuthorRefButton>
-        <ThemeToggle></ThemeToggle>
+        {/* <ThemeToggle></ThemeToggle> */}
       </div>
     </div>
   );
