@@ -50,7 +50,13 @@ export default function HomeLandingSection() {
   return (
     <section id="homeLanding" className={styles.homeSection}>
       <div className={styles.me}>
-        <Image src="/imgs/home_v0.1.jpg" alt="me" fill={true}></Image>
+        <Image
+          src="/imgs/home2_v0.3.webp"
+          alt="me"
+          fill
+          priority
+          quality={100}
+        ></Image>
       </div>
       <div id="topInfo" className={styles.topInfo}>
         <EmailButton></EmailButton>
