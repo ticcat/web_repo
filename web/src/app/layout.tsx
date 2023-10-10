@@ -8,7 +8,7 @@ const description = "Front end web developer located in Valencia, Spain";
 export const metadata: Metadata = {
   title: title,
   description: description,
-  metadataBase: new URL("https://sergiori.co"),
+  metadataBase: new URL("https://www.sergiori.co"),
   alternates: {
     canonical: "/",
   },
