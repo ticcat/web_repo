@@ -21,10 +21,12 @@ export const metadata: Metadata = {
     images: "/card_SRA.png",
   },
   twitter: {
+    card: "summary_large_image",
     title: title,
     description: description,
+    site: "@serrial3",
+    creator: "@serrial3",
     images: "/card_SRA.png",
-    card: "summary_large_image",
   },
   viewport: "width=device-width, initial-scale=1",
 };
