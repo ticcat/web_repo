@@ -35,7 +35,9 @@ export default function Home() {
     <div className={styles.homeContainer}>
       <NameCarousel></NameCarousel>
       <div className={styles.authorButton}>
-        <AuthorRefButton></AuthorRefButton>
+        <AnimatedElement>
+          <AuthorRefButton></AuthorRefButton>
+        </AnimatedElement>
       </div>
     </div>
   );
