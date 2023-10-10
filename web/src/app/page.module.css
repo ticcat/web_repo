@@ -1,11 +1,11 @@
-.header, .h5, .h4, .h3, .h2, .h1 {
+.header, .h5, .h4, .h3, .h2, .h1, .carouselContainer .nameCarousel .name {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   letter-spacing: 0.015rem;
   color: rgb(var(--head-sub-rgb));
 }
 
-.h1 {
+.h1, .carouselContainer .nameCarousel .name {
   font-size: 3.125rem;
   font-size: clamp(3.125rem, 0.40625rem + 7.25vw, 6.75rem);
 }
@@ -59,4 +59,58 @@
 
 .b2 {
   font-size: 14px;
+}
+
+.carouselContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.carouselContainer .nameCarousel {
+  position: relative;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  -webkit-animation: nameSlide 10s linear infinite;
+          animation: nameSlide 10s linear infinite;
+  z-index: 10;
+}
+.carouselContainer .nameCarousel .name {
+  overflow: visible;
+  letter-spacing: clamp(1rem, -0.5rem + 4vw, 3rem);
+  white-space: nowrap;
+  line-height: 1em;
+}
+.carouselContainer .nameCarousel .name .spacer {
+  margin: 0 2vw;
+}
+@-webkit-keyframes nameSlide {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+@keyframes nameSlide {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
 }/*# sourceMappingURL=page.module.css.map */
