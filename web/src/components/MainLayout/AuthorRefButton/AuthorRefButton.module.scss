@@ -9,6 +9,7 @@
     line-height: normal;
 
     .heart {
+      display: inline-block;
       color: rgb(var(--accent-1-rgb));
       transition: color 0.1s ease;
     }

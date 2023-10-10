@@ -8,7 +8,7 @@ export default function AuthorRefButton() {
     <Button clickHandler={() => window.open("https://twitter.com/serrial3")}>
       <div className={styles.authorRefButton}>
         <div className={styles.authorRefText}>
-          <span className={styles.heart}>❥</span> By Sergio
+          <span className={styles.heart}>❥</span> By Sergio{" "}
         </div>
       </div>
     </Button>

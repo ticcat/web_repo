@@ -2,7 +2,7 @@
 
 .carouselContainer {
   position: relative;
-  height: 100%;
+  height: max-content;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -11,7 +11,7 @@
   .nameCarousel {
     position: relative;
     height: max-content;
-    animation: nameSlide 10s linear infinite;
+    animation: nameSlide 15s linear infinite;
     z-index: 10;
 
     .name {
@@ -34,5 +34,20 @@
         transform: translateX(-100%);
       }
     }
+  }
+}
+
+.homeContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  .authorButton {
+    position: absolute;
+    bottom: 3rem;
   }
 }

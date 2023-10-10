@@ -63,7 +63,9 @@
 
 .carouselContainer {
   position: relative;
-  height: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -81,8 +83,8 @@
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  -webkit-animation: nameSlide 10s linear infinite;
-          animation: nameSlide 10s linear infinite;
+  -webkit-animation: nameSlide 15s linear infinite;
+          animation: nameSlide 15s linear infinite;
   z-index: 10;
 }
 .carouselContainer .nameCarousel .name {
@@ -113,4 +115,27 @@
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
+}
+
+.homeContainer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.homeContainer .authorButton {
+  position: absolute;
+  bottom: 3rem;
 }/*# sourceMappingURL=page.module.css.map */

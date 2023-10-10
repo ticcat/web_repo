@@ -71,6 +71,7 @@
   line-height: normal;
 }
 .authorRefButton .authorRefText .heart {
+  display: inline-block;
   color: rgb(var(--accent-1-rgb));
   -webkit-transition: color 0.1s ease;
   transition: color 0.1s ease;
