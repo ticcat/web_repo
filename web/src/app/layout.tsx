@@ -1,4 +1,5 @@
 import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
+import { Analytics } from "@vercel/analytics/react";
 import "@/globalStyles/globals.css";
 import type { Metadata } from "next";
 
@@ -50,6 +51,7 @@ export default function RootLayout({
           {children}
           {/* <MainLayout>{children}</MainLayout> */}
         </div>
+        <Analytics />
       </body>
     </html>
   );
