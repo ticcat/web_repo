@@ -1,4 +1,6 @@
 import MainLayout from "@/components/MainLayout/MainLayout";
+import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
+import { Analytics } from "@vercel/analytics/react";
 import "@/globalStyles/globals.css";
 import type { Metadata } from "next";
 
@@ -8,7 +10,7 @@ const description = "Front end web developer located in Valencia, Spain";
 export const metadata: Metadata = {
   title: title,
   description: description,
-  metadataBase: new URL("https://sergiori.co"),
+  metadataBase: new URL("https://www.sergiori.co"),
   alternates: {
     canonical: "/",
   },
@@ -18,13 +20,15 @@ export const metadata: Metadata = {
     title: title,
     description: description,
     locale: "en",
-    images: "/home2_v0.1.jpg",
+    images: "/card_SRA.png",
   },
   twitter: {
+    card: "summary_large_image",
     title: title,
     description: description,
-    images: "/home2_v0.1.jpg",
-    card: "summary_large_image",
+    site: "@serrial3",
+    creator: "@serrial3",
+    images: "/card_SRA.png",
   },
   viewport: "width=device-width, initial-scale=1",
 };
@@ -46,6 +50,7 @@ export default function RootLayout({
         <div className="root-layout">
           <MainLayout>{children}</MainLayout>
         </div>
+        <Analytics />
       </body>
     </html>
   );
