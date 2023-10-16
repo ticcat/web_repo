@@ -9,7 +9,8 @@
 }
 
 :root {
-  --accent-1-rgb: 176, 132, 205;
+  --accent-1-rgb: 216, 162, 250;
+  /* --accent-1-rgb: 209, 188, 239; */
   --accent-2-rgb: 255, 70, 85;
   --head-sub-rgb: 35, 31, 32;
   --body-rgb: 51, 45, 47;

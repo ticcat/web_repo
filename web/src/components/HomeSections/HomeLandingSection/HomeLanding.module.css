@@ -70,7 +70,7 @@
   bottom: calc(var(--root-layout-padding) * 1.5);
   left: calc(var(--root-layout-padding) * 2);
   opacity: 50%;
-  fill: rgb(var(--accent-1-rgb));
+  fill: rgb(var(--body-rgb));
   z-index: -5;
 }
 @media screen and (max-width: 1160px) {
@@ -134,7 +134,7 @@
 
 .homeSection {
   position: relative;
-  background-color: rgb(189, 183, 178);
+  background-color: rgb(136, 136, 136);
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
