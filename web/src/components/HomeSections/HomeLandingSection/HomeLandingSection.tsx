@@ -51,7 +51,7 @@ export default function HomeLandingSection() {
     <section id="homeLanding" className={styles.homeSection}>
       <div className={styles.me}>
         <Image
-          src="/imgs/home3_v0.2.webp"
+          src="/imgs/home.webp"
           alt="me"
           fill
           priority
