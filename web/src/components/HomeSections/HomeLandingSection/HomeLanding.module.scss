@@ -3,7 +3,7 @@
 $section-side-padding: calc(
   clamp(0.9375rem, 0.234375rem + 1.875vw, 1.875rem) * 2
 );
-$home-background-rgb: 189 183 178;
+$home-background-rgb: 136 136 136;
 
 .logo {
   position: absolute;
@@ -12,7 +12,7 @@ $home-background-rgb: 189 183 178;
   bottom: calc(var(--root-layout-padding) * 1.5);
   left: calc(var(--root-layout-padding) * 2);
   opacity: 50%;
-  fill: rgb(var(--accent-1-rgb));
+  fill: rgb(var(--body-rgb));
   z-index: -5;
 
   @media screen and (max-width: 1160px) {
