@@ -1,5 +1,4 @@
 import MainLayout from "@/components/MainLayout/MainLayout";
-import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
 import { Analytics } from "@vercel/analytics/react";
 import "@/globalStyles/globals.css";
 import type { Metadata } from "next";
