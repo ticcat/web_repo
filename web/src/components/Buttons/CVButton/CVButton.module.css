@@ -26,7 +26,7 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .text, .sub1 {
+.subtitle, .sub3, .sub2, .link .text, .sub1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -38,7 +38,7 @@
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.sub2, .text {
+.sub2, .link .text {
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
@@ -61,7 +61,10 @@
   font-size: 14px;
 }
 
-.text .arrow {
+.link {
+  text-decoration: none;
+}
+.link .text .arrow {
   display: inline-block;
   -webkit-transform: translateY(-7%) scaleY(140%);
           transform: translateY(-7%) scaleY(140%);

@@ -1,5 +1,9 @@
 @use "../../../globalStyles/globalClasses";
 
-.email {
-  @extend .sub2;
+.link {
+  text-decoration: none;
+
+  .email {
+    @extend .sub2;
+  }
 }

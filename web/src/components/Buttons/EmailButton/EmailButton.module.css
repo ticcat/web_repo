@@ -26,7 +26,7 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .email, .sub1 {
+.subtitle, .sub3, .sub2, .link .email, .sub1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -38,7 +38,7 @@
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.sub2, .email {
+.sub2, .link .email {
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
@@ -59,4 +59,8 @@
 
 .b2 {
   font-size: 14px;
+}
+
+.link {
+  text-decoration: none;
 }/*# sourceMappingURL=EmailButton.module.css.map */

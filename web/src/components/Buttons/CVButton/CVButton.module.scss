@@ -1,10 +1,14 @@
 @use "../../../globalStyles/globalClasses";
 
-.text {
-  @extend .sub2;
+.link {
+  text-decoration: none;
 
-  .arrow {
-    display: inline-block;
-    transform: translateY(-7%) scaleY(140%);
+  .text {
+    @extend .sub2;
+
+    .arrow {
+      display: inline-block;
+      transform: translateY(-7%) scaleY(140%);
+    }
   }
 }
