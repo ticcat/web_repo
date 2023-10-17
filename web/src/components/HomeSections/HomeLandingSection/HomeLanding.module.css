@@ -26,7 +26,7 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .sub1, .homeSection .botInfo .locationRole, .homeSection .botInfo .workInProgress {
+.subtitle, .sub3, .sub2, .homeSection .topInfo .links .separator, .sub1, .homeSection .botInfo .locationRole, .homeSection .botInfo .workInProgress {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -38,7 +38,7 @@
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.sub2 {
+.sub2, .homeSection .topInfo .links .separator {
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
@@ -186,6 +186,7 @@
           flex-direction: column;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  margin-top: clamp(0rem, 1.75rem - 2vw, 1rem);
   gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -193,6 +194,17 @@
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+.homeSection .topInfo .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 5px;
+  z-index: 1;
 }
 .homeSection .botInfo {
   display: -webkit-box;

@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./HomeLanding.module.css";
 import EmailButton from "@/components/Buttons/EmailButton/EmailButton";
 import SocialMediaButtons from "@/components/Buttons/SMNButtons/SMNButtons";
+import CVButton from "@/components/Buttons/CVButton/CVButton";
 
 function Logo() {
   return (
@@ -59,7 +60,13 @@ export default function HomeLandingSection() {
         ></Image>
       </div>
       <div id="topInfo" className={styles.topInfo}>
-        <EmailButton></EmailButton>
+        <div className={styles.links}>
+          <span className={styles.separator}>//</span>
+          <EmailButton></EmailButton>
+          <span className={styles.separator}>//</span>
+          <CVButton></CVButton>
+          <span className={styles.separator}>//</span>
+        </div>
         <SocialMediaButtons></SocialMediaButtons>
       </div>
       <div id="botInfo" className={styles.botInfo}>

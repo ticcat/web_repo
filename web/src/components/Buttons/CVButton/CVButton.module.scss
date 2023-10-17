@@ -1,0 +1,10 @@
+@use "../../../globalStyles/globalClasses";
+
+.text {
+  @extend .sub2;
+
+  .arrow {
+    display: inline-block;
+    transform: translateY(-7%) scaleY(140%);
+  }
+}

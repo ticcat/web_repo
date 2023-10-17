@@ -14,7 +14,7 @@ export default function EmailButton() {
             );
         }}
       >
-        // serialticcat@gmail.com //
+        serialticcat@gmail.com
       </Button>
     </div>
   );
