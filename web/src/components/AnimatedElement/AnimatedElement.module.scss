@@ -1,10 +1,15 @@
-.animate {
+.container {
   overflow: hidden;
 
   .child {
     display: block;
     transform: translateY(100%);
-    animation: show 0.5s ease-out 2.8s forwards;
+  }
+}
+
+.animate {
+  .child {
+    animation: show 0.5s ease-out forwards;
   }
 }
 

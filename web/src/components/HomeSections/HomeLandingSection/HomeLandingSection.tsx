@@ -5,6 +5,10 @@ import EmailButton from "@/components/Buttons/EmailButton/EmailButton";
 import SocialMediaButtons from "@/components/Buttons/SMNButtons/SMNButtons";
 import CVButton from "@/components/Buttons/CVButton/CVButton";
 
+const showElementTimeout = (
+  resolve: (value: boolean | PromiseLike<boolean>) => void
+) => setTimeout(() => resolve(true), 2800);
+
 function Logo() {
   return (
     <div className={styles.logo}>
@@ -30,14 +34,18 @@ function NameCarousel() {
   return (
     <div className={styles.carouselContainer}>
       <div className={styles.nameCarousel}>
-        <AnimatedElement>
+        <AnimatedElement
+          showPromise={new Promise((resolve) => showElementTimeout(resolve))}
+        >
           <span className={styles.name}>
             <span className={styles.spacer}>//</span>SERGIO RICO ALFONSO
           </span>
         </AnimatedElement>
       </div>
       <div className={styles.nameCarousel}>
-        <AnimatedElement>
+        <AnimatedElement
+          showPromise={new Promise((resolve) => showElementTimeout(resolve))}
+        >
           <span className={styles.name}>
             <span className={styles.spacer}>//</span>SERGIO RICO ALFONSO
           </span>
@@ -71,12 +79,18 @@ export default function HomeLandingSection() {
       </div>
       <div id="botInfo" className={styles.botInfo}>
         <div className={styles.locationRole}>
-          <AnimatedElement>
+          <AnimatedElement
+            showPromise={new Promise((resolve) => showElementTimeout(resolve))}
+          >
             FRONT END DEVELOPER // <br></br> VALENCIA, SPAIN
           </AnimatedElement>
         </div>
         <div className={styles.workInProgress}>
-          <AnimatedElement>// WORK IN PROGRESS //</AnimatedElement>
+          <AnimatedElement
+            showPromise={new Promise((resolve) => showElementTimeout(resolve))}
+          >
+            // WORK IN PROGRESS //
+          </AnimatedElement>
         </div>
         <div>
           <NameCarousel></NameCarousel>
