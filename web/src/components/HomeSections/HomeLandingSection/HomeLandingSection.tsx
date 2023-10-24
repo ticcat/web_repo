@@ -7,7 +7,7 @@ import CVButton from "@/components/Buttons/CVButton/CVButton";
 
 const showElementTimeout = (
   resolve: (value: boolean | PromiseLike<boolean>) => void
-) => setTimeout(() => resolve(true), 2800);
+) => setTimeout(() => resolve(true), 2850);
 
 function Logo() {
   return (
