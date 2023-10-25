@@ -63,7 +63,8 @@
 
 .b1 {
   @extend .body;
-  font-size: 16px;
+  font-size: 0.8125rem;
+  font-size: clamp(0.8125rem, 0.671875rem + 0.375vw, 1rem);
 }
 
 .b2 {
