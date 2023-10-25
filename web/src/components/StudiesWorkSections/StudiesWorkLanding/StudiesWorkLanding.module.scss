@@ -1,0 +1,27 @@
+@use "../../../globalStyles/globalClasses";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin: 0 calc(var(--root-layout-padding) * 2);
+  overflow: visible;
+
+  .title {
+    @extend .h1;
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    width: 70vw;
+
+    .text {
+      @extend .b1;
+      height: max-content;
+      width: 50%;
+    }
+  }
+}

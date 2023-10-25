@@ -1,6 +1,7 @@
 import styles from "./MainLayout.module.css";
 import AuthorRefButton from "./AuthorRefButton/AuthorRefButton";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
+import Link from "next/link";
 
 export default function MainLayout({
   children,
@@ -15,6 +16,7 @@ export default function MainLayout({
       <div className={styles.botLine}></div>
       <div className={styles.authorNTheme}>
         <AuthorRefButton></AuthorRefButton>
+        <Link href="/studiesnwork">To studies</Link>
         {/* <ThemeToggle></ThemeToggle> */}
       </div>
     </div>
