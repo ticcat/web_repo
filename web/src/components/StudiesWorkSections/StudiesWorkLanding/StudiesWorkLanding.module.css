@@ -26,14 +26,14 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .sub1 {
+.subtitle, .sub3, .sub2, .sub1, .container .textContainer .text .goToBtnContainer .goToBtnText {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
   color: rgb(var(--head-sub-rgb));
 }
 
-.sub1 {
+.sub1, .container .textContainer .text .goToBtnContainer .goToBtnText {
   font-size: 1.25rem;
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
@@ -73,6 +73,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: 45px;
   height: 100%;
   margin: 0 calc(var(--root-layout-padding) * 2);
   overflow: visible;
@@ -89,8 +90,17 @@
   width: 70vw;
 }
 .container .textContainer .text {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  height: 200px;
   width: 50%;
 }/*# sourceMappingURL=StudiesWorkLanding.module.css.map */

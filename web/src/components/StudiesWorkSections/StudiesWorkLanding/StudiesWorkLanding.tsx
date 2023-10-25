@@ -1,5 +1,8 @@
+"use client";
+
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import styles from "./StudiesWorkLanding.module.css";
+import Button from "@/components/Buttons/Button/Button";
 
 export default function StudiesWorkLanding() {
   const shortStudiesText = (
@@ -30,9 +33,23 @@ export default function StudiesWorkLanding() {
       <div className={styles.textContainer}>
         <div className={styles.text}>
           <AnimatedElement showOnRender>{shortStudiesText}</AnimatedElement>
+          <AnimatedElement showOnRender>
+            <div className={styles.goToBtnContainer}>
+              <Button clickHandler={() => {}}>
+                <div className={styles.goToBtnText}>Go to studies</div>
+              </Button>
+            </div>
+          </AnimatedElement>
         </div>
         <div className={styles.text}>
           <AnimatedElement showOnRender>{shortExperienceText}</AnimatedElement>
+          <AnimatedElement showOnRender>
+            <div className={styles.goToBtnContainer}>
+              <Button clickHandler={() => {}}>
+                <div className={styles.goToBtnText}>Go to experience</div>
+              </Button>
+            </div>
+          </AnimatedElement>
         </div>
       </div>
     </div>
