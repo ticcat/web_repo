@@ -1,6 +1,5 @@
 import styles from "./MainLayout.module.css";
 import AuthorRefButton from "./AuthorRefButton/AuthorRefButton";
-import LoadingScreen from "../LoadingScreen/LoadingScreen";
 import Link from "next/link";
 
 export default function MainLayout({
@@ -10,7 +9,7 @@ export default function MainLayout({
 }) {
   return (
     <div className={styles.container}>
-      <LoadingScreen loading={false} title={"welcome"}></LoadingScreen>
+      {/* <LoadingScreen loading={false} title={"welcome"}></LoadingScreen> */}
       <div className={styles.topLine}></div>
       <main className={styles.content}>{children}</main>
       <div className={styles.botLine}></div>
