@@ -48,7 +48,6 @@ export default function AnimatedElement({
   return (
     <>
       {text ? (
-        //TODO: Read word by word to animate each
         text.split(" ").map((word, index) => {
           return (
             <span
