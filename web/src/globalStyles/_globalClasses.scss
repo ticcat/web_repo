@@ -13,7 +13,8 @@
 
 .h2 {
   @extend .header;
-  font-size: 70px;
+  font-size: 3.125rem;
+  font-size: clamp(3.125rem, 2.1875rem + 2.5vw, 4.375rem);
 }
 
 .h3 {
