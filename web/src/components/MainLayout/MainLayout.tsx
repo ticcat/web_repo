@@ -16,6 +16,7 @@ export default function MainLayout({
       <div className={styles.authorNTheme}>
         <AuthorRefButton></AuthorRefButton>
         <Link href="/studiesnwork">To studies</Link>
+        <Link href="/">To home</Link>
         {/* <ThemeToggle></ThemeToggle> */}
       </div>
     </div>
