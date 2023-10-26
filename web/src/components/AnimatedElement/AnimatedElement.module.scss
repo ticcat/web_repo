@@ -1,8 +1,11 @@
 .container {
+  position: relative;
   overflow: hidden;
+  display: inline-block;
 
   .child {
-    display: inline-block;
+    position: relative;
+    display: block;
     transform: translateY(100%);
   }
 }

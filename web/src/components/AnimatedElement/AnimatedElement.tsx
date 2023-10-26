@@ -5,10 +5,12 @@ import styles from "./AnimatedElement.module.css";
 
 export default function AnimatedElement({
   children,
+  text,
   showPromise,
   showOnRender,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  text?: string;
   showPromise?: Promise<boolean>;
   showOnRender?: boolean;
 }) {
@@ -44,11 +46,28 @@ export default function AnimatedElement({
   });
 
   return (
-    <div
-      className={`${styles.container} ${visible && styles.animate}`}
-      ref={container}
-    >
-      <span className={styles.child}>{children}</span>
-    </div>
+    <>
+      {text ? (
+        //TODO: Read word by word to animate each
+        text.split(" ").map((word, index) => {
+          return (
+            <span
+              className={`${styles.container} ${visible && styles.animate}`}
+              ref={container}
+              key={index}
+            >
+              <span className={styles.child}>{word}&nbsp;</span>
+            </span>
+          );
+        })
+      ) : (
+        <span
+          className={`${styles.container} ${visible && styles.animate}`}
+          ref={container}
+        >
+          <span className={styles.child}>{children}</span>
+        </span>
+      )}
+    </>
   );
 }
