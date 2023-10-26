@@ -7,6 +7,7 @@
   gap: 45px;
   height: 100%;
   margin: 0 calc(var(--root-layout-padding) * 2);
+  padding: var(--root-layout-padding);
   overflow: visible;
 
   .title {
@@ -16,8 +17,8 @@
   .textContainer {
     display: flex;
     flex-direction: row;
-    gap: 25px;
-    width: 70vw;
+    gap: 30px;
+    width: 70%;
 
     .text {
       @extend .b1;
@@ -25,14 +26,23 @@
       justify-content: space-between;
       flex-direction: column;
       gap: 30px;
-      height: 200px;
       width: 50%;
 
       .goToBtnContainer {
         .goToBtnText {
-          @extend .sub1;
+          @extend .sub2;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .textContainer {
+      width: 100%;
     }
   }
 }
