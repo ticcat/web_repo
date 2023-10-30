@@ -18,7 +18,6 @@ export default function AnimatedElement({
   const intersectionCallback = (entries: Array<IntersectionObserverEntry>) => {
     const [entry] = entries;
     setVisible(entry.isIntersecting);
-    console.log("Visible");
   };
   const intersectionOptions = {
     threshold: 0,
