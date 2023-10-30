@@ -76,8 +76,8 @@
           justify-content: center;
   gap: 45px;
   height: 100%;
-  margin: 0 calc(var(--root-layout-padding) * 2);
-  padding: var(--root-layout-padding);
+  margin: 0 calc(var(--root-layout-padding) * 4);
+  padding: calc(var(--root-layout-padding) * 4) 0;
   overflow: visible;
 }
 .container .title {
