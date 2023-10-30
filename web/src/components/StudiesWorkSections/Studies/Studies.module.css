@@ -71,7 +71,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 140px;
+  gap: 70px;
   height: 100%;
   margin: 0 calc(var(--root-layout-padding) * 4);
   padding: calc(var(--root-layout-padding) * 4) 0;
@@ -116,8 +116,13 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  width: 40%;
+  width: 45%;
   gap: 10px;
+}
+@media screen and (max-width: 1050px) {
+  .container .entries .studyEntry .entryHeader {
+    width: 100%;
+  }
 }
 .container .entries .studyEntry .entryText {
   width: 50%;

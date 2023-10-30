@@ -3,7 +3,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 140px;
+  gap: 70px;
   height: 100%;
   margin: 0 calc(var(--root-layout-padding) * 4);
   padding: calc(var(--root-layout-padding) * 4) 0;
@@ -30,8 +30,12 @@
         display: flex;
         flex-direction: column;
         justify-content: start;
-        width: 40%;
+        width: 45%;
         gap: 10px;
+
+        @media screen and (max-width: 1050px) {
+          width: 100%;
+        }
 
         .studyTitle {
           @extend .h4;
