@@ -48,15 +48,7 @@ export default function AnimatedElement({
     <>
       {text ? (
         text.split(" ").map((word, index) => {
-          return (
-            <span
-              className={`${styles.container} ${visible && styles.animate}`}
-              ref={container}
-              key={index}
-            >
-              <span className={styles.child}>{word}&nbsp;</span>
-            </span>
-          );
+          return <AnimatedElement key={index}>{word}&nbsp;</AnimatedElement>;
         })
       ) : (
         <span
