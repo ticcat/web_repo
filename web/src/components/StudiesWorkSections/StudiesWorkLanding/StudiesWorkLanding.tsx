@@ -13,18 +13,15 @@ export default function StudiesWorkLanding() {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <AnimatedElement showOnRender>STUDIES &</AnimatedElement>
-        <AnimatedElement showOnRender>EXPERIENCE</AnimatedElement>
+        <AnimatedElement>STUDIES &</AnimatedElement>
+        <AnimatedElement>EXPERIENCE</AnimatedElement>
       </div>
       <div className={styles.textContainer}>
         <div className={styles.text}>
           <p>
-            <AnimatedElement
-              showOnRender
-              text={shortStudiesText}
-            ></AnimatedElement>
+            <AnimatedElement text={shortStudiesText}></AnimatedElement>
           </p>
-          <AnimatedElement showOnRender>
+          <AnimatedElement>
             <div className={styles.goToBtnContainer}>
               <Button clickHandler={() => {}}>
                 <div className={styles.goToBtnText}>Go to studies</div>
@@ -34,12 +31,9 @@ export default function StudiesWorkLanding() {
         </div>
         <div className={styles.text}>
           <p>
-            <AnimatedElement
-              showOnRender
-              text={shortExperienceText}
-            ></AnimatedElement>
+            <AnimatedElement text={shortExperienceText}></AnimatedElement>
           </p>
-          <AnimatedElement showOnRender>
+          <AnimatedElement>
             <div className={styles.goToBtnContainer}>
               <Button clickHandler={() => {}}>
                 <div className={styles.goToBtnText}>Go to experience</div>

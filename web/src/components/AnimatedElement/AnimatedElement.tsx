@@ -7,12 +7,10 @@ export default function AnimatedElement({
   children,
   text,
   showPromise,
-  showOnRender,
 }: {
   children?: React.ReactNode;
   text?: string;
   showPromise?: Promise<boolean>;
-  showOnRender?: boolean;
 }) {
   const [visible, setVisible] = useState(false);
   const container = useRef(null);
@@ -20,6 +18,7 @@ export default function AnimatedElement({
   const intersectionCallback = (entries: Array<IntersectionObserverEntry>) => {
     const [entry] = entries;
     setVisible(entry.isIntersecting);
+    console.log("Visible");
   };
   const intersectionOptions = {
     threshold: 0,
@@ -32,14 +31,14 @@ export default function AnimatedElement({
     );
     const containerElement = container.current;
 
-    if (!showOnRender) {
+    if (showPromise) {
       showPromise?.then((show) => show && !visible && setVisible(true));
     } else {
       if (containerElement) observer.observe(containerElement);
     }
 
     return () => {
-      if (showOnRender && containerElement) {
+      if (!showPromise && containerElement) {
         observer.unobserve(containerElement);
       }
     };

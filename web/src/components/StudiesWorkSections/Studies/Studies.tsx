@@ -8,54 +8,46 @@ export default function Studies() {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <AnimatedElement showOnRender>STUDIES</AnimatedElement>
+        <AnimatedElement>STUDIES</AnimatedElement>
       </div>
       <div className={styles.entries}>
         <div className={styles.studyEntry}>
           <div className={styles.entryHeader}>
             <div className={styles.studyTitle}>
-              <AnimatedElement showOnRender>
+              <AnimatedElement>
                 Universitat Politècnica de València //
               </AnimatedElement>
               <br></br>
-              <AnimatedElement showOnRender>2016 - 2022</AnimatedElement>
+              <AnimatedElement>2016 - 2022</AnimatedElement>
             </div>
             <div className={styles.studySubtitle}>
-              <AnimatedElement showOnRender>
+              <AnimatedElement>
                 Bachelors degree in computer science // Spec. Software
                 Engineering
               </AnimatedElement>
             </div>
           </div>
           <div className={styles.entryText}>
-            <AnimatedElement
-              text={longLoremIpsum}
-              showOnRender
-            ></AnimatedElement>
+            <AnimatedElement text={longLoremIpsum}></AnimatedElement>
           </div>
         </div>
         <div className={styles.studyEntry}>
           <div className={styles.entryHeader}>
             <div className={styles.studyTitle}>
-              <AnimatedElement showOnRender>
+              <AnimatedElement>
                 Korea University // 고려대학교 //
               </AnimatedElement>
               <br></br>
-              <AnimatedElement showOnRender>
-                Feb. 2020 - Aug. 2020
-              </AnimatedElement>
+              <AnimatedElement>Feb. 2020 - Aug. 2020</AnimatedElement>
             </div>
             <div className={styles.studySubtitle}>
-              <AnimatedElement showOnRender>
+              <AnimatedElement>
                 English studies // Artificial Intelligence class
               </AnimatedElement>
             </div>
           </div>
           <div className={styles.entryText}>
-            <AnimatedElement
-              text={longLoremIpsum}
-              showOnRender
-            ></AnimatedElement>
+            <AnimatedElement text={longLoremIpsum}></AnimatedElement>
           </div>
         </div>
       </div>
