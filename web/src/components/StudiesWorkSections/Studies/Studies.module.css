@@ -115,7 +115,7 @@
           flex-direction: column;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
-          justify-content: start;
+          justify-content: flex-start;
   width: 45%;
   gap: 10px;
 }
