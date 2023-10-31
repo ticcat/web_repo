@@ -1,0 +1,14 @@
+@use "../../../globalStyles/globalClasses";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  height: 100%;
+  margin: 0 calc(var(--root-layout-padding) * 4);
+  padding: calc(var(--root-layout-padding) * 4) 0;
+
+  .title {
+    @extend .h2;
+  }
+}
