@@ -1,5 +1,3 @@
-"use client";
-
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import styles from "./Studies.module.css";
 
@@ -8,7 +6,7 @@ export default function Studies() {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et ultrices neque ornare aenean euismod elementum nisi. Urna cursus eget nunc scelerisque viverra mauris. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Turpis tincidunt id aliquet risus feugiat in ante. Feugiat in fermentum posuere urna. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Urna id volutpat lacus laoreet. A pellentesque sit amet porttitor. Nibh nisl condimentum id venenatis a. Vestibulum lectus mauris ultrices eros in. Gravida cum sociis natoque penatibus et magnis dis parturient montes. Mauris pharetra et ultrices neque ornare. Malesuada bibendum arcu vitae elementum curabitur vitae. Vitae congue eu consequat ac felis. Lobortis mattis aliquam faucibus purus in.  ";
 
   return (
-    <div className={styles.container} id="studies">
+    <div id="studies" className={styles.container}>
       <div className={styles.title}>
         <AnimatedElement>STUDIES</AnimatedElement>
       </div>
