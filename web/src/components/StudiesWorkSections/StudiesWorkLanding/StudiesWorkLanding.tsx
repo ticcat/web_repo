@@ -3,7 +3,7 @@
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import styles from "./StudiesWorkLanding.module.css";
 import Button from "@/components/Buttons/Button/Button";
-import { scroller, animateScroll } from "react-scroll";
+import { scroller } from "react-scroll";
 
 export default function StudiesWorkLanding() {
   const shortStudiesText =
@@ -42,7 +42,7 @@ export default function StudiesWorkLanding() {
             <div className={styles.goToBtnContainer}>
               <Button
                 clickHandler={() => {
-                  animateScroll.scrollToBottom();
+                  scroller.scrollTo("work", { smooth: true, duration: 500 });
                 }}
               >
                 <div className={styles.goToBtnText}>Go to experience</div>
