@@ -27,14 +27,14 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .container .textContainer .text .goToBtnContainer .goToBtnText, .sub1 {
+.subtitle, .sub3, .sub2, .container .textContainer .text .goToBtnContainer .goToBtnText, .sub1, .toTopBtn .toTopBtnText {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
   color: rgb(var(--head-sub-rgb));
 }
 
-.sub1 {
+.sub1, .toTopBtn .toTopBtnText {
   font-size: 1.25rem;
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
@@ -63,6 +63,12 @@
   font-size: 14px;
 }
 
+.toTopBtn {
+  position: fixed;
+  opacity: 0;
+  bottom: 50px;
+  left: 75px;
+}
 .container {
   display: -webkit-box;
   display: -ms-flexbox;

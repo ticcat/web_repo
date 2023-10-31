@@ -1,5 +1,16 @@
 @use "../../../globalStyles/globalClasses";
 
+.toTopBtn {
+  position: fixed;
+  opacity: 0;
+  bottom: 50px;
+  left: 75px;
+
+  .toTopBtnText {
+    @extend .sub1;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
