@@ -20,7 +20,8 @@
 }
 
 .h4 {
-  font-size: 35px;
+  font-size: 1.875rem;
+  font-size: clamp(1.875rem, 1.640625rem + 0.625vw, 2.1875rem);
 }
 
 .h5 {
