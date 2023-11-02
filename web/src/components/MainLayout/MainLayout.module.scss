@@ -64,9 +64,7 @@ $corner-square-separation: calc($corner-square-size * 3);
   height: 100%;
 
   .content {
-    position: absolute;
     width: 100%;
-    height: 100vh;
   }
 
   &::before {
