@@ -1,14 +1,78 @@
 @use "../../../globalStyles/globalClasses";
 
+.filters {
+  @extend .sub2;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  gap: 3rem;
+}
+
+.entryContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  height: max-content;
+  border-bottom: 1px solid rgb(var(--accent-1-rgb));
+  padding: 0 10px 10px;
+  margin-right: 20px;
+
+  .titleAndArrow {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 100%;
+
+    .entryTitle {
+      @extend .h4;
+    }
+  }
+
+  .durationAndTech {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+
+    .techStack {
+      @extend .sub2;
+    }
+
+    .duration {
+      @extend .sub2;
+    }
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: 1rem;
   height: 100%;
   margin: 0 calc(var(--root-layout-padding) * 4);
   padding: calc(var(--root-layout-padding) * 4) 0;
+  overflow: hidden;
 
   .title {
     @extend .h2;
+  }
+  .worksContainer {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    width: 100%;
+    height: max-content;
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      gap: 5rem;
+      margin: 2rem 0;
+      height: 37%;
+      overflow-y: scroll;
+    }
   }
 }

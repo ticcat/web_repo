@@ -1,4 +1,4 @@
-.header, .h5, .h4, .h3, .h2, .container .title, .h1 {
+.header, .h5, .h4, .entryContainer .titleAndArrow .entryTitle, .h3, .h2, .container .title, .h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   letter-spacing: 0.015rem;
@@ -19,7 +19,7 @@
   font-size: 55px;
 }
 
-.h4 {
+.h4, .entryContainer .titleAndArrow .entryTitle {
   font-size: 35px;
 }
 
@@ -27,7 +27,7 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .sub1 {
+.subtitle, .sub3, .sub2, .filters, .entryContainer .durationAndTech .techStack, .entryContainer .durationAndTech .duration, .sub1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -39,7 +39,7 @@
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.sub2 {
+.sub2, .filters, .entryContainer .durationAndTech .techStack, .entryContainer .durationAndTech .duration {
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
@@ -63,6 +63,70 @@
   font-size: 14px;
 }
 
+.filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  gap: 3rem;
+}
+
+.entryContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border-bottom: 1px solid rgb(var(--accent-1-rgb));
+  padding: 0 10px 10px;
+  margin-right: 20px;
+}
+.entryContainer .titleAndArrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+.entryContainer .durationAndTech {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,8 +135,34 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 70px;
+  gap: 1rem;
   height: 100%;
   margin: 0 calc(var(--root-layout-padding) * 4);
   padding: calc(var(--root-layout-padding) * 4) 0;
+  overflow: hidden;
+}
+.container .worksContainer {
+  display: grid;
+  grid-template-rows: -webkit-max-content 1fr;
+  grid-template-rows: max-content 1fr;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.container .worksContainer .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  gap: 5rem;
+  margin: 2rem 0;
+  height: 37%;
+  overflow-y: scroll;
 }/*# sourceMappingURL=Work.module.css.map */
