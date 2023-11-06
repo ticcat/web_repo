@@ -1,3 +1,4 @@
+import WorkEntryInfo from "@/dbClasses/WorkEntry";
 import clientPromise from "@/utils/mongodb";
 import { NextResponse } from "next/server";
 
@@ -7,9 +8,20 @@ export async function GET() {
 
   try {
     const allExp = await db.collection("Experience").find({}).toArray();
-    //TODO: Create and return short work entry object list    
 
-    return NextResponse.json( allExp, {
+    const workEntries = allExp.map((exp) => new WorkEntryInfo(
+      exp._id,
+      exp.title,
+      exp.role,
+      {
+        start_date: exp.duration.start_date,
+        end_date: exp.duration.end_date,
+        period: exp.duration.perdiod
+      },
+      exp.stack)
+    );
+
+    return NextResponse.json(workEntries, {
       status: 200,
     })
   } catch(e) {
