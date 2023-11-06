@@ -3,20 +3,10 @@
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import Button from "@/components/Buttons/Button/Button";
 import styles from "./Work.module.css";
+import { useEffect, useState } from "react";
+import WorkEntryInfo from "@/dbClasses/WorkEntry";
 
-//TODO: Transalte to DB entry object
-type workEntryInfo = {
-  title: string;
-  role: string;
-  length: {
-    startDate: string;
-    endDate: string;
-    duration: string;
-  };
-  technologies: string[];
-};
-
-function WorksEntry({ entryInfo }: { entryInfo: workEntryInfo }) {
+function WorkEntry({ entryInfo }: { entryInfo: WorkEntryInfo }) {
   return (
     <div className={styles.entryContainer}>
       <div className={styles.titleAndArrow}>
@@ -30,9 +20,9 @@ function WorksEntry({ entryInfo }: { entryInfo: workEntryInfo }) {
         {/* Arrow&Tech */}
         <div
           className={styles.duration}
-        >{`${entryInfo.length.startDate} - ${entryInfo.length.endDate} // ${entryInfo.length.duration}`}</div>
+        >{`${entryInfo.duration.start_date} - ${entryInfo.duration.end_date} // ${entryInfo.duration.period}`}</div>
         <div className={styles.techStack}>
-          {entryInfo.technologies.map((tech) => {
+          {entryInfo.stack.map((tech) => {
             return `${tech} // `;
           })}
         </div>
@@ -52,27 +42,17 @@ function Filters() {
 }
 
 export default function Work() {
-  const testInfo: workEntryInfo = {
-    title: "Test @ Test company",
-    role: "Front end developer",
-    length: {
-      startDate: "Oct. 2023",
-      endDate: "Dec. 2030",
-      duration: "7 years",
-    },
-    technologies: ["React", "Redux", "NextJS", "SASS"],
-  };
+  const [workEntries, setWorkEntries] = useState<WorkEntryInfo[]>([]);
 
-  const worksList = [
-    <WorksEntry key={1} entryInfo={testInfo}></WorksEntry>,
-    <WorksEntry key={2} entryInfo={testInfo}></WorksEntry>,
-    <WorksEntry key={3} entryInfo={testInfo}></WorksEntry>,
-    <WorksEntry key={4} entryInfo={testInfo}></WorksEntry>,
-    <WorksEntry key={5} entryInfo={testInfo}></WorksEntry>,
-    <WorksEntry key={6} entryInfo={testInfo}></WorksEntry>,
-    <WorksEntry key={7} entryInfo={testInfo}></WorksEntry>,
-    <WorksEntry key={8} entryInfo={testInfo}></WorksEntry>,
-  ];
+  useEffect(() => {
+    fetch("/api/experience/shortList")
+      .then((res) => res?.json())
+      .then((data) => setWorkEntries(data));
+
+    return () => {
+      setWorkEntries([]);
+    };
+  }, []);
 
   return (
     <div id="work" className={styles.container}>
@@ -81,7 +61,11 @@ export default function Work() {
       </div>
       <div className={styles.worksContainer}>
         <Filters></Filters>
-        <div className={styles.list}>{worksList}</div>
+        <div className={styles.list}>
+          {workEntries.map((entry) => (
+            <WorkEntry key={entry.id.toString()} entryInfo={entry}></WorkEntry>
+          ))}
+        </div>
       </div>
     </div>
   );
