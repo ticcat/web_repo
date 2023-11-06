@@ -1,0 +1,55 @@
+[{
+  "_id": 1,
+  "title": "PlayJoy Games @ NoSpoon",
+  "type": "work",
+  "role": "Full stack developer",
+  "stack": ["Kotlin", "AWS", "XML", "CSS", "CreateJS", "NativeScript"],
+  "duration": {
+    "start_date": "Nov. 2020",
+    "end_date": "Oct. 2022",
+    "period": "2 years"
+  },
+  "project_description": "Mobile cards and traditional games app in a startup company",
+  "role_desc": "Fullstack games and app developer with close contact with the designers team",
+  "urls": {
+    "company_url": "https://www.nospoonlab.com/", 
+    "project_url": "https://playjoy.com/en/"
+  }
+},
+{
+  "_id": 2,
+  "title": "ADD Informática",
+  "type": "work",
+  "role": "Front end developer",
+  "stack": [".NET", "C#", "XML", "UNO", "AZURE"],
+  "duration": {
+    "start_date": "Oct. 2022",
+    "end_date": "Mar. 2023",
+    "period": "6 months"
+  },
+  "project_description": "Future version of the healthcare and welfare software that the company offers",
+  "role_desc": "Front end developer and designers-coders middleman working on the new product for the company",
+  "urls": {
+    "company_url": "https://addinformatica.com/", 
+    "project_url": ""
+  }
+},
+{
+  "_id": 3,
+  "title": "MultiAPI",
+  "type": "personal",
+  "role": "Design and front end developer",
+  "stack": ["JS", "CSS", "HTML", "Figma"],
+  "duration": {
+    "start_date": "May. 2023",
+    "end_date": "Jul. 2023",
+    "period": "3 months"
+  },
+  "project_description": "Personal project offering access to PokeAPI and SWAPI as a web development learning project.",
+  "role_desc": "Designed and developed a web app from scratch.",
+  "urls": {
+    "company_url": "", 
+    "project_url": "https://ticcat.github.io/multiAPI//",
+    "github_url": "https://github.com/ticcat"
+  }
+}]
