@@ -16,7 +16,7 @@ export async function GET() {
       {
         start_date: exp.duration.start_date,
         end_date: exp.duration.end_date,
-        period: exp.duration.perdiod
+        period: exp.duration.period
       },
       exp.stack)
     );
