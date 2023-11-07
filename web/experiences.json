@@ -11,10 +11,7 @@
   },
   "project_description": "Mobile cards and traditional games app in a startup company",
   "role_desc": "Fullstack games and app developer with close contact with the designers team",
-  "urls": {
-    "company_url": "https://www.nospoonlab.com/", 
-    "project_url": "https://playjoy.com/en/"
-  }
+  "url": "https://playjoy.com/en/"
 },
 {
   "_id": 2,
@@ -29,10 +26,7 @@
   },
   "project_description": "Future version of the healthcare and welfare software that the company offers",
   "role_desc": "Front end developer and designers-coders middleman working on the new product for the company",
-  "urls": {
-    "company_url": "https://addinformatica.com/", 
-    "project_url": ""
-  }
+  "url": "https://addinformatica.com/"
 },
 {
   "_id": 3,
@@ -47,9 +41,5 @@
   },
   "project_description": "Personal project offering access to PokeAPI and SWAPI as a web development learning project.",
   "role_desc": "Designed and developed a web app from scratch.",
-  "urls": {
-    "company_url": "", 
-    "project_url": "https://ticcat.github.io/multiAPI//",
-    "github_url": "https://github.com/ticcat"
-  }
+  "url":  "https://github.com/ticcat"
 }]
