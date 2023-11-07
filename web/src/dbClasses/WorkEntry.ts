@@ -12,12 +12,14 @@ export default class WorkEntryInfo {
   role: string;
   duration: Duration
   stack: string[];
+  url: string;
 
-  constructor(id:ObjectId, title:string, role:string, duration: Duration, stack:string[]) {
+  constructor(id:ObjectId, title:string, role:string, duration:Duration, stack:string[], url:string) {
     this.id = id;
     this.title = title;
     this.role = role;
     this.duration = duration;
     this.stack = stack;
+    this.url = url;
   }
 }
