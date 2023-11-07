@@ -18,6 +18,14 @@
   padding: 0 0 10px;
   margin-right: 20px;
   overflow: hidden;
+  pointer-events: none;
+
+  .navLink {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    pointer-events: all;
+  }
 
   .borderContainer {
     position: absolute;
@@ -139,6 +147,7 @@
     @extend .h2;
     white-space: nowrap;
   }
+
   .worksContainer {
     display: grid;
     grid-template-rows: max-content 1fr;

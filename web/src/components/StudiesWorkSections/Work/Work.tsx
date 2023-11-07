@@ -2,13 +2,19 @@
 
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import Button from "@/components/Buttons/Button/Button";
+import Link from "next/link";
+import WorkEntryInfo from "@/dbClasses/WorkEntry";
 import styles from "./Work.module.css";
 import { useEffect, useState } from "react";
-import WorkEntryInfo from "@/dbClasses/WorkEntry";
 
 function WorkEntry({ entryInfo }: { entryInfo: WorkEntryInfo }) {
   return (
     <div className={styles.entryContainer}>
+      <Link
+        className={styles.navLink}
+        href={entryInfo.url}
+        target="_blank"
+      ></Link>
       <div className={styles.borderContainerSecond}></div>
       <div className={styles.borderContainerFirst}></div>
       <div className={styles.titleAndArrow}>

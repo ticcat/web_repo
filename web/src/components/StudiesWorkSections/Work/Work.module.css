@@ -94,6 +94,13 @@
   padding: 0 0 10px;
   margin-right: 20px;
   overflow: hidden;
+  pointer-events: none;
+}
+.entryContainer .navLink {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  pointer-events: all;
 }
 .entryContainer .borderContainer, .entryContainer .borderContainerSecond, .entryContainer .borderContainerFirst {
   position: absolute;
