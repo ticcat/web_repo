@@ -10,14 +10,14 @@ function WorkEntry({ entryInfo }: { entryInfo: WorkEntryInfo }) {
   return (
     <div className={styles.entryContainer}>
       <div className={styles.titleAndArrow}>
-        {/* Title&Duration */}
+        {/* Title&Arrow */}
         <div
           className={styles.entryTitle}
         >{`${entryInfo.title} // ${entryInfo.role}`}</div>
         <div className={styles.arrow}></div>
       </div>
       <div className={styles.durationAndTech}>
-        {/* Arrow&Tech */}
+        {/* Duration&Tech */}
         <div
           className={styles.duration}
         >{`${entryInfo.duration.start_date} - ${entryInfo.duration.end_date} // ${entryInfo.duration.period}`}</div>
