@@ -9,12 +9,15 @@ import WorkEntryInfo from "@/dbClasses/WorkEntry";
 function WorkEntry({ entryInfo }: { entryInfo: WorkEntryInfo }) {
   return (
     <div className={styles.entryContainer}>
+      <div className={styles.borderContainer}></div>
       <div className={styles.titleAndArrow}>
         {/* Title&Arrow */}
         <div
           className={styles.entryTitle}
         >{`${entryInfo.title} // ${entryInfo.role}`}</div>
-        <div className={styles.arrow}></div>
+        <div className={styles.arrowContainer}>
+          <div className={styles.arrow}>→</div>
+        </div>
       </div>
       <div className={styles.durationAndTech}>
         {/* Duration&Tech */}

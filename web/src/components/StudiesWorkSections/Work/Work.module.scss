@@ -9,14 +9,22 @@
 }
 
 .entryContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 30px;
   height: max-content;
-  border-bottom: 1px solid rgb(var(--accent-1-rgb));
   padding: 0 0 10px;
   margin-right: 20px;
+
+  .borderContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid rgb(var(--accent-1-rgb));
+    z-index: 5;
+  }
 
   .titleAndArrow {
     display: flex;
@@ -27,6 +35,16 @@
 
     .entryTitle {
       @extend .h4;
+    }
+
+    .arrowContainer {
+      overflow: hidden;
+
+      .arrow {
+        @extend .h4;
+        opacity: 0;
+        transform: scale(1.5) translate(-1px, -3px);
+      }
     }
   }
 
@@ -43,6 +61,30 @@
 
     .duration {
       @extend .sub2;
+    }
+  }
+
+  &:hover {
+    .arrowContainer {
+      .arrow {
+        animation: arrowAnimation 0.2s ease-in forwards;
+      }
+    }
+  }
+
+  @keyframes arrowAnimation {
+    0% {
+      opacity: 0;
+      transform: scale(1.5) translate(-100%, -3px);
+    }
+    1% {
+      opacity: 1;
+      transform: scale(1.5) translate(-100%, -3px);
+    }
+    100% {
+      opacity: 1;
+
+      transform: scale(1.5) translate(-1px, -3px);
     }
   }
 }
