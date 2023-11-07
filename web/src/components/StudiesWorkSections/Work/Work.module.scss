@@ -48,9 +48,9 @@
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  gap: 70px;
   height: 100vh;
   margin: 0 calc(var(--root-layout-padding) * 4);
   padding: calc(var(--root-layout-padding) * 4) 0;
@@ -64,15 +64,15 @@
     display: grid;
     grid-template-rows: max-content 1fr;
     width: 100%;
-    height: max-content;
+    height: 100%;
 
     .list {
       display: flex;
       flex-direction: column;
       justify-content: stretch;
-      gap: 5rem;
+      gap: 3rem;
       margin: 2rem 0;
-      height: 37%;
+      height: 45vh;
       overflow-y: scroll;
     }
   }
