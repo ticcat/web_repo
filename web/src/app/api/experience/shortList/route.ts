@@ -18,7 +18,8 @@ export async function GET() {
         end_date: exp.duration.end_date,
         period: exp.duration.period
       },
-      exp.stack)
+      exp.stack,
+      exp.url)
     );
 
     return NextResponse.json(workEntries, {
