@@ -1,5 +1,6 @@
 import styles from "./MainLayout.module.css";
 import AuthorRefButton from "./AuthorRefButton/AuthorRefButton";
+import ThemeToggle from "./ThemeToggle/ThemeButton";
 import Link from "next/link";
 
 export default function MainLayout({
@@ -17,7 +18,7 @@ export default function MainLayout({
         <AuthorRefButton></AuthorRefButton>
         <Link href="/studiesnwork">To studies</Link>
         <Link href="/">To home</Link>
-        {/* <ThemeToggle></ThemeToggle> */}
+        <ThemeToggle></ThemeToggle>
       </div>
     </div>
   );
