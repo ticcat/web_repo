@@ -42,11 +42,49 @@ function WorkEntry({ entryInfo }: { entryInfo: WorkEntryInfo }) {
 }
 
 function Filters() {
+  type Filter = {
+    name: string;
+    selected: boolean;
+    type: string;
+  };
+  const [filters, setFilters] = useState<Filter[]>([
+    { name: "All", selected: true, type: "" },
+    { name: "Company", selected: false, type: "work" },
+    { name: "Personal", selected: false, type: "personal" },
+  ]);
+
+  const clickHandler = (filter: Filter) => {
+    const updatedFilters = filters.map((f) => {
+      if (f.name === filter.name) {
+        return {
+          name: f.name,
+          selected: true,
+          type: f.type,
+        };
+      } else {
+        return {
+          name: f.name,
+          selected: false,
+          type: f.type,
+        };
+      }
+    });
+
+    console.log(filter.name + " clicked");
+    setFilters(updatedFilters);
+  };
+
   return (
     <div className={styles.filters}>
-      <Button clickHandler={() => {}}>All</Button>
-      <Button clickHandler={() => {}}>Company</Button>
-      <Button clickHandler={() => {}}>Personal</Button>
+      {filters.map((filter) => (
+        <Button
+          key={filter.name}
+          clickHandler={() => clickHandler(filter)}
+          isActive={filter.selected}
+        >
+          {filter.name}
+        </Button>
+      ))}
     </div>
   );
 }
