@@ -2,6 +2,7 @@ import styles from "./MainLayout.module.css";
 import AuthorRefButton from "./AuthorRefButton/AuthorRefButton";
 import ThemeToggle from "./ThemeToggle/ThemeButton";
 import Link from "next/link";
+import ToTopButton from "../Buttons/ToTopButton/ToTopButton";
 
 export default function MainLayout({
   children,
@@ -20,6 +21,7 @@ export default function MainLayout({
         <Link href="/">To home</Link>
         <ThemeToggle></ThemeToggle>
       </div>
+      <ToTopButton></ToTopButton>
     </div>
   );
 }

@@ -3,38 +3,7 @@
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import styles from "./StudiesWorkLanding.module.css";
 import Button from "@/components/Buttons/Button/Button";
-import { scroller, animateScroll } from "react-scroll";
-import { useEffect, useState } from "react";
-
-function ToTopButton() {
-  const [isVisible, setVisible] = useState(false);
-
-  const scrollListener = () => {
-    setVisible(window.scrollY > 200);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", scrollListener);
-
-    return () => {
-      window.removeEventListener("scroll", scrollListener);
-    };
-  });
-
-  return (
-    <div className={styles.toTopBtn}>
-      {isVisible && (
-        <Button
-          clickHandler={() =>
-            animateScroll.scrollToTop({ smooth: true, duration: 300 })
-          }
-        >
-          <div className={styles.toTopBtnText}>To Top</div>
-        </Button>
-      )}
-    </div>
-  );
-}
+import { scroller } from "react-scroll";
 
 export default function StudiesWorkLanding() {
   const shortStudiesText =
@@ -82,7 +51,6 @@ export default function StudiesWorkLanding() {
           </AnimatedElement>
         </div>
       </div>
-      <ToTopButton></ToTopButton>
     </div>
   );
 }
