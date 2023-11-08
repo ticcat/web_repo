@@ -87,16 +87,16 @@
     cursor: pointer;
 
     .borderContainer {
-      animation: borderAnimation 0.4s var(--fill-anim-timing-func) forwards;
+      animation: borderAnimation 0.6s var(--fill-anim-timing-func) forwards;
     }
 
     .borderContainerSecond {
-      animation-delay: 0.1s;
+      animation-delay: 0.15s;
     }
 
     .arrowContainer {
       .arrow {
-        animation: arrowAnimation 0.2s var(--fill-anim-timing-func) 0.3s
+        animation: arrowAnimation 0.2s var(--fill-anim-timing-func) 0.35s
           forwards;
       }
     }
