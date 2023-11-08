@@ -1,13 +1,28 @@
 import WorkEntryInfo from "@/dbClasses/WorkEntry";
 import clientPromise from "@/utils/mongodb";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   const client = await clientPromise;
   const db = client.db("WebPortfolio");
 
+  const type = request.nextUrl.searchParams.get("type");
+
   try {
-    const allExp = await db.collection("Experience").find({}).toArray();
+    let allExp;
+
+    switch (type) {
+      case "work":
+      case "personal": {
+        allExp =  await db.collection("Experience").find({type: type}).toArray();
+        break;
+      }
+      default: {
+        allExp =  await db.collection("Experience").find({}).toArray();
+        break;
+      }
+    }
+    
 
     const workEntries = allExp.map((exp) => new WorkEntryInfo(
       exp._id,
