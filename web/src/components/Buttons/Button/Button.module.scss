@@ -45,4 +45,10 @@ $fill-function: var(--fill-anim-timing-func);
       transition: transform 0.35s 0.1s $fill-function;
     }
   }
+
+  &.active {
+    .fill {
+      transform: translateY(0%);
+    }
+  }
 }
