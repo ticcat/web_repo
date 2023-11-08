@@ -41,12 +41,17 @@ function WorkEntry({ entryInfo }: { entryInfo: WorkEntryInfo }) {
   );
 }
 
-function Filters() {
+function Filters({
+  setWorkEntries,
+}: {
+  setWorkEntries: (entries: Array<WorkEntryInfo>) => void;
+}) {
   type Filter = {
     name: string;
     selected: boolean;
     type: string;
   };
+
   const [filters, setFilters] = useState<Filter[]>([
     { name: "All", selected: true, type: "" },
     { name: "Company", selected: false, type: "work" },
@@ -70,8 +75,13 @@ function Filters() {
       }
     });
 
-    console.log(filter.name + " clicked");
-    setFilters(updatedFilters);
+    fetch(`/api/experience/shortList?type=${filter.type}`)
+      .then((res) => res?.json())
+      .then((data) => {
+        setWorkEntries(data);
+        console.log(filter.name + " clicked");
+        setFilters(updatedFilters);
+      });
   };
 
   return (
@@ -108,7 +118,9 @@ export default function Work() {
         <AnimatedElement>EXPERIENCE</AnimatedElement>
       </div>
       <div className={styles.worksContainer}>
-        <Filters></Filters>
+        <Filters
+          setWorkEntries={(entries) => setWorkEntries(entries)}
+        ></Filters>
         <div className={styles.list}>
           {workEntries.map((entry) => (
             <WorkEntry key={entry.id.toString()} entryInfo={entry}></WorkEntry>
