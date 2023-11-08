@@ -9,7 +9,7 @@ export default function Button({
 }: {
   children: React.ReactNode;
   clickHandler: () => void;
-  isActive: boolean;
+  isActive?: boolean;
 }) {
   return (
     <div
