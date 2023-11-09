@@ -134,11 +134,12 @@
 }
 .entryContainer .titleAndArrow .arrowContainer {
   overflow: hidden;
+  width: 3rem;
 }
 .entryContainer .titleAndArrow .arrowContainer .arrow {
   opacity: 0;
-  -webkit-transform: scale(1.5) translate(-1px, -3px);
-          transform: scale(1.5) translate(-1px, -3px);
+  -webkit-transform: scale(1.7, 1.5) translate(-1px, -3px);
+          transform: scale(1.7, 1.5) translate(-1px, -3px);
 }
 .entryContainer .durationAndTech {
   display: -webkit-box;
@@ -210,35 +211,35 @@
 @-webkit-keyframes arrowAnimation {
   0% {
     opacity: 0;
-    -webkit-transform: scale(1.5) translate(-100%, -3px);
-            transform: scale(1.5) translate(-100%, -3px);
+    -webkit-transform: scale(1.7, 1.5) translate(-100%, -3px);
+            transform: scale(1.7, 1.5) translate(-100%, -3px);
   }
   1% {
     opacity: 1;
-    -webkit-transform: scale(1.5) translate(-100%, -3px);
-            transform: scale(1.5) translate(-100%, -3px);
+    -webkit-transform: scale(1.7, 1.5) translate(-100%, -3px);
+            transform: scale(1.7, 1.5) translate(-100%, -3px);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1.5) translate(-1px, -3px);
-            transform: scale(1.5) translate(-1px, -3px);
+    -webkit-transform: scale(1.7, 1.5) translate(25%, -3px);
+            transform: scale(1.7, 1.5) translate(25%, -3px);
   }
 }
 @keyframes arrowAnimation {
   0% {
     opacity: 0;
-    -webkit-transform: scale(1.5) translate(-100%, -3px);
-            transform: scale(1.5) translate(-100%, -3px);
+    -webkit-transform: scale(1.7, 1.5) translate(-100%, -3px);
+            transform: scale(1.7, 1.5) translate(-100%, -3px);
   }
   1% {
     opacity: 1;
-    -webkit-transform: scale(1.5) translate(-100%, -3px);
-            transform: scale(1.5) translate(-100%, -3px);
+    -webkit-transform: scale(1.7, 1.5) translate(-100%, -3px);
+            transform: scale(1.7, 1.5) translate(-100%, -3px);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1.5) translate(-1px, -3px);
-            transform: scale(1.5) translate(-1px, -3px);
+    -webkit-transform: scale(1.7, 1.5) translate(25%, -3px);
+            transform: scale(1.7, 1.5) translate(25%, -3px);
   }
 }
 
