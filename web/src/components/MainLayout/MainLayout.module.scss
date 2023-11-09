@@ -63,6 +63,17 @@ $corner-square-separation: calc($corner-square-size * 3);
   width: 100%;
   height: 100%;
 
+  .topNavBar {
+    position: fixed;
+    right: calc(var(--root-layout-padding) * 2);
+    top: calc(var(--root-layout-padding) * 2);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
+    height: max-content;
+    width: max-content;
+  }
+
   .content {
     width: 100%;
   }

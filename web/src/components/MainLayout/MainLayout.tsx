@@ -1,8 +1,8 @@
 import styles from "./MainLayout.module.css";
 import AuthorRefButton from "./AuthorRefButton/AuthorRefButton";
 import ThemeToggle from "./ThemeToggle/ThemeButton";
-import Link from "next/link";
 import ToTopButton from "../Buttons/ToTopButton/ToTopButton";
+import NavBar from "./NavBar/NavBar";
 
 export default function MainLayout({
   children,
@@ -15,10 +15,11 @@ export default function MainLayout({
       <div className={styles.topLine}></div>
       <main className={styles.content}>{children}</main>
       <div className={styles.botLine}></div>
+      <div className={styles.topNavBar}>
+        <NavBar></NavBar>
+      </div>
       <div className={styles.authorNTheme}>
         <AuthorRefButton></AuthorRefButton>
-        <Link href="/studiesnwork">To studies</Link>
-        <Link href="/">To home</Link>
         <ThemeToggle></ThemeToggle>
       </div>
       <ToTopButton></ToTopButton>
