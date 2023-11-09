@@ -9,6 +9,22 @@ const showElementTimeout = (
   resolve: (value: boolean | PromiseLike<boolean>) => void
 ) => setTimeout(() => resolve(true), 2850);
 
+function ContactButtons() {
+  return (
+    <>
+      {" "}
+      <div className={styles.links}>
+        <span className={styles.separator}>//</span>
+        <EmailButton></EmailButton>
+        <span className={styles.separator}>//</span>
+        <CVButton></CVButton>
+        <span className={styles.separator}>//</span>
+      </div>
+      <SocialMediaButtons></SocialMediaButtons>
+    </>
+  );
+}
+
 function Logo() {
   return (
     <div className={styles.logo}>
@@ -68,14 +84,7 @@ export default function HomeLandingSection() {
         ></Image>
       </div>
       <div id="topInfo" className={styles.topInfo}>
-        <div className={styles.links}>
-          <span className={styles.separator}>//</span>
-          <EmailButton></EmailButton>
-          <span className={styles.separator}>//</span>
-          <CVButton></CVButton>
-          <span className={styles.separator}>//</span>
-        </div>
-        <SocialMediaButtons></SocialMediaButtons>
+        <ContactButtons></ContactButtons>
       </div>
       <div id="botInfo" className={styles.botInfo}>
         <div className={styles.locationRole}>
