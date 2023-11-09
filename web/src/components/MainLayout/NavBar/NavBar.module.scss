@@ -1,0 +1,18 @@
+@use "../../../globalStyles/globalClasses";
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  z-index: 1;
+
+  .navItem {
+    @extend .sub2;
+    text-decoration: none;
+    color: rgb(var(--head-sub-rgb));
+  }
+
+  .separator {
+    @extend .sub2;
+  }
+}
