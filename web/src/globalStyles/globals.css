@@ -46,6 +46,10 @@ body {
   min-height: -moz-fill-available;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .root-layout {
   position: relative;
   width: 100%;
