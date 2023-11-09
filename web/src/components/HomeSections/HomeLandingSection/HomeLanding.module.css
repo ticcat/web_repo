@@ -179,6 +179,25 @@
        object-fit: cover;
   }
 }
+.homeSection .topInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-top: clamp(0rem, 1.75rem - 2vw, 1rem);
+  gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
 .homeSection .botInfo {
   display: -webkit-box;
   display: -ms-flexbox;

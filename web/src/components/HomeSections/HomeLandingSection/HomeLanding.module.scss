@@ -96,6 +96,16 @@ $home-background-rgb: 137 137 137;
     }
   }
 
+  .topInfo {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    margin-top: clamp(0rem, 1.75rem + -2vw, 1rem);
+    gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
+    height: max-content;
+    width: max-content;
+  }
+
   .botInfo {
     display: flex;
     flex-direction: column;

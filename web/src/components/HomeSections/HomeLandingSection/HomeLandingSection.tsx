@@ -1,7 +1,6 @@
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import Image from "next/image";
 import styles from "./HomeLanding.module.css";
-import NavBar from "@/components/MainLayout/NavBar/NavBar";
 
 const showElementTimeout = (
   resolve: (value: boolean | PromiseLike<boolean>) => void
@@ -65,9 +64,7 @@ export default function HomeLandingSection() {
           quality={100}
         ></Image>
       </div>
-      <div id="topInfo" className={styles.topInfo}>
-        <NavBar></NavBar>
-      </div>
+      <div id="topInfo" className={styles.topInfo}></div>
       <div id="botInfo" className={styles.botInfo}>
         <div className={styles.locationRole}>
           <AnimatedElement
