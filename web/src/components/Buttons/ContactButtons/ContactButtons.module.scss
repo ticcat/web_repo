@@ -1,0 +1,12 @@
+@use "../../../globalStyles/globalClasses";
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  z-index: 1;
+
+  .separator {
+    @extend .sub2;
+  }
+}
