@@ -58,11 +58,8 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: rgb(var(--accent-1-rgb));
-  transition: background-color 1s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  transform: scaleY(2);
   background-color: rgb(var(--accent-2-rgb));
-  transition: background-color 1s ease;
 }
