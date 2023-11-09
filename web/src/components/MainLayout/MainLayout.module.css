@@ -64,7 +64,7 @@
   font-size: 14px;
 }
 
-.side-line, .container::after, .container::before {
+.side-line, .container .content .rightLine, .container .content .leftLine {
   display: block;
   position: fixed;
   height: 85vh;
@@ -117,19 +117,19 @@
 .container .content {
   width: 100%;
 }
-.container::before {
-  content: "";
+.container .content .leftLine {
   -webkit-transform: translateY(-12px);
           transform: translateY(-12px);
   left: var(--root-layout-padding);
   bottom: var(--root-layout-padding);
 }
-.container::after {
-  content: "";
-  -webkit-transform: translateY(12px);
-          transform: translateY(12px);
+.container .content .rightLine {
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: scaleY(0.1);
+          transform: scaleY(0.1);
   right: var(--root-layout-padding);
-  top: var(--root-layout-padding);
+  top: calc(var(--root-layout-padding) + 12px);
 }
 .container .topLine {
   top: var(--root-layout-padding);

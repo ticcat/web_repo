@@ -76,22 +76,21 @@ $corner-square-separation: calc($corner-square-size * 3);
 
   .content {
     width: 100%;
-  }
 
-  &::before {
-    @extend .side-line;
-    content: "";
-    transform: translateY(calc($corner-square-separation * -1));
-    left: var(--root-layout-padding);
-    bottom: var(--root-layout-padding);
-  }
+    .leftLine {
+      @extend .side-line;
+      transform: translateY(calc($corner-square-separation * -1));
+      left: var(--root-layout-padding);
+      bottom: var(--root-layout-padding);
+    }
 
-  &::after {
-    @extend .side-line;
-    content: "";
-    transform: translateY($corner-square-separation);
-    right: var(--root-layout-padding);
-    top: var(--root-layout-padding);
+    .rightLine {
+      @extend .side-line;
+      transform-origin: top;
+      transform: scaleY(0.1);
+      right: var(--root-layout-padding);
+      top: calc(var(--root-layout-padding) + $corner-square-separation);
+    }
   }
 
   .topLine {

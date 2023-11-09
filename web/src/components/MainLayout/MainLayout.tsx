@@ -3,6 +3,7 @@ import AuthorRefButton from "./AuthorRefButton/AuthorRefButton";
 import ThemeToggle from "./ThemeToggle/ThemeButton";
 import ToTopButton from "../Buttons/ToTopButton/ToTopButton";
 import NavBar from "./NavBar/NavBar";
+import SideLine from "./SideLine/SideLine";
 
 export default function MainLayout({
   children,
@@ -13,7 +14,11 @@ export default function MainLayout({
     <div className={styles.container}>
       {/* <LoadingScreen loading={false} title={"welcome"}></LoadingScreen> */}
       <div className={styles.topLine}></div>
-      <main className={styles.content}>{children}</main>
+      <main className={styles.content}>
+        <SideLine side="left"></SideLine>
+        {children}
+        <SideLine side="right"></SideLine>
+      </main>
       <div className={styles.botLine}></div>
       <div className={styles.topNavBar}>
         <NavBar></NavBar>
