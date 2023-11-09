@@ -5,17 +5,6 @@ $section-side-padding: calc(
 );
 $home-background-rgb: 137 137 137;
 
-.links {
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-  z-index: 1;
-
-  .separator {
-    @extend .sub2;
-  }
-}
-
 .logo {
   position: absolute;
   width: 945px;
@@ -105,16 +94,6 @@ $home-background-rgb: 137 137 137;
         object-fit: cover;
       }
     }
-  }
-
-  .topInfo {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-end;
-    margin-top: clamp(0rem, 1.75rem + -2vw, 1rem);
-    gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
-    height: max-content;
-    width: max-content;
   }
 
   .botInfo {
