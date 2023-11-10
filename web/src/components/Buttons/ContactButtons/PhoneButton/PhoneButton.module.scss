@@ -1,0 +1,6 @@
+@use "../../../../globalStyles/globalClasses";
+
+.phone {
+  @extend .sub2;
+  text-decoration: none;
+}
