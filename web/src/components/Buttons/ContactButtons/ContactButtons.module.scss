@@ -1,12 +1,17 @@
 @use "../../../globalStyles/globalClasses";
 
-.links {
+.container {
   display: flex;
-  flex-direction: row;
-  gap: 5px;
-  z-index: 1;
+  flex-direction: column;
+  gap: 20px;
 
-  .separator {
-    @extend .sub2;
+  .links {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    .separator {
+      @extend .sub2;
+    }
   }
 }
