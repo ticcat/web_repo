@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "../Button/Button";
+import Button from "../../Button/Button";
 import Link from "next/link";
 import styles from "./CVButton.module.css";
 

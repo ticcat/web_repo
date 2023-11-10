@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./EmailButton.module.css";
-import Button from "../Button/Button";
+import Button from "../../Button/Button";
 import Link from "next/link";
 
 export default function EmailButton() {
