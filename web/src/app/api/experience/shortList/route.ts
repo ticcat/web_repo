@@ -41,6 +41,6 @@ export async function GET(request: Request) {
       status: 200,
     })
   } catch(e) {
-    return Response.json({status: 404});
+    return Response.json(e, {status: 404});
   }
 }
