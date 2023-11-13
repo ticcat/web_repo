@@ -1,0 +1,26 @@
+$line-width: 1px;
+$corner-square-size: 4px;
+$corner-square-separation: calc($corner-square-size * 3);
+
+.side-line {
+  display: block;
+  position: fixed;
+  height: 85vh;
+  width: $line-width;
+  background-color: rgb(var(--accent-1-rgb));
+  z-index: 15;
+}
+
+.leftLine {
+  @extend .side-line;
+  transform-origin: bottom;
+  left: var(--root-layout-padding);
+  bottom: calc(var(--root-layout-padding) + $corner-square-separation);
+}
+
+.rightLine {
+  @extend .side-line;
+  transform-origin: top;
+  right: var(--root-layout-padding);
+  top: calc(var(--root-layout-padding) + $corner-square-separation);
+}

@@ -1,0 +1,77 @@
+[
+{
+  "_id": 1,
+  "title": "Web portfolio",
+  "type": "personal",
+  "role": "Designer and full stack developer",
+  "stack": ["TypeSciprt", "SASS", "React", "Next13", "MongoDB", "Figma"],
+  "duration": {
+    "start_date": "Sep. 2023",
+    "end_date": "Nov. 2023",
+    "period": "3 months"
+  },
+  "project_description": "Personal website to offer contact and info about me.",
+  "role_desc": "Designed a custom design system and web app in Figma and implemented using Next13 fullstack framework.",
+  "url":  "https://github.com/ticcat/web_repo"
+},
+{
+  "_id": 2,
+  "title": "UI Sandbox",
+  "type": "personal",
+  "role": "Front end developer",
+  "stack": ["TypeSciprt", "SASS", "React", "Next13"],
+  "duration": {
+    "start_date": "Sep. 2023",
+    "end_date": "Ongoing",
+    "period": ""
+  },
+  "project_description": "Personal site to host UI study cases I find while doing research or going through the web.",
+  "role_desc": "Study and develop UI components understanding and learning the implementations.",
+  "url":  "https://github.com/ticcat/ui-sandbox"
+},
+{
+  "_id": 3,
+  "title": "MultiAPI",
+  "type": "personal",
+  "role": "Design and front end developer",
+  "stack": ["JS", "CSS", "HTML", "Figma"],
+  "duration": {
+    "start_date": "May. 2023",
+    "end_date": "Jul. 2023",
+    "period": "3 months"
+  },
+  "project_description": "Personal project offering access to PokeAPI and SWAPI as a web development learning project.",
+  "role_desc": "Designed and developed a web app from scratch.",
+  "url":  "https://github.com/ticcat/MultiAPI"
+},
+{
+  "_id": 4,
+  "title": "ADD Informática",
+  "type": "work",
+  "role": "Front end developer",
+  "stack": [".NET", "C#", "XML", "UNO", "AZURE"],
+  "duration": {
+    "start_date": "Oct. 2022",
+    "end_date": "Mar. 2023",
+    "period": "6 months"
+  },
+  "project_description": "Future version of the healthcare and welfare software that the company offers",
+  "role_desc": "Front end developer and designers-coders middleman working on the new product for the company",
+  "url": "https://addinformatica.com/"
+},
+{
+  "_id": 5,
+  "title": "PlayJoy Games @ NoSpoon",
+  "type": "work",
+  "role": "Full stack developer",
+  "stack": ["Kotlin", "AWS", "XML", "CSS", "CreateJS", "NativeScript"],
+  "duration": {
+    "start_date": "Nov. 2020",
+    "end_date": "Oct. 2022",
+    "period": "2 years"
+  },
+  "project_description": "Mobile cards and traditional games app in a startup company",
+  "role_desc": "Fullstack games and app developer with close contact with the designers team",
+  "url": "https://playjoy.com/en/"
+}
+]

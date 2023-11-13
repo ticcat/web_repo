@@ -1,0 +1,12 @@
+@use "../../../globalStyles/globalClasses";
+
+.toTopBtn {
+  position: fixed;
+  bottom: 50px;
+  left: 75px;
+  z-index: 10;
+
+  .toTopBtnText {
+    @extend .sub1;
+  }
+}

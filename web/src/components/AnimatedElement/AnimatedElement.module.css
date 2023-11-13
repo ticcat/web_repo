@@ -1,7 +1,10 @@
 .container {
+  position: relative;
   overflow: hidden;
+  display: inline-block;
 }
 .container .child {
+  position: relative;
   display: block;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);

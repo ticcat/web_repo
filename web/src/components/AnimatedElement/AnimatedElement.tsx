@@ -5,12 +5,12 @@ import styles from "./AnimatedElement.module.css";
 
 export default function AnimatedElement({
   children,
+  text,
   showPromise,
-  showOnRender,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  text?: string;
   showPromise?: Promise<boolean>;
-  showOnRender?: boolean;
 }) {
   const [visible, setVisible] = useState(false);
   const container = useRef(null);
@@ -30,25 +30,33 @@ export default function AnimatedElement({
     );
     const containerElement = container.current;
 
-    if (!showOnRender) {
+    if (showPromise) {
       showPromise?.then((show) => show && !visible && setVisible(true));
     } else {
       if (containerElement) observer.observe(containerElement);
     }
 
     return () => {
-      if (showOnRender && containerElement) {
+      if (!showPromise && containerElement) {
         observer.unobserve(containerElement);
       }
     };
   });
 
   return (
-    <div
-      className={`${styles.container} ${visible && styles.animate}`}
-      ref={container}
-    >
-      <span className={styles.child}>{children}</span>
-    </div>
+    <>
+      {text ? (
+        text.split(" ").map((word, index) => {
+          return <AnimatedElement key={index}>{word}&nbsp;</AnimatedElement>;
+        })
+      ) : (
+        <span
+          className={`${styles.container} ${visible && styles.animate}`}
+          ref={container}
+        >
+          <span className={styles.child}>{children}</span>
+        </span>
+      )}
+    </>
   );
 }

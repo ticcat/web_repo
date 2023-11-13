@@ -48,4 +48,8 @@
   transition: -webkit-transform 0.35s 0.1s var(--fill-anim-timing-func);
   transition: transform 0.35s 0.1s var(--fill-anim-timing-func);
   transition: transform 0.35s 0.1s var(--fill-anim-timing-func), -webkit-transform 0.35s 0.1s var(--fill-anim-timing-func);
+}
+.container.active .fill, .container.active .fill1, .container.active .fill2 {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }/*# sourceMappingURL=Button.module.css.map */

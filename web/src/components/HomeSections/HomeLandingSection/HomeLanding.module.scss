@@ -104,17 +104,6 @@ $home-background-rgb: 137 137 137;
     gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
     height: max-content;
     width: max-content;
-
-    .links {
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-      z-index: 1;
-
-      .separator {
-        @extend .sub2;
-      }
-    }
   }
 
   .botInfo {
