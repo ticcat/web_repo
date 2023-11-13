@@ -9,7 +9,7 @@ export async function GET() {
     const allStudies = await db.collection("Studies").find({}).toArray();
 
     const studyEntries = allStudies.map((study) => {
-      new StudyEntry(study._id,
+      new StudyEntry(study.id,
         study.title,
         study.subtitle,
         study.duration,
