@@ -8,13 +8,13 @@ export async function GET() {
   try {
     const allStudies = await db.collection("Studies").find({}).toArray();
 
-    const studyEntries = allStudies.map((study) => {
-      new StudyEntry(study.id,
+    const studyEntries = allStudies.map((study) => 
+      new StudyEntry(study._id,
         study.title,
         study.subtitle,
         study.duration,
-        study.text);
-    });
+        study.text)
+    );
 
     return Response.json(studyEntries, {status: 200});
   } catch(e) {
