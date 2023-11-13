@@ -1,12 +1,12 @@
 import WorkEntryInfo from "@/dbClasses/WorkEntry";
 import clientPromise from "@/utils/mongodb";
-import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(request: NextRequest) {
+export async function GET(request: Request) {
   const client = await clientPromise;
   const db = client.db("WebPortfolio");
 
-  const type = request.nextUrl.searchParams.get("type");
+  const  {searchParams} = new URL(request.url);
+  const type = searchParams.get("type");
 
   try {
     let allExp;
@@ -37,10 +37,10 @@ export async function GET(request: NextRequest) {
       exp.url)
     );
 
-    return NextResponse.json(workEntries, {
+    return Response.json(workEntries, {
       status: 200,
     })
   } catch(e) {
-    console.error(e);
+    Response.json({status: 404});
   }
 }
