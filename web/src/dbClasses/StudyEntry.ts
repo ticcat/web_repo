@@ -1,6 +1,6 @@
 import { ObjectId } from "mongodb";
 
-export default class StudyEntry {
+export default class StudyEntryInfo {
   id: ObjectId;
   title: string;
   subtitle: string;

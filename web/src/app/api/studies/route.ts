@@ -1,4 +1,4 @@
-import StudyEntry from "@/dbClasses/StudyEntry";
+import StudyEntryInfo from "@/dbClasses/StudyEntry";
 import clientPromise from "@/utils/mongodb";
 
 export async function GET() {
@@ -9,7 +9,7 @@ export async function GET() {
     const allStudies = await db.collection("Studies").find({}).toArray();
 
     const studyEntries = allStudies.map((study) => 
-      new StudyEntry(study._id,
+      new StudyEntryInfo(study._id,
         study.title,
         study.subtitle,
         study.duration,
