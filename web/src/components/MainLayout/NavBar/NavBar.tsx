@@ -3,30 +3,34 @@
 import Button from "@/components/Buttons/Button/Button";
 import styles from "./NavBar.module.css";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
+  const pathname = usePathname();
+  const buttons = [
+    { name: "Home", url: "/" },
+    { name: "Studies & Exp", url: "/studiesnexp" },
+    { name: "Contact", url: "/contact" },
+  ];
+
   return (
     <>
-      {" "}
       <div className={styles.links}>
-        <span className={styles.separator}>//</span>
-        <Button clickHandler={() => {}}>
-          <Link className={styles.navItem} href="/">
-            <div>Home</div>
-          </Link>
-        </Button>
-        <span className={styles.separator}>//</span>
-        <Button clickHandler={() => {}}>
-          <Link className={styles.navItem} href="/studiesnexp">
-            <div>Studies & Exp</div>
-          </Link>
-        </Button>
-        <span className={styles.separator}>//</span>
-        <Button clickHandler={() => {}}>
-          <Link className={styles.navItem} href="/contact">
-            <div>Contact</div>
-          </Link>
-        </Button>
+        {buttons.map((button) => {
+          return (
+            <>
+              <span className={styles.separator}>//</span>
+              <Button
+                clickHandler={() => {}}
+                isActive={pathname === button.url}
+              >
+                <Link className={styles.navItem} href={button.url}>
+                  <div>{button.name}</div>
+                </Link>
+              </Button>
+            </>
+          );
+        })}
         <span className={styles.separator}>//</span>
       </div>
     </>
