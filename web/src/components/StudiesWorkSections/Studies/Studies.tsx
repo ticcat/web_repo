@@ -29,7 +29,7 @@ export default function Studies() {
   const [studyEntries, setStudyEntries] = useState<StudyEntryInfo[]>([]);
 
   useEffect(() => {
-    fetch("/api/studies")
+    fetch("/api/studiesnexp/studies")
       .then((res) => res?.json())
       .then((data) => setStudyEntries(data));
 

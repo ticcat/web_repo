@@ -75,7 +75,7 @@ function Filters({
       }
     });
 
-    fetch(`/api/experience/shortList?type=${filter.type}`)
+    fetch(`/api/studiesnexp/experience/shortList?type=${filter.type}`)
       .then((res) => res?.json())
       .then((data) => {
         setWorkEntries(data);
@@ -103,7 +103,7 @@ export default function Work() {
   const [workEntries, setWorkEntries] = useState<WorkEntryInfo[]>([]);
 
   useEffect(() => {
-    fetch("/api/experience/shortList")
+    fetch("/api/studiesnexp/experience/shortList")
       .then((res) => res?.json())
       .then((data) => setWorkEntries(data));
 
