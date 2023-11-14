@@ -17,7 +17,7 @@ export default function NavBar() {
         </Button>
         <span className={styles.separator}>//</span>
         <Button clickHandler={() => {}}>
-          <Link className={styles.navItem} href="/studiesnwork">
+          <Link className={styles.navItem} href="/studiesnexp">
             <div>Studies & Exp</div>
           </Link>
         </Button>
