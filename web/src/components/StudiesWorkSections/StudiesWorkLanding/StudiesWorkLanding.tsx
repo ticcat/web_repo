@@ -4,17 +4,13 @@ import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import styles from "./StudiesWorkLanding.module.css";
 import Button from "@/components/Buttons/Button/Button";
 import { scroller } from "react-scroll";
-import { useEffect, useState } from "react";
 import ShortTextEntry from "@/dbClasses/ShortTextEntry";
+import useFetchState from "@/hooks/useFetchState";
 
 export default function StudiesWorkLanding() {
-  const [shortTexts, setShortTexts] = useState<ShortTextEntry[]>([]);
-
-  useEffect(() => {
-    fetch("/api/studiesnexp/shortTexts")
-      .then((res) => res?.json())
-      .then((data) => setShortTexts(data));
-  }, []);
+  const [shortTexts] = useFetchState<ShortTextEntry>(
+    "/api/studiesnexp/shortTexts"
+  );
 
   return (
     <div className={styles.container}>

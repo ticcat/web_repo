@@ -5,7 +5,8 @@ import Button from "@/components/Buttons/Button/Button";
 import Link from "next/link";
 import WorkEntryInfo from "@/dbClasses/WorkEntry";
 import styles from "./Work.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useFetchState from "@/hooks/useFetchState";
 
 function WorkEntry({ entryInfo }: { entryInfo: WorkEntryInfo }) {
   return (
@@ -100,17 +101,9 @@ function Filters({
 }
 
 export default function Work() {
-  const [workEntries, setWorkEntries] = useState<WorkEntryInfo[]>([]);
-
-  useEffect(() => {
-    fetch("/api/studiesnexp/experience/shortList")
-      .then((res) => res?.json())
-      .then((data) => setWorkEntries(data));
-
-    return () => {
-      setWorkEntries([]);
-    };
-  }, []);
+  const [workEntries, setWorkEntries] = useFetchState<WorkEntryInfo>(
+    "/api/studiesnexp/experience/shortList"
+  );
 
   return (
     <div id="work" className={styles.container}>
