@@ -28,7 +28,7 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .sub1, .toTopBtn .toTopBtnText {
+.subtitle, .sub3, .sub2, .container .textContainer .text .goToBtnContainer .goToBtnText, .sub1, .toTopBtn .toTopBtnText {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -40,7 +40,7 @@
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.sub2 {
+.sub2, .container .textContainer .text .goToBtnContainer .goToBtnText {
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
@@ -49,13 +49,13 @@
   font-size: 18px;
 }
 
-.body, .b2, .b1 {
+.body, .b2, .b1, .container .textContainer .text {
   font-family: "Manrope", sans-serif;
   font-weight: 400;
   color: rgb(var(--body-rgb));
 }
 
-.b1 {
+.b1, .container .textContainer .text {
   font-size: 0.8125rem;
   font-size: clamp(0.8125rem, 0.671875rem + 0.375vw, 1rem);
 }
@@ -95,11 +95,36 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.container .shortTextsContainer {
-  min-height: 170px;
+.container .textContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 30px;
+  width: 70%;
+}
+.container .textContainer .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  width: 50%;
 }
 @media screen and (max-width: 600px) {
   .container .title {
     font-size: 2.5rem;
+  }
+  .container .textContainer {
+    width: 100%;
   }
 }/*# sourceMappingURL=StudiesWorkLanding.module.css.map */
