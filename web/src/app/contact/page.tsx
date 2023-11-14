@@ -1,5 +1,9 @@
 import styles from "./page.module.css";
 
 export default function Contact() {
-  return <div className={styles.title}>Contact</div>;
+  return (
+    <div className={styles.container}>
+      <div className={styles.title}>CONTACT</div>
+    </div>
+  );
 }
