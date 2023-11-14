@@ -1,0 +1,5 @@
+@use "../../globalStyles/globalClasses";
+
+.title {
+  @extend .h1;
+}
