@@ -2,8 +2,8 @@
 
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import styles from "./Studies.module.css";
-import { useEffect, useState } from "react";
 import StudyEntryInfo from "@/dbClasses/StudyEntry";
+import useFetchState from "@/hooks/useFetchState";
 
 function StudyEntry({ entry }: { entry: StudyEntryInfo }) {
   return (
@@ -26,15 +26,9 @@ function StudyEntry({ entry }: { entry: StudyEntryInfo }) {
 }
 
 export default function Studies() {
-  const [studyEntries, setStudyEntries] = useState<StudyEntryInfo[]>([]);
-
-  useEffect(() => {
-    fetch("/api/studies")
-      .then((res) => res?.json())
-      .then((data) => setStudyEntries(data));
-
-    return setStudyEntries([]);
-  }, []);
+  const [studyEntries] = useFetchState<StudyEntryInfo>(
+    "/api/studiesnexp/studies"
+  );
 
   return (
     <div id="studies" className={styles.container}>
