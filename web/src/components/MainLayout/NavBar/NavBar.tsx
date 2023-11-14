@@ -22,6 +22,12 @@ export default function NavBar() {
           </Link>
         </Button>
         <span className={styles.separator}>//</span>
+        <Button clickHandler={() => {}}>
+          <Link className={styles.navItem} href="/contact">
+            <div>Contact</div>
+          </Link>
+        </Button>
+        <span className={styles.separator}>//</span>
       </div>
     </>
   );
