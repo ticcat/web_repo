@@ -1,0 +1,29 @@
+@use "../../../../globalStyles/globalClasses";
+
+.textContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 70%;
+
+  .text {
+    @extend .b1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+    width: 50%;
+
+    .goToBtnContainer {
+      .goToBtnText {
+        @extend .sub2;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .textContainer {
+    width: 100%;
+  }
+}
