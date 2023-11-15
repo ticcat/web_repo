@@ -12,6 +12,18 @@ $input-padding: 0 5px 10px 5px;
     @extend .b1;
     background-color: transparent;
     border: none;
+
+    &:hover {
+      border: none;
+    }
+
+    &:active {
+      border: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .emailSubject {
@@ -26,11 +38,19 @@ $input-padding: 0 5px 10px 5px;
     .email {
       flex: 0.5 0.5 auto;
       border-bottom: 1px solid rgb(var(--accent-1-rgb));
+
+      &:focus {
+        border-bottom: 1px solid rgb(var(--accent-2-rgb));
+      }
     }
 
     .subject {
       flex: 2 2 auto;
       border-bottom: 1px solid rgb(var(--accent-1-rgb));
+
+      &:focus {
+        border-bottom: 1px solid rgb(var(--accent-2-rgb));
+      }
     }
   }
 
@@ -39,6 +59,10 @@ $input-padding: 0 5px 10px 5px;
     border-bottom: 1px solid rgb(var(--accent-1-rgb));
     padding: $input-padding;
     resize: none;
+
+    &:focus {
+      border-bottom: 1px solid rgb(var(--accent-2-rgb));
+    }
   }
 
   .submitButton {
@@ -46,14 +70,7 @@ $input-padding: 0 5px 10px 5px;
 
     .submitText {
       @extend .sub1;
-    }
-
-    &:hover {
-      border: none;
-    }
-
-    &:active {
-      border: none;
+      cursor: pointer;
     }
   }
 }

@@ -79,6 +79,15 @@
   background-color: transparent;
   border: none;
 }
+.form *:hover {
+  border: none;
+}
+.form *:active {
+  border: none;
+}
+.form *:focus {
+  outline: none;
+}
 .form .emailSubject {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,11 +107,17 @@
           flex: 0.5 0.5 auto;
   border-bottom: 1px solid rgb(var(--accent-1-rgb));
 }
+.form .emailSubject .email:focus {
+  border-bottom: 1px solid rgb(var(--accent-2-rgb));
+}
 .form .emailSubject .subject {
   -webkit-box-flex: 2;
       -ms-flex: 2 2 auto;
           flex: 2 2 auto;
   border-bottom: 1px solid rgb(var(--accent-1-rgb));
+}
+.form .emailSubject .subject:focus {
+  border-bottom: 1px solid rgb(var(--accent-2-rgb));
 }
 .form .content {
   min-height: 125px;
@@ -110,13 +125,13 @@
   padding: 0 5px 10px 5px;
   resize: none;
 }
+.form .content:focus {
+  border-bottom: 1px solid rgb(var(--accent-2-rgb));
+}
 .form .submitButton {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
-.form .submitButton:hover {
-  border: none;
-}
-.form .submitButton:active {
-  border: none;
+.form .submitButton .submitText {
+  cursor: pointer;
 }/*# sourceMappingURL=ContactForm.module.css.map */
