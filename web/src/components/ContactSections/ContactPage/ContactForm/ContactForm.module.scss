@@ -1,0 +1,59 @@
+@use "../../../../globalStyles/globalClasses";
+
+$input-padding: 0 5px 10px 5px;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 60vw;
+
+  * {
+    @extend .b1;
+    background-color: transparent;
+    border: none;
+  }
+
+  .emailSubject {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    * {
+      padding: $input-padding;
+    }
+
+    .email {
+      flex: 0.5 0.5 auto;
+      border-bottom: 1px solid rgb(var(--accent-1-rgb));
+    }
+
+    .subject {
+      flex: 2 2 auto;
+      border-bottom: 1px solid rgb(var(--accent-1-rgb));
+    }
+  }
+
+  .content {
+    min-height: 125px;
+    border-bottom: 1px solid rgb(var(--accent-1-rgb));
+    padding: $input-padding;
+    resize: none;
+  }
+
+  .submitButton {
+    align-self: flex-end;
+
+    .submitText {
+      @extend .sub1;
+    }
+
+    &:hover {
+      border: none;
+    }
+
+    &:active {
+      border: none;
+    }
+  }
+}
