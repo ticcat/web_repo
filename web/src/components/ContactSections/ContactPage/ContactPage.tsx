@@ -1,6 +1,6 @@
-import styles from "./ContactForm.module.css";
+import styles from "./ContactPage.module.css";
 
-export default function ContactForm() {
+export default function ContactPage() {
   return (
     <div className={styles.container}>
       <div className={styles.title}>CONTACT</div>
