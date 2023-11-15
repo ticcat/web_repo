@@ -18,7 +18,7 @@ export default function NavBar() {
       <div className={styles.links}>
         {buttons.map((button) => {
           return (
-            <>
+            <div key={button.name}>
               <span className={styles.separator}>//</span>
               <Button
                 clickHandler={() => {}}
@@ -28,7 +28,7 @@ export default function NavBar() {
                   <div>{button.name}</div>
                 </Link>
               </Button>
-            </>
+            </div>
           );
         })}
         <span className={styles.separator}>//</span>
