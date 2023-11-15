@@ -28,7 +28,7 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .sub1 {
+.subtitle, .sub3, .sub2, .container .thanksText, .sub1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -40,7 +40,7 @@
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.sub2 {
+.sub2, .container .thanksText {
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
@@ -68,11 +68,22 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 30px;
   height: 100vh;
+  margin: 0 calc(var(--root-layout-padding) * 4);
+  padding: calc(var(--root-layout-padding) * 2) 0;
+  padding-top: calc(var(--root-layout-padding) * 8);
+}
+.container .thanksText {
+  -ms-flex-item-align: center;
+      align-self: center;
 }/*# sourceMappingURL=ContactPage.module.css.map */
