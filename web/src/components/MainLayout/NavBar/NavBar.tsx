@@ -4,6 +4,7 @@ import Button from "@/components/Buttons/Button/Button";
 import styles from "./NavBar.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Fragment } from "react";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -18,7 +19,7 @@ export default function NavBar() {
       <div className={styles.links}>
         {buttons.map((button) => {
           return (
-            <div key={button.name}>
+            <Fragment key={button.name}>
               <span className={styles.separator}>//</span>
               <Button
                 clickHandler={() => {}}
@@ -28,7 +29,7 @@ export default function NavBar() {
                   <div>{button.name}</div>
                 </Link>
               </Button>
-            </div>
+            </Fragment>
           );
         })}
         <span className={styles.separator}>//</span>
