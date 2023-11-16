@@ -127,5 +127,12 @@
 }
 .container .entries .studyEntry .entryText {
   width: 50%;
-  min-width: 400px;
+}
+@media screen and (max-width: 1050px) {
+  .container .entries .studyEntry .entryHeader {
+    width: 100%;
+  }
+  .container .entries .studyEntry .entryText {
+    width: 100%;
+  }
 }/*# sourceMappingURL=Studies.module.css.map */
