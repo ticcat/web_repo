@@ -76,6 +76,11 @@
   padding: 0 0 calc(var(--root-layout-padding) * 4) 0;
   overflow: hidden;
 }
+.container .title {
+  overflow-wrap: break-word;
+  font-size: 2rem;
+  font-size: clamp(2rem, 1.375rem + 3vw, 4.375rem);
+}
 .container .title .arrow {
   display: inline-block;
   -webkit-transform: scale(1.3) translate(5px, -5px);

@@ -11,6 +11,9 @@
 
   .title {
     @extend .h2;
+    overflow-wrap: break-word;
+    font-size: 2rem;
+    font-size: clamp(2rem, 1.375rem + 3vw, 4.375rem);
 
     .arrow {
       display: inline-block;
