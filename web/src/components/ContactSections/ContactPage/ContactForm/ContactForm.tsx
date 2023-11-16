@@ -28,6 +28,7 @@ export default function ContactForm() {
             type="text"
             placeholder="Your e-mail"
             value={email}
+            required
             onChange={(event) => handleChange(setEmail, event.target.value)}
           ></input>
           <input
@@ -35,6 +36,7 @@ export default function ContactForm() {
             type="text"
             placeholder="What's the matter?"
             value={subject}
+            required
             onChange={(event) => handleChange(setSubject, event.target.value)}
           ></input>
         </div>
@@ -42,6 +44,7 @@ export default function ContactForm() {
           className={styles.content}
           placeholder="What do you need to tell me?"
           value={content}
+          required
           onChange={(event) => handleChange(setContent, event.target.value)}
         ></textarea>
         <div className={styles.submitButton}>
