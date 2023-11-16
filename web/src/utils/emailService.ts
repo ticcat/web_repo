@@ -1,7 +1,8 @@
 export function sendEmail(data: {email: string, subject: string, content: string}) {
-  const {email, subject, content} = data;
-
-    console.log("Email: " + email);
-    console.log("Subject: " + subject);
-    console.log("Content: " + content);
+  fetch("/api/contact", {
+    method: "POST",
+    body: JSON.stringify(data)
+  }).then((res) => res.json())
+  .then((data) => alert(data))
+  .catch((e)=> alert("Error " + e.message));
 }
