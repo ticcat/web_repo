@@ -21,7 +21,7 @@
 
 .h4, .entryContainer .titleAndArrow .entryTitle, .entryContainer .titleAndArrow .arrowContainer .arrow {
   font-size: 1.875rem;
-  font-size: clamp(1.875rem, 1.640625rem + 0.625vw, 2.1875rem);
+  font-size: clamp(1.875rem, 1.64rem + 0.625vw, 2.1875rem);
 }
 
 .h5 {
