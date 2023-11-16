@@ -49,7 +49,15 @@
       .entryText {
         @extend .b1;
         width: 50%;
-        min-width: 400px;
+      }
+
+      @media screen and (max-width: 1050px) {
+        .entryHeader {
+          width: 100%;
+        }
+        .entryText {
+          width: 100%;
+        }
       }
     }
   }

@@ -28,19 +28,19 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .container .links .separator, .sub1 {
+.subtitle, .sub3, .sub2, .sub1, .form .submitButton .submitText {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
   color: rgb(var(--head-sub-rgb));
 }
 
-.sub1 {
+.sub1, .form .submitButton .submitText {
   font-size: 1.25rem;
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.sub2, .container .links .separator {
+.sub2 {
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
@@ -49,13 +49,13 @@
   font-size: 18px;
 }
 
-.body, .b2, .b1 {
+.body, .b2, .b1, .form * {
   font-family: "Manrope", sans-serif;
   font-weight: 400;
   color: rgb(var(--body-rgb));
 }
 
-.b1 {
+.b1, .form * {
   font-size: 0.8125rem;
   font-size: clamp(0.8125rem, 0.671875rem + 0.375vw, 1rem);
 }
@@ -64,7 +64,7 @@
   font-size: 14px;
 }
 
-.container {
+.form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,8 +73,22 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
+  width: 60vw;
 }
-.container .links {
+.form * {
+  background-color: transparent;
+  border: none;
+}
+.form *:hover {
+  border: none;
+}
+.form *:active {
+  border: none;
+}
+.form *:focus {
+  outline: none;
+}
+.form .emailSubject {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,16 +96,47 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 15px;
+  gap: 30px;
 }
-.container .links .link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}/*# sourceMappingURL=ContactButtons.module.css.map */
+.form .emailSubject * {
+  padding: 0 5px 10px 5px;
+}
+.form .emailSubject .email {
+  -webkit-box-flex: 0.5;
+      -ms-flex: 0.5 0.5 auto;
+          flex: 0.5 0.5 auto;
+  border-bottom: 1px solid rgb(var(--accent-1-rgb));
+}
+.form .emailSubject .email:focus {
+  border-bottom: 1px solid rgb(var(--accent-2-rgb));
+}
+.form .emailSubject .subject {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 2 auto;
+          flex: 2 2 auto;
+  border-bottom: 1px solid rgb(var(--accent-1-rgb));
+}
+.form .emailSubject .subject:focus {
+  border-bottom: 1px solid rgb(var(--accent-2-rgb));
+}
+.form .content {
+  min-height: 125px;
+  border-bottom: 1px solid rgb(var(--accent-1-rgb));
+  padding: 0 5px 10px 5px;
+  resize: none;
+}
+.form .content:focus {
+  border-bottom: 1px solid rgb(var(--accent-2-rgb));
+}
+.form .submitButton {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+.form .submitButton .submitText {
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .form {
+    width: 100%;
+  }
+}/*# sourceMappingURL=ContactForm.module.css.map */

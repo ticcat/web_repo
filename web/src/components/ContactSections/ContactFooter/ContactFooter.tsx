@@ -7,7 +7,7 @@ export default function ContactFooter() {
       <div className={styles.title}>
         CONTACT ME <span className={styles.arrow}>↓</span>
       </div>
-      <ContactButtons></ContactButtons>
+      <ContactButtons contactLink></ContactButtons>
     </div>
   );
 }

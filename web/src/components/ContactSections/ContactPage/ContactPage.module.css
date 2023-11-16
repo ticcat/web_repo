@@ -1,11 +1,11 @@
-.header, .h5, .h4, .h3, .h2, .h1 {
+.header, .h5, .h4, .h3, .h2, .h1, .container .title {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   letter-spacing: 0.015rem;
   color: rgb(var(--head-sub-rgb));
 }
 
-.h1 {
+.h1, .container .title {
   font-size: 3.125rem;
   font-size: clamp(3.125rem, 0.40625rem + 7.25vw, 6.75rem);
 }
@@ -28,19 +28,19 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .sub1, .toTopBtn .toTopBtnText {
+.subtitle, .sub3, .sub2, .container .thanksText, .sub1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
   color: rgb(var(--head-sub-rgb));
 }
 
-.sub1, .toTopBtn .toTopBtnText {
+.sub1 {
   font-size: 1.25rem;
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.sub2 {
+.sub2, .container .thanksText {
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
@@ -64,9 +64,26 @@
   font-size: 14px;
 }
 
-.toTopBtn {
-  position: fixed;
-  bottom: 50px;
-  left: 75px;
-  z-index: 10;
-}/*# sourceMappingURL=ToTopButton.module.css.map */
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 30px;
+  height: 100vh;
+  margin: 0 calc(var(--root-layout-padding) * 4);
+  padding: calc(var(--root-layout-padding) * 2) 0;
+  padding-top: calc(var(--root-layout-padding) * 8);
+}
+.container .thanksText {
+  -ms-flex-item-align: center;
+      align-self: center;
+}/*# sourceMappingURL=ContactPage.module.css.map */

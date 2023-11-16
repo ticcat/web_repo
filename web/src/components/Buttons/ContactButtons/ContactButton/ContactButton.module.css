@@ -28,19 +28,19 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .sub1, .toTopBtn .toTopBtnText {
+.subtitle, .sub3, .sub2, .text, .sub1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
   color: rgb(var(--head-sub-rgb));
 }
 
-.sub1, .toTopBtn .toTopBtnText {
+.sub1 {
   font-size: 1.25rem;
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.sub2 {
+.sub2, .text {
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
@@ -64,9 +64,11 @@
   font-size: 14px;
 }
 
-.toTopBtn {
-  position: fixed;
-  bottom: 50px;
-  left: 75px;
-  z-index: 10;
-}/*# sourceMappingURL=ToTopButton.module.css.map */
+.text {
+  text-decoration: none;
+}
+.text .arrow {
+  display: inline-block;
+  -webkit-transform: scale(1.5) translateY(-1px);
+          transform: scale(1.5) translateY(-1px);
+}/*# sourceMappingURL=ContactButton.module.css.map */
