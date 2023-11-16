@@ -3,8 +3,13 @@ import SocialMediaButtons from "@/components/Buttons/ContactButtons/SMNButtons/S
 import CVButton from "@/components/Buttons/ContactButtons/CVButton/CVButton";
 import styles from "./ContactButtons.module.css";
 import PhoneButton from "./PhoneButton/PhoneButton";
+import ContactButton from "./ContactButton/ContactButton";
 
-export default function ContactButtons() {
+export default function ContactButtons({
+  contactLink,
+}: {
+  contactLink?: boolean;
+}) {
   return (
     <div className={styles.container}>
       <div className={styles.links}>
@@ -14,6 +19,8 @@ export default function ContactButtons() {
         <CVButton></CVButton>
         <span className={styles.separator}>//</span>
         <PhoneButton></PhoneButton>
+        <span className={styles.separator}>//</span>
+        {contactLink && <ContactButton></ContactButton>}
       </div>
       <div className={styles.smnButtons}>
         <SocialMediaButtons></SocialMediaButtons>
