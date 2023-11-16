@@ -13,14 +13,24 @@ export default function ContactButtons({
   return (
     <div className={styles.container}>
       <div className={styles.links}>
-        <span className={styles.separator}>//</span>
-        <EmailButton></EmailButton>
-        <span className={styles.separator}>//</span>
-        <CVButton></CVButton>
-        <span className={styles.separator}>//</span>
-        <PhoneButton></PhoneButton>
-        <span className={styles.separator}>//</span>
-        {contactLink && <ContactButton></ContactButton>}
+        <div className={styles.link}>
+          <span className={styles.separator}>//&nbsp;</span>
+          <EmailButton></EmailButton>
+        </div>
+        <div className={styles.link}>
+          <span className={styles.separator}>//&nbsp;</span>
+          <PhoneButton></PhoneButton>
+        </div>
+        <div className={styles.link}>
+          <span className={styles.separator}>//&nbsp;</span>
+          <CVButton></CVButton>
+        </div>
+        {contactLink && (
+          <div className={styles.link}>
+            <span className={styles.separator}>//&nbsp;</span>
+            <ContactButton></ContactButton>
+          </div>
+        )}
       </div>
       <div className={styles.smnButtons}>
         <SocialMediaButtons></SocialMediaButtons>
