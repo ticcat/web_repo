@@ -15,7 +15,11 @@ export default function ContactForm() {
   };
 
   const handleSubmit = (event: FormEvent) => {
-    sendEmail({ email: email, subject: subject, content: content });
+    sendEmail({ email: email, subject: subject, content: content }).then(() => {
+      setEmail("");
+      setSubject("");
+      setContent("");
+    });
     event.preventDefault();
   };
 
