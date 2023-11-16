@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import styles from "./ContactForm.module.css";
 import Button from "@/components/Buttons/Button/Button";
+import { sendEmail } from "@/utils/emailService";
 
 export default function ContactForm() {
   const [email, setEmail] = useState("");
@@ -14,9 +15,7 @@ export default function ContactForm() {
   };
 
   const handleSubmit = (event: FormEvent) => {
-    console.log("Email: " + email);
-    console.log("Subject: " + subject);
-    console.log("Content: " + content);
+    sendEmail({ email: email, subject: subject, content: content });
     event.preventDefault();
   };
 
