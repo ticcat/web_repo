@@ -2,17 +2,36 @@
 
 .links {
   display: flex;
-  flex-direction: row;
   gap: 5px;
   z-index: 1;
 
   .navItem {
-    @extend .sub2;
-    text-decoration: none;
-    color: rgb(var(--head-sub-rgb));
+    flex-direction: row-reverse;
+
+    .navText {
+      @extend .sub2;
+      text-decoration: none;
+      color: rgb(var(--head-sub-rgb));
+    }
+
+    .separator {
+      @extend .sub2;
+    }
   }
 
-  .separator {
-    @extend .sub2;
+  .navLink {
+    @extend .navItem;
+  }
+
+  .navMenuButton {
+    @extend .navItem;
+  }
+
+  .visible {
+    display: flex;
+  }
+
+  .hidden {
+    display: none;
   }
 }

@@ -28,7 +28,7 @@
   font-size: 25px;
 }
 
-.subtitle, .sub3, .sub2, .links .navItem, .links .separator, .sub1 {
+.subtitle, .sub3, .sub2, .links .navItem .navText, .links .navItem .separator, .links .navLink .navText, .links .navLink .separator, .links .navMenuButton .navText, .links .navMenuButton .separator, .sub1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -40,7 +40,7 @@
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.sub2, .links .navItem, .links .separator {
+.sub2, .links .navItem .navText, .links .navItem .separator, .links .navLink .navText, .links .navLink .separator, .links .navMenuButton .navText, .links .navMenuButton .separator {
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
@@ -68,14 +68,24 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   gap: 5px;
   z-index: 1;
 }
-.links .navItem {
+.links .navItem, .links .navMenuButton, .links .navLink {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.links .navItem .navText, .links .navMenuButton .navText, .links .navLink .navText {
   text-decoration: none;
   color: rgb(var(--head-sub-rgb));
+}
+.links .visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.links .hidden {
+  display: none;
 }/*# sourceMappingURL=NavBar.module.css.map */
