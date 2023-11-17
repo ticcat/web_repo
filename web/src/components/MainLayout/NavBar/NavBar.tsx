@@ -58,7 +58,7 @@ export default function NavBar() {
           <Fragment>
             <div className={`${styles.navMenuButton} ${styles.visible}`}>
               <span className={styles.separator}>&nbsp;//</span>
-              <Button clickHandler={() => setOpen(!open)}>
+              <Button clickHandler={() => setOpen(!open)} isActive={open}>
                 <div className={styles.navText}>{open ? "Close" : "Menu"}</div>
               </Button>
               <span className={styles.separator}>//&nbsp;</span>
@@ -67,20 +67,22 @@ export default function NavBar() {
           {buttons.map((button) => {
             return (
               <Fragment key={button.name}>
-                <div
-                  className={`${styles.navLink} ${
-                    open ? styles.openAnim : styles.closeAnim
-                  }`}
-                >
-                  <span className={styles.separator}>&nbsp;//</span>
-                  <Button
-                    clickHandler={() => {}}
-                    isActive={pathname === button.url}
+                <div className={styles.navLinkContainer}>
+                  <div
+                    className={`${styles.navLink} ${
+                      open ? styles.openAnim : styles.closeAnim
+                    }`}
                   >
-                    <Link className={styles.navText} href={button.url}>
-                      {button.name}
-                    </Link>
-                  </Button>
+                    <span className={styles.separator}>&nbsp;//</span>
+                    <Button
+                      clickHandler={() => {}}
+                      isActive={pathname === button.url}
+                    >
+                      <Link className={styles.navText} href={button.url}>
+                        {button.name}
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </Fragment>
             );

@@ -6,6 +6,7 @@
   z-index: 1;
 
   .navItem {
+    display: flex;
     flex-direction: row-reverse;
 
     .navText {
@@ -19,15 +20,21 @@
     }
   }
 
+  .navLinkContainer {
+    overflow: hidden;
+    height: max-content;
+  }
+
   .navLink {
     @extend .navItem;
   }
 
   .navMenuButton {
     @extend .navItem;
+    text-align: center;
 
     .navText {
-      min-width: 50px;
+      min-width: 100px;
     }
   }
 
@@ -60,33 +67,27 @@
 
 @keyframes showNavLink {
   0% {
-    display: flex;
-    opacity: 0;
+    // opacity: 0;
     transform: translateY(-100%);
   }
   75% {
-    display: flex;
     transform: translateY(0);
   }
   100% {
-    display: flex;
-    opacity: 1;
+    // opacity: 1;
   }
 }
 
 @keyframes hideNavLink {
   0% {
-    display: flex;
-    opacity: 1;
+    // opacity: 1;
     transform: translateY(0);
   }
   75% {
-    display: flex;
-    opacity: 0;
+    // opacity: 0;
   }
   100% {
-    display: none;
-    opacity: 0;
+    // opacity: 0;
     transform: translateY(-100%);
   }
 }

@@ -72,6 +72,9 @@
   z-index: 1;
 }
 .links .navItem, .links .navMenuButton, .links .navLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
@@ -81,8 +84,17 @@
   text-decoration: none;
   color: rgb(var(--head-sub-rgb));
 }
+.links .navLinkContainer {
+  overflow: hidden;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.links .navMenuButton {
+  text-align: center;
+}
 .links .navMenuButton .navText {
-  min-width: 50px;
+  min-width: 100px;
 }
 .links .openAnim {
   will-change: transform;
@@ -119,86 +131,41 @@
 
 @-webkit-keyframes showNavLink {
   0% {
-    display: -webkit-box;
-    display: flex;
-    opacity: 0;
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
   }
   75% {
-    display: -webkit-box;
-    display: flex;
     -webkit-transform: translateY(0);
             transform: translateY(0);
-  }
-  100% {
-    display: -webkit-box;
-    display: flex;
-    opacity: 1;
   }
 }
 
 @keyframes showNavLink {
   0% {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    opacity: 0;
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
   }
   75% {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-transform: translateY(0);
             transform: translateY(0);
-  }
-  100% {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    opacity: 1;
   }
 }
 @-webkit-keyframes hideNavLink {
   0% {
-    display: -webkit-box;
-    display: flex;
-    opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
-  75% {
-    display: -webkit-box;
-    display: flex;
-    opacity: 0;
-  }
   100% {
-    display: none;
-    opacity: 0;
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
   }
 }
 @keyframes hideNavLink {
   0% {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
-  75% {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    opacity: 0;
-  }
   100% {
-    display: none;
-    opacity: 0;
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
   }
