@@ -247,10 +247,10 @@
   display: grid;
   grid-template-rows: -webkit-max-content 1fr;
   grid-template-rows: max-content 1fr;
-  gap: 70px;
+  gap: 50px;
   height: 100vh;
-  margin: 0 calc(var(--root-layout-padding) * 4);
-  padding: calc(var(--root-layout-padding) * 4) 0;
+  margin: var(--page-section-margin);
+  padding: var(--page-section-padding);
   overflow: hidden;
 }
 .container .title {
@@ -261,7 +261,7 @@
   grid-template-rows: -webkit-max-content 1fr;
   grid-template-rows: max-content 1fr;
   width: 100%;
-  height: 100%;
+  height: 450px;
 }
 .container .worksContainer .list {
   display: -webkit-box;
@@ -276,7 +276,12 @@
           justify-content: stretch;
   gap: 3rem;
   margin: 2rem 0;
-  height: 45vh;
+  height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+@media screen and (max-width: 600px) {
+  .container .worksContainer {
+    height: 550px;
+  }
 }/*# sourceMappingURL=Work.module.css.map */

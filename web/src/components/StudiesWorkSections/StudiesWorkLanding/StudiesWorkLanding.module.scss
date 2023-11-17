@@ -16,8 +16,8 @@
   justify-content: center;
   gap: 45px;
   height: 100vh;
-  margin: 0 calc(var(--root-layout-padding) * 4);
-  padding: calc(var(--root-layout-padding) * 4) 0;
+  margin: var(--page-section-margin);
+  padding: var(--page-section-padding);
   overflow: visible;
 
   .title {

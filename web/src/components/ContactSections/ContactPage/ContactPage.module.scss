@@ -7,7 +7,7 @@
   justify-content: space-around;
   gap: 30px;
   height: 100vh;
-  margin: 0 calc(var(--root-layout-padding) * 4);
+  margin: var(--page-section-margin);
   padding: calc(var(--root-layout-padding) * 2) 0;
   padding-top: calc(var(--root-layout-padding) * 8);
 

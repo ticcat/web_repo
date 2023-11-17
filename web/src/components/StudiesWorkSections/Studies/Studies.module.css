@@ -72,10 +72,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 70px;
+  gap: 50px;
   height: 100%;
-  margin: 0 calc(var(--root-layout-padding) * 4);
-  padding: calc(var(--root-layout-padding) * 4) 0;
+  margin: var(--page-section-margin);
+  padding: var(--page-section-padding);
 }
 .container .entries {
   display: -webkit-box;
