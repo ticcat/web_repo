@@ -8,5 +8,10 @@
 
   .toTopBtnText {
     @extend .sub1;
+
+    .arrow {
+      display: inline-block;
+      transform: scale(1.5) translateY(-1px);
+    }
   }
 }

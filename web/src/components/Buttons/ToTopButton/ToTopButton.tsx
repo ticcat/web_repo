@@ -29,8 +29,11 @@ export default function ToTopButton() {
             clickHandler={() =>
               animateScroll.scrollToTop({ smooth: true, duration: 300 })
             }
+            isActive
           >
-            <div className={styles.toTopBtnText}>To Top</div>
+            <div className={styles.toTopBtnText}>
+              To Top <span className={styles.arrow}>↑</span>
+            </div>
           </Button>
         </AnimatedElement>
       )}
