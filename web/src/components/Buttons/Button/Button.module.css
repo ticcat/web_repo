@@ -4,6 +4,7 @@
   width: -moz-max-content;
   width: max-content;
   overflow: hidden;
+  cursor: pointer;
 }
 .container .content {
   position: relative;
