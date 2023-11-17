@@ -32,7 +32,7 @@ export default function NavBar() {
   return (
     <>
       {!compressed ? (
-        <div className={styles.links} style={{ flexDirection: "row" }}>
+        <div className={`${styles.links} ${styles.flexRow}`}>
           {buttons.map((button) => {
             return (
               <Fragment key={button.name}>
@@ -52,7 +52,7 @@ export default function NavBar() {
           })}
         </div>
       ) : (
-        <div className={styles.links} style={{ flexDirection: "column" }}>
+        <div className={`${styles.links} ${styles.flexColumn}`}>
           <Fragment>
             <div className={`${styles.navMenuButton} ${styles.visible}`}>
               <span className={styles.separator}>&nbsp;//</span>

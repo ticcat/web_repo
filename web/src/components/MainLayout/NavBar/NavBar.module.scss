@@ -23,6 +23,14 @@
     @extend .navItem;
   }
 
+  .navMenuButton {
+    @extend .navItem;
+
+    .navText {
+      min-width: 50px;
+    }
+  }
+
   .openAnim {
     will-change: transform;
     animation: showNavLink 0.2s ease-out forwards;
@@ -33,14 +41,6 @@
     animation: hideNavLink 0.2s ease-out forwards;
   }
 
-  .navMenuButton {
-    @extend .navItem;
-
-    .navText {
-      min-width: 50px;
-    }
-  }
-
   .visible {
     display: flex;
   }
@@ -48,6 +48,14 @@
   .hidden {
     display: none;
   }
+}
+
+.flexRow {
+  flex-direction: row;
+}
+
+.flexColumn {
+  flex-direction: column;
 }
 
 @keyframes showNavLink {

@@ -81,6 +81,9 @@
   text-decoration: none;
   color: rgb(var(--head-sub-rgb));
 }
+.links .navMenuButton .navText {
+  min-width: 50px;
+}
 .links .openAnim {
   will-change: transform;
   -webkit-animation: showNavLink 0.2s ease-out forwards;
@@ -91,9 +94,6 @@
   -webkit-animation: hideNavLink 0.2s ease-out forwards;
           animation: hideNavLink 0.2s ease-out forwards;
 }
-.links .navMenuButton .navText {
-  min-width: 50px;
-}
 .links .visible {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,6 +101,20 @@
 }
 .links .hidden {
   display: none;
+}
+
+.flexRow {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flexColumn {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @-webkit-keyframes showNavLink {
