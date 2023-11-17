@@ -40,12 +40,12 @@
 
   .openAnim {
     will-change: transform;
-    animation: showNavLink 0.2s ease-out forwards;
+    animation: showNavLink 0.25s var(--fill-anim-timing-func) forwards;
   }
 
   .closeAnim {
     will-change: transform;
-    animation: hideNavLink 0.2s ease-out forwards;
+    animation: hideNavLink 0.25s var(--fill-anim-timing-func) forwards;
   }
 
   .visible {
@@ -67,27 +67,22 @@
 
 @keyframes showNavLink {
   0% {
-    // opacity: 0;
     transform: translateY(-100%);
   }
   75% {
     transform: translateY(0);
   }
   100% {
-    // opacity: 1;
   }
 }
 
 @keyframes hideNavLink {
   0% {
-    // opacity: 1;
     transform: translateY(0);
   }
   75% {
-    // opacity: 0;
   }
   100% {
-    // opacity: 0;
     transform: translateY(-100%);
   }
 }

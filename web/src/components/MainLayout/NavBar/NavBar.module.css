@@ -98,13 +98,13 @@
 }
 .links .openAnim {
   will-change: transform;
-  -webkit-animation: showNavLink 0.2s ease-out forwards;
-          animation: showNavLink 0.2s ease-out forwards;
+  -webkit-animation: showNavLink 0.25s var(--fill-anim-timing-func) forwards;
+          animation: showNavLink 0.25s var(--fill-anim-timing-func) forwards;
 }
 .links .closeAnim {
   will-change: transform;
-  -webkit-animation: hideNavLink 0.2s ease-out forwards;
-          animation: hideNavLink 0.2s ease-out forwards;
+  -webkit-animation: hideNavLink 0.25s var(--fill-anim-timing-func) forwards;
+          animation: hideNavLink 0.25s var(--fill-anim-timing-func) forwards;
 }
 .links .visible {
   display: -webkit-box;
