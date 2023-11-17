@@ -81,6 +81,19 @@
   text-decoration: none;
   color: rgb(var(--head-sub-rgb));
 }
+.links .openAnim {
+  will-change: transform;
+  -webkit-animation: showNavLink 0.2s ease-out forwards;
+          animation: showNavLink 0.2s ease-out forwards;
+}
+.links .closeAnim {
+  will-change: transform;
+  -webkit-animation: hideNavLink 0.2s ease-out forwards;
+          animation: hideNavLink 0.2s ease-out forwards;
+}
+.links .navMenuButton .navText {
+  min-width: 50px;
+}
 .links .visible {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -88,4 +101,91 @@
 }
 .links .hidden {
   display: none;
+}
+
+@-webkit-keyframes showNavLink {
+  0% {
+    display: -webkit-box;
+    display: flex;
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  75% {
+    display: -webkit-box;
+    display: flex;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    display: -webkit-box;
+    display: flex;
+    opacity: 1;
+  }
+}
+
+@keyframes showNavLink {
+  0% {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  75% {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes hideNavLink {
+  0% {
+    display: -webkit-box;
+    display: flex;
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  75% {
+    display: -webkit-box;
+    display: flex;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+@keyframes hideNavLink {
+  0% {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  75% {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
 }/*# sourceMappingURL=NavBar.module.css.map */

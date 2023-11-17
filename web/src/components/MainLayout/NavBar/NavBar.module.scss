@@ -23,8 +23,22 @@
     @extend .navItem;
   }
 
+  .openAnim {
+    will-change: transform;
+    animation: showNavLink 0.2s ease-out forwards;
+  }
+
+  .closeAnim {
+    will-change: transform;
+    animation: hideNavLink 0.2s ease-out forwards;
+  }
+
   .navMenuButton {
     @extend .navItem;
+
+    .navText {
+      min-width: 50px;
+    }
   }
 
   .visible {
@@ -33,5 +47,38 @@
 
   .hidden {
     display: none;
+  }
+}
+
+@keyframes showNavLink {
+  0% {
+    display: flex;
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  75% {
+    display: flex;
+    transform: translateY(0);
+  }
+  100% {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+@keyframes hideNavLink {
+  0% {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    display: flex;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: translateY(-100%);
   }
 }

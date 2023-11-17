@@ -14,7 +14,9 @@ export default function NavBar() {
     { name: "Contact", url: "/contact" },
   ];
 
-  const [compressed, setCompressed] = useState(window.innerWidth <= 600);
+  const [compressed, setCompressed] = useState(
+    typeof window !== "undefined" ? window.innerWidth <= 600 : true
+  );
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -65,7 +67,7 @@ export default function NavBar() {
               <Fragment key={button.name}>
                 <div
                   className={`${styles.navLink} ${
-                    open ? styles.visible : styles.hidden
+                    open ? styles.openAnim : styles.closeAnim
                   }`}
                 >
                   <span className={styles.separator}>&nbsp;//</span>
