@@ -15,17 +15,19 @@ export default function NavBar() {
   ];
 
   const [compressed, setCompressed] = useState(
-    typeof window !== "undefined" ? window.innerWidth <= 600 : true
+    typeof window !== "undefined"
+      ? window.innerWidth <= window.innerHeight
+      : true
   );
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
-      setCompressed(window.innerWidth <= 600);
+      setCompressed(window.innerWidth <= window.innerHeight);
     });
 
     return window.removeEventListener("resize", () => {
-      setCompressed(window.innerWidth <= 600);
+      setCompressed(window.innerWidth <= window.innerHeight);
     });
   });
 
