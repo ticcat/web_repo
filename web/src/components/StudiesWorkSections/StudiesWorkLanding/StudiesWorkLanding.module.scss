@@ -18,6 +18,7 @@
   height: 100vh;
   margin: var(--page-section-margin);
   padding: var(--page-section-padding);
+  padding-top: calc(var(--root-layout-padding) * 10);
   overflow: visible;
 
   .title {
@@ -55,6 +56,13 @@
 
     .textContainer {
       width: 100%;
+      gap: 50px;
+      flex-direction: column;
+
+      .text {
+        gap: 10px;
+        width: 100%;
+      }
     }
   }
 }
