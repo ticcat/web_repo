@@ -5,8 +5,8 @@
   grid-template-rows: max-content 1fr;
   gap: 35px;
   height: max-content;
-  margin: 0 calc(var(--root-layout-padding) * 4);
-  padding: 0 0 calc(var(--root-layout-padding) * 4) 0;
+  margin: var(--page-section-margin);
+  padding: var(--page-section-padding);
   overflow: hidden;
 
   .title {

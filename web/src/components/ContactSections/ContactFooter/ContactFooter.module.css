@@ -73,8 +73,8 @@
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  margin: 0 calc(var(--root-layout-padding) * 4);
-  padding: 0 0 calc(var(--root-layout-padding) * 4) 0;
+  margin: var(--page-section-margin);
+  padding: var(--page-section-padding);
   overflow: hidden;
 }
 .container .title {
