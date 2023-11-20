@@ -70,7 +70,7 @@
   display: -ms-flexbox;
   display: flex;
   gap: 5px;
-  z-index: 1;
+  z-index: 5;
 }
 .links .navItem, .links .navMenuButton, .links .navLink {
   display: -webkit-box;
