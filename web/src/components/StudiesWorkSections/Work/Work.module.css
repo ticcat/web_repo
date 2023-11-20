@@ -1,4 +1,4 @@
-.header, .h5, .h4, .entryContainer .titleAndArrow .entryTitle, .entryContainer .titleAndArrow .arrowContainer .arrow, .h3, .h2, .container .title, .h1 {
+.header, .h5, .entryContainer .titleAndArrow .entryTitle, .h4, .entryContainer .titleAndArrow .arrowContainer .arrow, .h3, .h2, .container .title, .h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   letter-spacing: 0.015rem;
@@ -19,13 +19,14 @@
   font-size: 55px;
 }
 
-.h4, .entryContainer .titleAndArrow .entryTitle, .entryContainer .titleAndArrow .arrowContainer .arrow {
+.h4, .entryContainer .titleAndArrow .arrowContainer .arrow {
   font-size: 1.875rem;
   font-size: clamp(1.875rem, 1.64rem + 0.625vw, 2.1875rem);
 }
 
-.h5 {
-  font-size: 25px;
+.h5, .entryContainer .titleAndArrow .entryTitle {
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
 .subtitle, .sub3, .sub2, .filters, .entryContainer .durationAndTech .techStack, .entryContainer .durationAndTech .duration, .sub1 {
@@ -82,6 +83,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -90,7 +93,9 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 30px;
-  min-height: 100px;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
   padding: 0 0 10px;
   margin-right: 20px;
   overflow: hidden;
@@ -155,7 +160,14 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 100%;
+  gap: 10px;
+}
+.entryContainer .durationAndTech .techStack {
+  width: 100%;
+  text-align: end;
+}
+.entryContainer .durationAndTech .duration {
+  width: 100%;
 }
 .entryContainer:hover {
   cursor: pointer;
@@ -171,6 +183,25 @@
 .entryContainer:hover .arrowContainer .arrow {
   -webkit-animation: arrowAnimation 0.2s var(--fill-anim-timing-func) 0.35s forwards;
           animation: arrowAnimation 0.2s var(--fill-anim-timing-func) 0.35s forwards;
+}
+@media screen and (max-width: 600px) {
+  .entryContainer .arrowContainer {
+    overflow: visible;
+  }
+  .entryContainer .durationAndTech {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .entryContainer .durationAndTech .techStack {
+    text-align: start;
+  }
 }
 @-webkit-keyframes borderAnimation {
   0% {
@@ -271,9 +302,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
   gap: 3rem;
   margin: 2rem 0;
   height: 100%;
