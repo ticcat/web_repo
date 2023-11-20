@@ -89,6 +89,6 @@
 }
 @media screen and (max-width: 600px) {
   .container {
-    padding: 0 0 calc(var(--root-layout-padding) * 6) 0;
+    padding-bottom: calc(var(--root-layout-padding) * 6);
   }
 }/*# sourceMappingURL=ContactFooter.module.css.map */
