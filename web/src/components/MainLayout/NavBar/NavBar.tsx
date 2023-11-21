@@ -2,24 +2,54 @@
 
 import Button from "@/components/Buttons/Button/Button";
 import styles from "./NavBar.module.css";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import LinkButton from "@/components/Buttons/LinkButton/LinkButton";
+import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
+import { usePathname, useRouter } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
+
+export type Page = {
+  label: string;
+  href: string;
+};
+
+const pages: Page[] = [
+  { label: "Home", href: "/" },
+  { label: "Studies & Exp", href: "/studiesnexp" },
+  { label: "Contact", href: "/contact" },
+];
+
+function NavManager({ pageToLoad }: { pageToLoad: Page }) {
+  const router = useRouter();
+  const path = usePathname();
+
+  const [isLoading, setIsLoading] = useState(
+    pageToLoad.href !== path && pageToLoad.href !== ""
+  );
+
+  if (pageToLoad.href !== path && isLoading) {
+    setTimeout(() => router.push(pageToLoad.href), 1000);
+    setTimeout(() => setIsLoading(false), 1450);
+  }
+
+  useEffect(() => {
+    setIsLoading(true);
+  }, [pageToLoad]);
+
+  return (
+    <LoadingScreen loading={isLoading} title={pageToLoad.label}></LoadingScreen>
+  );
+}
 
 export default function NavBar() {
   const pathname = usePathname();
-  const buttons = [
-    { name: "Home", url: "/" },
-    { name: "Studies & Exp", url: "/studiesnexp" },
-    { name: "Contact", url: "/contact" },
-  ];
-
   const [compressed, setCompressed] = useState(
     typeof window !== "undefined"
       ? window.innerWidth <= window.innerHeight
       : true
   );
   const [open, setOpen] = useState(false);
+
+  const [pageToLoad, setPageToLoad] = useState<Page>({ label: "", href: "" });
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -33,21 +63,21 @@ export default function NavBar() {
 
   return (
     <>
+      <NavManager pageToLoad={pageToLoad}></NavManager>
       {!compressed ? (
         <div className={`${styles.links} ${styles.flexRow}`}>
-          {buttons.map((button) => {
+          {pages.map((page) => {
             return (
-              <Fragment key={button.name}>
+              <Fragment key={page.label}>
                 <div className={`${styles.navLink} ${styles.visible}`}>
                   <span className={styles.separator}>&nbsp;//</span>
-                  <Button
-                    clickHandler={() => {}}
-                    isActive={pathname === button.url}
+                  <LinkButton
+                    page={page}
+                    setPageToLoad={setPageToLoad}
+                    isActive={pathname === page.href}
                   >
-                    <Link className={styles.navText} href={button.url}>
-                      <div>{button.name}</div>
-                    </Link>
-                  </Button>
+                    <div className={styles.navText}>{page.label}</div>
+                  </LinkButton>
                 </div>
               </Fragment>
             );
@@ -64,9 +94,9 @@ export default function NavBar() {
               <span className={styles.separator}>//&nbsp;</span>
             </div>
           </Fragment>
-          {buttons.map((button) => {
+          {pages.map((page) => {
             return (
-              <Fragment key={button.name}>
+              <Fragment key={page.label}>
                 <div className={styles.navLinkContainer}>
                   <div
                     className={`${styles.navLink} ${
@@ -74,14 +104,13 @@ export default function NavBar() {
                     }`}
                   >
                     <span className={styles.separator}>&nbsp;//</span>
-                    <Button
-                      clickHandler={() => {}}
-                      isActive={pathname === button.url}
+                    <LinkButton
+                      page={page}
+                      setPageToLoad={setPageToLoad}
+                      isActive={pathname === page.href}
                     >
-                      <Link className={styles.navText} href={button.url}>
-                        {button.name}
-                      </Link>
-                    </Button>
+                      <div className={styles.navText}>{page.label}</div>
+                    </LinkButton>
                   </div>
                 </div>
               </Fragment>
