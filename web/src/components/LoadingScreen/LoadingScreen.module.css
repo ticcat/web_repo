@@ -77,20 +77,14 @@
 }
 .container.show * {
   will-change: transform;
-  -webkit-animation: show 0.5s var(--fill-anim-timing-func) forwards;
-          animation: show 0.5s var(--fill-anim-timing-func) forwards;
+  -webkit-animation: show 1s var(--fill-anim-timing-func) forwards;
+          animation: show 1s var(--fill-anim-timing-func) forwards;
   bottom: 0;
 }
 .container.show .screen {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
   opacity: 0;
-}
-.container.show .screen .title h1 {
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
-  -webkit-animation-delay: 0.75s;
-          animation-delay: 0.75s;
 }
 .container.show .fill1 {
   -webkit-animation-delay: 0.25s;
@@ -98,25 +92,25 @@
   opacity: 0;
 }
 .container.show .fill2 {
-  -webkit-animation-delay: 0.15s;
-          animation-delay: 0.15s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
   opacity: 0;
 }
 .container.hide * {
   will-change: transform;
   -webkit-animation: hide 1s var(--fill-anim-timing-func) forwards;
           animation: hide 1s var(--fill-anim-timing-func) forwards;
-  -webkit-animation-delay: 2.2s;
-          animation-delay: 2.2s;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
   top: 0;
 }
 .container.hide .fill1 {
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
 }
 .container.hide .fill2 {
-  -webkit-animation-delay: 2.6s;
-          animation-delay: 2.6s;
+  -webkit-animation-delay: 1.45s;
+          animation-delay: 1.45s;
 }
 .container .screen {
   position: absolute;

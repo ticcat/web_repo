@@ -1,8 +1,8 @@
 @use "../../globalStyles/globalClasses";
 
 $fill-function: var(--fill-anim-timing-func);
+$show-anim-params: show 1s $fill-function forwards;
 $hide-anim-params: hide 1s $fill-function forwards;
-$show-anim-params: show 0.5s $fill-function forwards;
 
 .container {
   position: fixed;
@@ -22,13 +22,13 @@ $show-anim-params: show 0.5s $fill-function forwards;
     }
 
     .screen {
-      animation-delay: 0.3s;
+      animation-delay: 0.45s;
       opacity: 0;
 
-      .title h1 {
-        transform: translateY(100%);
-        animation-delay: 0.75s;
-      }
+      // .title h1 {
+      //   transform: translateY(100%);
+      //   animation-delay: 0.75s;
+      // }
     }
 
     .fill1 {
@@ -37,7 +37,7 @@ $show-anim-params: show 0.5s $fill-function forwards;
     }
 
     .fill2 {
-      animation-delay: 0.15s;
+      animation-delay: 0.2s;
       opacity: 0;
     }
   }
@@ -46,16 +46,16 @@ $show-anim-params: show 0.5s $fill-function forwards;
     * {
       will-change: transform;
       animation: $hide-anim-params;
-      animation-delay: 2.2s;
+      animation-delay: 1.2s;
       top: 0;
     }
 
     .fill1 {
-      animation-delay: 2.5s;
+      animation-delay: 1.4s;
     }
 
     .fill2 {
-      animation-delay: 2.6s;
+      animation-delay: 1.45s;
     }
   }
 
