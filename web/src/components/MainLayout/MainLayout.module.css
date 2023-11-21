@@ -114,6 +114,7 @@
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  z-index: 50;
 }
 .container .content {
   width: 100%;

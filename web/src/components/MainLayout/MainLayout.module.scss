@@ -72,6 +72,7 @@ $corner-square-separation: calc($corner-square-size * 3);
     gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
     height: max-content;
     width: max-content;
+    z-index: 50;
   }
 
   .content {
