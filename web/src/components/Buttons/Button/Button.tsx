@@ -39,7 +39,7 @@ export default function Button({
   tooltip?: string;
   isActive?: boolean;
 }) {
-  const prefersMotion = localStorage.getItem("prefers-motion") === "true";
+  // const prefersMotion = localStorage.getItem("prefers-motion") === "true";
 
   return (
     <>
@@ -48,7 +48,7 @@ export default function Button({
           <ButtonContent
             clickHandler={clickHandler}
             isActive={isActive}
-            motion={prefersMotion}
+            motion={true}
           >
             {children}
           </ButtonContent>
@@ -57,7 +57,7 @@ export default function Button({
         <ButtonContent
           clickHandler={clickHandler}
           isActive={isActive}
-          motion={prefersMotion}
+          motion={true}
         >
           {children}
         </ButtonContent>
