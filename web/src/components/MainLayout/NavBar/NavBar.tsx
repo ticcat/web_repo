@@ -21,14 +21,16 @@ const pages: Page[] = [
 function NavManager({ pageToLoad }: { pageToLoad: Page }) {
   const router = useRouter();
   const path = usePathname();
-
   const [isLoading, setIsLoading] = useState(
     pageToLoad.href !== path && pageToLoad.href !== ""
   );
 
+  const prefersMotion = localStorage.getItem("prefers-motion") === "true";
+  const pushDelay = prefersMotion ? 1000 : 0;
+
   if (pageToLoad.href !== path && isLoading) {
-    setTimeout(() => router.push(pageToLoad.href), 1000);
-    setTimeout(() => setIsLoading(false), 1100);
+    setTimeout(() => router.push(pageToLoad.href), pushDelay);
+    setTimeout(() => setIsLoading(false), pushDelay + 100);
   }
 
   useEffect(() => {
@@ -36,7 +38,16 @@ function NavManager({ pageToLoad }: { pageToLoad: Page }) {
   }, [pageToLoad]);
 
   return (
-    <LoadingScreen loading={isLoading} title={pageToLoad.label}></LoadingScreen>
+    <>
+      {prefersMotion ? (
+        <LoadingScreen
+          loading={isLoading}
+          title={pageToLoad.label}
+        ></LoadingScreen>
+      ) : (
+        <></>
+      )}
+    </>
   );
 }
 

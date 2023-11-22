@@ -33,11 +33,19 @@ function ButtonOffSVG() {
 }
 
 export default function MotionButton() {
-  const [motion, setMotion] = useState(true);
+  const prefersMotion =
+    localStorage.getItem("prefers-motion") === "true" ? true : false;
+
+  const [motion, setMotion] = useState<boolean>(prefersMotion);
+
+  const changeMotionSetting = () => {
+    setMotion(!motion);
+    localStorage.setItem("prefers-motion", `${motion ? "false" : "true"}`);
+  };
 
   return (
     <Button
-      clickHandler={() => setMotion(!motion)}
+      clickHandler={() => changeMotionSetting()}
       tooltip={motion ? "Reduce motion" : "Enable motion"}
       isActive={motion}
     >
