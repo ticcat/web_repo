@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./MotionButton.module.css";
 import Button from "@/components/Buttons/Button/Button";
+import { getSetting, setSetting } from "@/utils/userConfig";
 
 function ButtonOnSVG() {
   return (
@@ -33,14 +34,13 @@ function ButtonOffSVG() {
 }
 
 export default function MotionButton() {
-  const prefersMotion =
-    localStorage.getItem("prefers-motion") === "true" ? true : false;
+  const prefersMotion = getSetting("prefers-motion", "true") === "true";
 
   const [motion, setMotion] = useState<boolean>(prefersMotion);
 
   const changeMotionSetting = () => {
     setMotion(!motion);
-    localStorage.setItem("prefers-motion", `${motion ? "false" : "true"}`);
+    setSetting("prefers-motion", `${motion ? "false" : "true"}`);
   };
 
   return (

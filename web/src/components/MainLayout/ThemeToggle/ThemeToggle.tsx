@@ -3,6 +3,7 @@
 import Tooltip from "@/components/Tooltip/Tooltip";
 import styles from "./ThemeToggle.module.css";
 import { useEffect, useState } from "react";
+import { getSetting, setSetting } from "@/utils/userConfig";
 
 function LightIcon() {
   return (
@@ -32,7 +33,7 @@ function DarkIcon() {
 
 export default function ThemeToggle() {
   const [currentTheme, setCurrentTheme] = useState<string>(
-    localStorage.getItem("theme") || "dark"
+    getSetting("theme", "dark")
   );
   const toggleClass = `${styles.toggleContainer} ${
     currentTheme === "light" ? styles.light : styles.dark
@@ -42,7 +43,7 @@ export default function ThemeToggle() {
     const theme = currentTheme === "light" ? "dark" : "light";
 
     setCurrentTheme(theme);
-    localStorage.setItem("theme", theme);
+    setSetting("theme", theme);
   }
 
   useEffect(() => {

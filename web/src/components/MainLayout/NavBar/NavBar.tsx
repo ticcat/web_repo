@@ -6,6 +6,7 @@ import LinkButton from "@/components/Buttons/LinkButton/LinkButton";
 import LoadingScreen from "@/components/MainLayout/NavBar/LoadingScreen/LoadingScreen";
 import { usePathname, useRouter } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
+import { getSetting } from "@/utils/userConfig";
 
 export type Page = {
   label: string;
@@ -25,7 +26,8 @@ function NavManager({ pageToLoad }: { pageToLoad: Page }) {
     pageToLoad.href !== path && pageToLoad.href !== ""
   );
 
-  const prefersMotion = localStorage.getItem("prefers-motion") === "true";
+  const prefersMotion = getSetting("prefers-motion", "true") === "true";
+
   const pushDelay = prefersMotion ? 1000 : 0;
 
   if (pageToLoad.href !== path && isLoading) {

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./AnimatedElement.module.css";
+import { getSetting } from "@/utils/userConfig";
 
 export default function AnimatedElement({
   children,
@@ -12,7 +13,7 @@ export default function AnimatedElement({
   text?: string;
   showPromise?: Promise<boolean>;
 }) {
-  const prefersMotion = localStorage.getItem("prefers-motion") === "true";
+  const prefersMotion = getSetting("prefers-motion", "true") === "true";
 
   const [visible, setVisible] = useState(false);
   const container = useRef(null);

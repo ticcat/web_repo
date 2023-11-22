@@ -39,7 +39,7 @@ export default function Button({
   tooltip?: string;
   isActive?: boolean;
 }) {
-  // const prefersMotion = localStorage.getItem("prefers-motion") === "true";
+  // const prefersMotion = getSetting("prefers-motion", "true") === "true";
 
   return (
     <>
