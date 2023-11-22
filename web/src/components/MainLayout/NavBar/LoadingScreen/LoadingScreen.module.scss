@@ -1,8 +1,8 @@
 @use "../../globalStyles/globalClasses";
 
 $fill-function: var(--fill-anim-timing-func);
-$show-anim-params: show 1s $fill-function forwards;
-$hide-anim-params: hide 1s $fill-function forwards;
+$show-anim-params: show 0.75s $fill-function forwards;
+$hide-anim-params: hide 0.75s $fill-function forwards;
 
 .container {
   position: fixed;
@@ -22,13 +22,8 @@ $hide-anim-params: hide 1s $fill-function forwards;
     }
 
     .screen {
-      animation-delay: 0.45s;
+      animation-delay: 0.35s;
       opacity: 0;
-
-      // .title h1 {
-      //   transform: translateY(100%);
-      //   animation-delay: 0.75s;
-      // }
     }
 
     .fill1 {
@@ -71,12 +66,15 @@ $hide-anim-params: hide 1s $fill-function forwards;
 
     .title {
       overflow: hidden;
+      width: 100%;
 
       h1 {
         @extend .h1;
-        letter-spacing: clamp(1rem, -3.5rem + 12vw, 7rem);
+        position: relative;
+        letter-spacing: clamp(1rem, -1.25rem + 6vw, 4rem);
         margin-right: calc(clamp(1rem, -3.5rem + 12vw, 7rem) * -1);
         animation: showTitle 2s $fill-function forwards;
+        text-align: center;
       }
     }
   }
