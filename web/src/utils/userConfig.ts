@@ -1,4 +1,6 @@
 export function getSetting(setting: string, fallbackValue: string): string {
+  if(typeof localStorage === "undefined") return fallbackValue;
+
   return localStorage?.getItem(setting) || fallbackValue;
 }
 
