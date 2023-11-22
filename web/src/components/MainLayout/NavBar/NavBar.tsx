@@ -3,7 +3,7 @@
 import Button from "@/components/Buttons/Button/Button";
 import styles from "./NavBar.module.css";
 import LinkButton from "@/components/Buttons/LinkButton/LinkButton";
-import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
+import LoadingScreen from "@/components/MainLayout/NavBar/LoadingScreen/LoadingScreen";
 import { usePathname, useRouter } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
 
@@ -28,7 +28,7 @@ function NavManager({ pageToLoad }: { pageToLoad: Page }) {
 
   if (pageToLoad.href !== path && isLoading) {
     setTimeout(() => router.push(pageToLoad.href), 1000);
-    setTimeout(() => setIsLoading(false), 1450);
+    setTimeout(() => setIsLoading(false), 1100);
   }
 
   useEffect(() => {

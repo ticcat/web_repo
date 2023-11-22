@@ -4,7 +4,7 @@ import styles from "./HomeLanding.module.css";
 
 const showElementTimeout = (
   resolve: (value: boolean | PromiseLike<boolean>) => void
-) => setTimeout(() => resolve(true), 2050);
+) => setTimeout(() => resolve(true), 1750);
 
 function Logo() {
   return (
