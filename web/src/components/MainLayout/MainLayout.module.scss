@@ -124,9 +124,22 @@ $corner-square-separation: calc($corner-square-size * 3);
     }
   }
 
-  .authorNTheme {
+  .cornerHub {
     position: fixed;
     top: var(--root-layout-padding);
     left: var(--root-layout-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+
+    .settings {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
   }
 }
