@@ -33,12 +33,16 @@ function ButtonOffSVG() {
 }
 
 export default function MotionButton() {
-  const [visible, setVisible] = useState(true);
+  const [motion, setMotion] = useState(true);
 
   return (
-    <Button clickHandler={() => setVisible(!visible)} isActive={!visible}>
+    <Button
+      clickHandler={() => setMotion(!motion)}
+      tooltip={motion ? "Reduce motion" : "Enable motion"}
+      isActive={motion}
+    >
       <div className={styles.container}>
-        {visible ? <ButtonOnSVG></ButtonOnSVG> : <ButtonOffSVG></ButtonOffSVG>}
+        {motion ? <ButtonOnSVG></ButtonOnSVG> : <ButtonOffSVG></ButtonOffSVG>}
       </div>
     </Button>
   );
