@@ -10,6 +10,12 @@
   }
 }
 
+.static {
+  .child {
+    transform: translateY(0);
+  }
+}
+
 .animate {
   .child {
     animation: show 0.5s ease-out forwards;

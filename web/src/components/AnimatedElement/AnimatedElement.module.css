@@ -10,6 +10,11 @@
           transform: translateY(100%);
 }
 
+.static .child {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 .animate .child {
   -webkit-animation: show 0.5s ease-out forwards;
           animation: show 0.5s ease-out forwards;

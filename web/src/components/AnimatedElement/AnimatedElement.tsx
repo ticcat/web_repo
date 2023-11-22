@@ -12,6 +12,8 @@ export default function AnimatedElement({
   text?: string;
   showPromise?: Promise<boolean>;
 }) {
+  const prefersMotion = localStorage.getItem("prefers-motion") === "true";
+
   const [visible, setVisible] = useState(false);
   const container = useRef(null);
 
@@ -45,17 +47,41 @@ export default function AnimatedElement({
 
   return (
     <>
-      {text ? (
-        text.split(" ").map((word, index) => {
-          return <AnimatedElement key={index}>{word}&nbsp;</AnimatedElement>;
-        })
+      {prefersMotion ? (
+        <>
+          {text ? (
+            text.split(" ").map((word, index) => {
+              return (
+                <AnimatedElement key={index}>{word}&nbsp;</AnimatedElement>
+              );
+            })
+          ) : (
+            <span
+              className={`${styles.container} ${visible && styles.animate}`}
+              ref={container}
+            >
+              <span className={styles.child}>{children}</span>
+            </span>
+          )}
+        </>
       ) : (
-        <span
-          className={`${styles.container} ${visible && styles.animate}`}
-          ref={container}
-        >
-          <span className={styles.child}>{children}</span>
-        </span>
+        <>
+          {text ? (
+            <span
+              className={`${styles.container} ${styles.static}`}
+              ref={container}
+            >
+              <span className={styles.child}>{text}</span>
+            </span>
+          ) : (
+            <span
+              className={`${styles.container} ${styles.static}`}
+              ref={container}
+            >
+              <span className={styles.child}>{children}</span>
+            </span>
+          )}
+        </>
       )}
     </>
   );
