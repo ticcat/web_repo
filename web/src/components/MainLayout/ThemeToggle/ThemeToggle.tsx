@@ -2,7 +2,7 @@
 
 import Tooltip from "@/components/Tooltip/Tooltip";
 import styles from "./ThemeToggle.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function LightIcon() {
   return (
@@ -31,21 +31,23 @@ function DarkIcon() {
 }
 
 export default function ThemeToggle() {
-  const [currentTheme, setCurrentTheme] = useState("dark");
+  const [currentTheme, setCurrentTheme] = useState<string>(
+    localStorage.getItem("theme") || "dark"
+  );
   const toggleClass = `${styles.toggleContainer} ${
     currentTheme === "light" ? styles.light : styles.dark
   }`;
 
-  function changeTheme(newTheme?: string) {
-    const theme = newTheme
-      ? newTheme
-      : currentTheme === "light"
-      ? "dark"
-      : "light";
+  function changeTheme() {
+    const theme = currentTheme === "light" ? "dark" : "light";
 
-    document.documentElement.setAttribute("color-theme", theme);
     setCurrentTheme(theme);
+    localStorage.setItem("theme", theme);
   }
+
+  useEffect(() => {
+    document.documentElement.setAttribute("color-theme", currentTheme);
+  }, [currentTheme]);
 
   return (
     <Tooltip text="Change theme">
