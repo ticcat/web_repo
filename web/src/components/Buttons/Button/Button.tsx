@@ -1,8 +1,9 @@
 "use client";
 
+import Tooltip from "@/components/Tooltip/Tooltip";
 import styles from "./Button.module.css";
 
-export default function Button({
+function ButtonContent({
   children,
   clickHandler,
   isActive,
@@ -20,5 +21,33 @@ export default function Button({
       <div className={styles.fill2}></div>
       <div className={styles.content}>{children}</div>
     </div>
+  );
+}
+
+export default function Button({
+  children,
+  clickHandler,
+  tooltip,
+  isActive,
+}: {
+  children: React.ReactNode;
+  clickHandler: () => void;
+  tooltip?: string;
+  isActive?: boolean;
+}) {
+  return (
+    <>
+      {tooltip ? (
+        <Tooltip text={tooltip}>
+          <ButtonContent clickHandler={clickHandler} isActive={isActive}>
+            {children}
+          </ButtonContent>
+        </Tooltip>
+      ) : (
+        <ButtonContent clickHandler={clickHandler} isActive={isActive}>
+          {children}
+        </ButtonContent>
+      )}
+    </>
   );
 }
