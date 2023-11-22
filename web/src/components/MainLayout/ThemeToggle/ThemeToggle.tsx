@@ -1,5 +1,6 @@
 "use client";
 
+import Tooltip from "@/components/Tooltip/Tooltip";
 import styles from "./ThemeToggle.module.css";
 import { useState } from "react";
 
@@ -47,7 +48,7 @@ export default function ThemeToggle() {
   }
 
   return (
-    <>
+    <Tooltip text="Change theme">
       <div className={toggleClass} onClick={() => changeTheme()}>
         <span className={styles.light}>
           <LightIcon></LightIcon>
@@ -56,6 +57,6 @@ export default function ThemeToggle() {
           <DarkIcon></DarkIcon>
         </span>
       </div>
-    </>
+    </Tooltip>
   );
 }
