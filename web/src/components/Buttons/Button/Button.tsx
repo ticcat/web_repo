@@ -7,14 +7,18 @@ function ButtonContent({
   children,
   clickHandler,
   isActive,
+  motion,
 }: {
   children: React.ReactNode;
   clickHandler: () => void;
   isActive?: boolean;
+  motion: boolean;
 }) {
   return (
     <div
-      className={`${styles.container} ${isActive ? styles.active : ""}`}
+      className={`${styles.container} ${isActive ? styles.active : ""} ${
+        motion && styles.animated
+      }`}
       onClick={() => clickHandler()}
     >
       <div className={styles.fill1}></div>
@@ -35,16 +39,26 @@ export default function Button({
   tooltip?: string;
   isActive?: boolean;
 }) {
+  const prefersMotion = localStorage.getItem("prefers-motion") === "true";
+
   return (
     <>
       {tooltip ? (
         <Tooltip text={tooltip}>
-          <ButtonContent clickHandler={clickHandler} isActive={isActive}>
+          <ButtonContent
+            clickHandler={clickHandler}
+            isActive={isActive}
+            motion={prefersMotion}
+          >
             {children}
           </ButtonContent>
         </Tooltip>
       ) : (
-        <ButtonContent clickHandler={clickHandler} isActive={isActive}>
+        <ButtonContent
+          clickHandler={clickHandler}
+          isActive={isActive}
+          motion={prefersMotion}
+        >
           {children}
         </ButtonContent>
       )}

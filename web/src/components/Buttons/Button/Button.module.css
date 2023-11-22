@@ -87,35 +87,44 @@
 }
 .container .fill1 {
   background-color: rgb(var(--accent-2-rgb));
-  -webkit-transition: -webkit-transform 0.25s 0.05s var(--fill-anim-timing-func);
-  transition: -webkit-transform 0.25s 0.05s var(--fill-anim-timing-func);
-  transition: transform 0.25s 0.05s var(--fill-anim-timing-func);
-  transition: transform 0.25s 0.05s var(--fill-anim-timing-func), -webkit-transform 0.25s 0.05s var(--fill-anim-timing-func);
 }
 .container .fill2 {
   background-color: rgb(var(--accent-1-rgb));
-  -webkit-transition: -webkit-transform 0.25s var(--fill-anim-timing-func);
-  transition: -webkit-transform 0.25s var(--fill-anim-timing-func);
-  transition: transform 0.25s var(--fill-anim-timing-func);
-  transition: transform 0.25s var(--fill-anim-timing-func), -webkit-transform 0.25s var(--fill-anim-timing-func);
 }
 .container:hover .fill, .container:hover .fill1, .container:hover .fill2 {
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
 }
-.container:hover .fill1 {
+.container.active .fill, .container.active .fill1, .container.active .fill2 {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.animated .fill1 {
+  -webkit-transition: -webkit-transform 0.25s 0.05s var(--fill-anim-timing-func);
+  transition: -webkit-transform 0.25s 0.05s var(--fill-anim-timing-func);
+  transition: transform 0.25s 0.05s var(--fill-anim-timing-func);
+  transition: transform 0.25s 0.05s var(--fill-anim-timing-func), -webkit-transform 0.25s 0.05s var(--fill-anim-timing-func);
+}
+.animated .fill2 {
+  -webkit-transition: -webkit-transform 0.25s var(--fill-anim-timing-func);
+  transition: -webkit-transform 0.25s var(--fill-anim-timing-func);
+  transition: transform 0.25s var(--fill-anim-timing-func);
+  transition: transform 0.25s var(--fill-anim-timing-func), -webkit-transform 0.25s var(--fill-anim-timing-func);
+}
+.animated:hover .fill, .animated:hover .container .fill1, .container .animated:hover .fill1, .animated:hover .container .fill2, .container .animated:hover .fill2 {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+.animated:hover .fill1 {
   -webkit-transition: -webkit-transform 0.35s var(--fill-anim-timing-func);
   transition: -webkit-transform 0.35s var(--fill-anim-timing-func);
   transition: transform 0.35s var(--fill-anim-timing-func);
   transition: transform 0.35s var(--fill-anim-timing-func), -webkit-transform 0.35s var(--fill-anim-timing-func);
 }
-.container:hover .fill2 {
+.animated:hover .fill2 {
   -webkit-transition: -webkit-transform 0.35s 0.1s var(--fill-anim-timing-func);
   transition: -webkit-transform 0.35s 0.1s var(--fill-anim-timing-func);
   transition: transform 0.35s 0.1s var(--fill-anim-timing-func);
   transition: transform 0.35s 0.1s var(--fill-anim-timing-func), -webkit-transform 0.35s 0.1s var(--fill-anim-timing-func);
-}
-.container.active .fill, .container.active .fill1, .container.active .fill2 {
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
 }/*# sourceMappingURL=Button.module.css.map */
