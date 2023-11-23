@@ -5,6 +5,7 @@ import ToTopButton from "../Buttons/ToTopButton/ToTopButton";
 import NavBar from "./NavBar/NavBar";
 import SideLine from "./SideLine/SideLine";
 import MotionButton from "./MotionButton/MotionButton";
+import NavManager from "@/utils/NavManager";
 
 export default function MainLayout({
   children,
@@ -13,6 +14,7 @@ export default function MainLayout({
 }) {
   return (
     <div className={styles.container}>
+      <NavManager></NavManager>
       {/* <LoadingScreen loading={false} title={"welcome"}></LoadingScreen> */}
       <div className={styles.topLine}></div>
       <main className={styles.content}>
