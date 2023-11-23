@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Button from "../Button/Button";
 import { useEffect } from "react";
-import { Page } from "@/utils/NavManager";
+import { Page } from "@/components/NavManager/NavManager";
 
 export default function LinkButton({
   page,

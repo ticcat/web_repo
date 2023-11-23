@@ -5,7 +5,7 @@ import styles from "./NavBar.module.css";
 import LinkButton from "@/components/Buttons/LinkButton/LinkButton";
 import { usePathname } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
-import { pages } from "@/utils/NavManager";
+import { pages } from "@/components/NavManager/NavManager";
 
 export default function NavBar() {
   const pathname = usePathname();

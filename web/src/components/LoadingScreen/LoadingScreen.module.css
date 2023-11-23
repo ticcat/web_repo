@@ -112,6 +112,22 @@
   -webkit-animation-delay: 1.45s;
           animation-delay: 1.45s;
 }
+.container.slowHide * {
+  will-change: transform;
+  -webkit-animation: hide 0.75s var(--fill-anim-timing-func) forwards;
+          animation: hide 0.75s var(--fill-anim-timing-func) forwards;
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+  top: 0;
+}
+.container.slowHide .fill1 {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+.container.slowHide .fill2 {
+  -webkit-animation-delay: 2.6s;
+          animation-delay: 2.6s;
+}
 .container .screen {
   position: absolute;
   width: 100%;

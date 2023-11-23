@@ -2,8 +2,8 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { getSetting } from "./userConfig";
-import LoadingScreen from "@/components/MainLayout/NavBar/LoadingScreen/LoadingScreen";
+import { getSetting } from "../../utils/userConfig";
+import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
 
 export type Page = {
   label: string;
@@ -16,6 +16,8 @@ export const pages: Page[] = [
   { label: "Contact", href: "/contact" },
 ];
 
+const welcomePage = { label: "Welcome", href: "/" };
+
 export function getPageByHref(href: string): Page {
   return pages.find((p) => p.href === href) || pages[0];
 }
@@ -25,17 +27,15 @@ export default function NavManager() {
   const path = usePathname();
 
   const [pageToLoad, setPageToLoad] = useState<Page>(
-    pages.find((p) => p.href === path) || pages[0]
+    path === "/" ? welcomePage : getPageByHref(path)
   );
-  const [isLoading, setIsLoading] = useState<boolean>(
-    pageToLoad.href !== path && pageToLoad.href !== ""
-  );
+  const [isLoading, setIsLoading] = useState(pageToLoad.href !== path);
 
   const prefersMotion = getSetting("prefers-motion", "true") === "true";
   const pushDelay = prefersMotion ? 1000 : 0;
 
-  if (pageToLoad.href !== path && isLoading) {
-    setTimeout(() => router.push(pageToLoad.href), pushDelay);
+  if (isLoading) {
+    setTimeout(() => isLoading && router.push(pageToLoad.href), pushDelay);
     setTimeout(() => setIsLoading(false), pushDelay + 100);
   }
 
@@ -65,6 +65,7 @@ export default function NavManager() {
         <LoadingScreen
           loading={isLoading}
           title={pageToLoad.label}
+          slow={pageToLoad.label === "Welcome"}
         ></LoadingScreen>
       ) : (
         <></>

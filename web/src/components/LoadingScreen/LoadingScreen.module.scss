@@ -54,6 +54,23 @@ $hide-anim-params: hide 0.75s $fill-function forwards;
     }
   }
 
+  &.slowHide {
+    * {
+      will-change: transform;
+      animation: $hide-anim-params;
+      animation-delay: 2.2s;
+      top: 0;
+    }
+
+    .fill1 {
+      animation-delay: 2.5s;
+    }
+
+    .fill2 {
+      animation-delay: 2.6s;
+    }
+  }
+
   .screen {
     position: absolute;
     width: 100%;

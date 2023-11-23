@@ -3,7 +3,7 @@
 import Button from "../../Button/Button";
 import styles from "./ContactButton.module.css";
 import LinkButton from "../../LinkButton/LinkButton";
-import { getPageByHref } from "@/utils/NavManager";
+import { getPageByHref } from "@/components/NavManager/NavManager";
 
 export default function ContactButton() {
   return (

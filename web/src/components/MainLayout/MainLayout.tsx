@@ -5,7 +5,7 @@ import ToTopButton from "../Buttons/ToTopButton/ToTopButton";
 import NavBar from "./NavBar/NavBar";
 import SideLine from "./SideLine/SideLine";
 import MotionButton from "./MotionButton/MotionButton";
-import NavManager from "@/utils/NavManager";
+import NavManager from "@/components/NavManager/NavManager";
 
 export default function MainLayout({
   children,
