@@ -41,16 +41,16 @@ $hide-anim-params: hide 0.75s $fill-function forwards;
     * {
       will-change: transform;
       animation: $hide-anim-params;
-      animation-delay: 1.2s;
+      animation-delay: 0.7s;
       top: 0;
     }
 
     .fill1 {
-      animation-delay: 1.4s;
+      animation-delay: 0.9s;
     }
 
     .fill2 {
-      animation-delay: 1.45s;
+      animation-delay: 0.95s;
     }
   }
 
@@ -58,16 +58,16 @@ $hide-anim-params: hide 0.75s $fill-function forwards;
     * {
       will-change: transform;
       animation: $hide-anim-params;
-      animation-delay: 2.2s;
+      animation-delay: 1.7s;
       top: 0;
     }
 
     .fill1 {
-      animation-delay: 2.5s;
+      animation-delay: 2s;
     }
 
     .fill2 {
-      animation-delay: 2.6s;
+      animation-delay: 2.1s;
     }
   }
 
@@ -90,7 +90,7 @@ $hide-anim-params: hide 0.75s $fill-function forwards;
         position: relative;
         letter-spacing: clamp(1rem, -1.25rem + 6vw, 4rem);
         margin-right: calc(clamp(1rem, -3.5rem + 12vw, 7rem) * -1);
-        animation: showTitle 2s $fill-function forwards;
+        animation: showTitle 1s $fill-function forwards;
         text-align: center;
       }
     }

@@ -100,33 +100,33 @@
   will-change: transform;
   -webkit-animation: hide 0.75s var(--fill-anim-timing-func) forwards;
           animation: hide 0.75s var(--fill-anim-timing-func) forwards;
-  -webkit-animation-delay: 1.2s;
-          animation-delay: 1.2s;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
   top: 0;
 }
 .container.hide .fill1 {
-  -webkit-animation-delay: 1.4s;
-          animation-delay: 1.4s;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
 }
 .container.hide .fill2 {
-  -webkit-animation-delay: 1.45s;
-          animation-delay: 1.45s;
+  -webkit-animation-delay: 0.95s;
+          animation-delay: 0.95s;
 }
 .container.slowHide * {
   will-change: transform;
   -webkit-animation: hide 0.75s var(--fill-anim-timing-func) forwards;
           animation: hide 0.75s var(--fill-anim-timing-func) forwards;
-  -webkit-animation-delay: 2.2s;
-          animation-delay: 2.2s;
+  -webkit-animation-delay: 1.7s;
+          animation-delay: 1.7s;
   top: 0;
 }
 .container.slowHide .fill1 {
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
 .container.slowHide .fill2 {
-  -webkit-animation-delay: 2.6s;
-          animation-delay: 2.6s;
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
 }
 .container .screen {
   position: absolute;
@@ -152,8 +152,8 @@
   position: relative;
   letter-spacing: clamp(1rem, -1.25rem + 6vw, 4rem);
   margin-right: calc(clamp(1rem, -3.5rem + 12vw, 7rem) * -1);
-  -webkit-animation: showTitle 2s var(--fill-anim-timing-func) forwards;
-          animation: showTitle 2s var(--fill-anim-timing-func) forwards;
+  -webkit-animation: showTitle 1s var(--fill-anim-timing-func) forwards;
+          animation: showTitle 1s var(--fill-anim-timing-func) forwards;
   text-align: center;
 }
 .container .fill, .container .fill2, .container .fill1 {
