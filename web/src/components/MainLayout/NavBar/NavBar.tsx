@@ -3,55 +3,9 @@
 import Button from "@/components/Buttons/Button/Button";
 import styles from "./NavBar.module.css";
 import LinkButton from "@/components/Buttons/LinkButton/LinkButton";
-import LoadingScreen from "@/components/MainLayout/NavBar/LoadingScreen/LoadingScreen";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
-import { getSetting } from "@/utils/userConfig";
-
-export type Page = {
-  label: string;
-  href: string;
-};
-
-const pages: Page[] = [
-  { label: "Home", href: "/" },
-  { label: "Studies & Exp", href: "/studiesnexp" },
-  { label: "Contact", href: "/contact" },
-];
-
-function NavManager({ pageToLoad }: { pageToLoad: Page }) {
-  const router = useRouter();
-  const path = usePathname();
-  const [isLoading, setIsLoading] = useState(
-    pageToLoad.href !== path && pageToLoad.href !== ""
-  );
-
-  const prefersMotion = getSetting("prefers-motion", "true") === "true";
-
-  const pushDelay = prefersMotion ? 1000 : 0;
-
-  if (pageToLoad.href !== path && isLoading) {
-    setTimeout(() => router.push(pageToLoad.href), pushDelay);
-    setTimeout(() => setIsLoading(false), pushDelay + 100);
-  }
-
-  useEffect(() => {
-    setIsLoading(true);
-  }, [pageToLoad]);
-
-  return (
-    <>
-      {prefersMotion ? (
-        <LoadingScreen
-          loading={isLoading}
-          title={pageToLoad.label}
-        ></LoadingScreen>
-      ) : (
-        <></>
-      )}
-    </>
-  );
-}
+import { pages } from "@/utils/NavManager";
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -61,8 +15,6 @@ export default function NavBar() {
       : true
   );
   const [open, setOpen] = useState(false);
-
-  const [pageToLoad, setPageToLoad] = useState<Page>({ label: "", href: "" });
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -76,7 +28,6 @@ export default function NavBar() {
 
   return (
     <>
-      <NavManager pageToLoad={pageToLoad}></NavManager>
       {!compressed ? (
         <div className={`${styles.links} ${styles.flexRow}`}>
           {pages.map((page) => {
@@ -84,11 +35,7 @@ export default function NavBar() {
               <Fragment key={page.label}>
                 <div className={`${styles.navLink} ${styles.visible}`}>
                   <span className={styles.separator}>&nbsp;//</span>
-                  <LinkButton
-                    page={page}
-                    setPageToLoad={setPageToLoad}
-                    isActive={pathname === page.href}
-                  >
+                  <LinkButton page={page} isActive={pathname === page.href}>
                     <div className={styles.navText}>{page.label}</div>
                   </LinkButton>
                 </div>
@@ -117,11 +64,7 @@ export default function NavBar() {
                     }`}
                   >
                     <span className={styles.separator}>&nbsp;//</span>
-                    <LinkButton
-                      page={page}
-                      setPageToLoad={setPageToLoad}
-                      isActive={pathname === page.href}
-                    >
+                    <LinkButton page={page} isActive={pathname === page.href}>
                       <div className={styles.navText}>{page.label}</div>
                     </LinkButton>
                   </div>
