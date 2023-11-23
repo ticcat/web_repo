@@ -1,15 +1,18 @@
 "use client";
 
-import Link from "next/link";
 import Button from "../../Button/Button";
 import styles from "./ContactButton.module.css";
+import LinkButton from "../../LinkButton/LinkButton";
+import { getPageByHref } from "@/utils/NavManager";
 
 export default function ContactButton() {
   return (
     <Button clickHandler={() => {}}>
-      <Link className={styles.text} href="/contact">
-        Want to tell me something? <span className={styles.arrow}>→</span>
-      </Link>
+      <LinkButton page={getPageByHref("/contact")}>
+        <span className={styles.text}>
+          Want to tell me something? <span className={styles.arrow}>→</span>
+        </span>
+      </LinkButton>
     </Button>
   );
 }
