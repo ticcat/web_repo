@@ -1,5 +1,5 @@
 import WorkEntryInfo from "@/dbClasses/WorkEntry";
-import clientPromise from "@/utils/mongodb";
+import clientPromise from "@/utils/mongodbConnection";
 
 export async function GET(request: Request) {
   const client = await clientPromise;
