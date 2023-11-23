@@ -2,24 +2,24 @@
 
 import { useRouter } from "next/navigation";
 import Button from "../Button/Button";
-import { Page } from "@/components/MainLayout/NavBar/NavBar";
 import { useEffect } from "react";
+import { Page } from "@/utils/NavManager";
 
 export default function LinkButton({
   page,
-  setPageToLoad,
   children,
   isActive,
 }: {
   page: Page;
-  setPageToLoad: (page: Page) => void;
   children: React.ReactNode;
-  isActive: boolean;
+  isActive?: boolean;
 }) {
+  const navEvent = new CustomEvent("navigation", { detail: page });
+
   const router = useRouter();
 
   const clickHandler = () => {
-    setPageToLoad(page);
+    document.dispatchEvent(navEvent);
   };
 
   useEffect(() => {
