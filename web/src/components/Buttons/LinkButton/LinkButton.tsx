@@ -14,23 +14,26 @@ export default function LinkButton({
   children: React.ReactNode;
   isActive?: boolean;
 }) {
-  const navEvent = new CustomEvent("navigation", { detail: page });
-
   const router = useRouter();
-
-  const clickHandler = () => {
-    document.dispatchEvent(navEvent);
-  };
-
   useEffect(() => {
     router.prefetch(page.href);
   });
 
-  return (
-    <div>
-      <Button clickHandler={clickHandler} isActive={isActive}>
-        {children}
-      </Button>
-    </div>
-  );
+  try {
+    const navEvent = new CustomEvent("navigation", { detail: page });
+
+    const clickHandler = () => {
+      document.dispatchEvent(navEvent);
+    };
+
+    return (
+      <div>
+        <Button clickHandler={clickHandler} isActive={isActive}>
+          {children}
+        </Button>
+      </div>
+    );
+  } catch (e) {
+    console.log("Avoided custom event creation");
+  }
 }

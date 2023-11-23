@@ -40,7 +40,14 @@ export default function NavManager() {
   }
 
   const handleNavEvent = (e: Event) => {
-    const pageToLoad = (e as CustomEvent).detail;
+    let pageToLoad = pages[0];
+
+    try {
+      pageToLoad = (e as CustomEvent).detail;
+    } catch (e) {
+      console.log("Avoided custom event creation");
+    }
+
     setPageToLoad(pageToLoad);
   };
 
