@@ -9,6 +9,9 @@
 }
 
 :root {
+  --dark-background-rgb: 35, 31, 32;
+  --dark-head-sub-rgb: 244, 244, 237;
+
   --accent-1-rgb: 216, 162, 250;
   --accent-2-rgb: 255, 70, 85;
   --head-sub-rgb: 35, 31, 32;

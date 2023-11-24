@@ -141,7 +141,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgb(var(--background-rgb));
+  background-color: rgb(var(--dark-background-rgb));
   z-index: 10;
 }
 .container .screen .title {
@@ -155,6 +155,7 @@
   -webkit-animation: showTitle 1s var(--fill-anim-timing-func) forwards;
           animation: showTitle 1s var(--fill-anim-timing-func) forwards;
   text-align: center;
+  color: rgb(var(--dark-head-sub-rgb));
 }
 .container .fill, .container .fill2, .container .fill1 {
   position: absolute;

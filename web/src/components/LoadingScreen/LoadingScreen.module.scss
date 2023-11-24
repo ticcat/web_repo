@@ -78,7 +78,8 @@ $hide-anim-params: hide 0.75s $fill-function forwards;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(var(--background-rgb));
+    background-color: rgb(var(--dark-background-rgb));
+
     z-index: 10;
 
     .title {
@@ -92,6 +93,7 @@ $hide-anim-params: hide 0.75s $fill-function forwards;
         margin-right: calc(clamp(1rem, -3.5rem + 12vw, 7rem) * -1);
         animation: showTitle 1s $fill-function forwards;
         text-align: center;
+        color: rgb(var(--dark-head-sub-rgb));
       }
     }
   }

@@ -52,9 +52,6 @@ export default function ThemeToggle() {
         currentTheme === "light" ? styles.light : styles.dark
       }`
     );
-  }, [currentTheme]);
-
-  useEffect(() => {
     document.documentElement.setAttribute("color-theme", currentTheme);
   }, [currentTheme]);
 
