@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Button from "../Button/Button";
 import { useEffect } from "react";
-import { Page } from "@/components/NavManager/NavManager";
+import { Page } from "@/utils/pages";
 
 export default function LinkButton({
   page,
@@ -27,11 +27,9 @@ export default function LinkButton({
     };
 
     return (
-      <div>
-        <Button clickHandler={clickHandler} isActive={isActive}>
-          {children}
-        </Button>
-      </div>
+      <Button clickHandler={clickHandler} isActive={isActive}>
+        {children}
+      </Button>
     );
   } catch (e) {
     console.log("Avoided custom event creation");

@@ -4,17 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getSetting } from "../../utils/userConfig";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
-
-export type Page = {
-  label: string;
-  href: string;
-};
-
-export const pages: Page[] = [
-  { label: "Home", href: "/" },
-  { label: "Studies & Exp", href: "/studiesnexp" },
-  { label: "Contact", href: "/contact" },
-];
+import { Page, pages } from "@/utils/pages";
 
 const welcomePage = { label: "Welcome", href: "/" };
 

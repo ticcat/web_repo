@@ -5,16 +5,16 @@ import styles from "./NavBar.module.css";
 import LinkButton from "@/components/Buttons/LinkButton/LinkButton";
 import { usePathname } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
-import { pages } from "@/components/NavManager/NavManager";
+import { pages } from "@/utils/pages";
 
 export default function NavBar() {
   const pathname = usePathname();
-  const [compressed, setCompressed] = useState(
-    typeof window !== "undefined"
-      ? window.innerWidth <= window.innerHeight
-      : true
-  );
+  const [compressed, setCompressed] = useState(false);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setCompressed(window.innerWidth <= window.innerHeight);
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
