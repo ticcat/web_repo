@@ -15,22 +15,24 @@ export default function AnimatedElement({
 }) {
   const prefersMotion = getSetting("prefers-motion", "true") === "true";
 
-  const [visible, setVisible] = useState(false);
   const [contentClass, setContentClass] = useState(
     `${styles.container} ${styles.static}`
   );
 
   const container = useRef(null);
 
-  const intersectionCallback = (entries: Array<IntersectionObserverEntry>) => {
-    const [entry] = entries;
-    setVisible(entry.isIntersecting);
-    setContentClass(
-      `${styles.container} ${entry.isIntersecting && styles.animate}`
-    );
-  };
-
   useEffect(() => {
+    const intersectionCallback = (
+      entries: Array<IntersectionObserverEntry>
+    ) => {
+      const [entry] = entries;
+      setContentClass(
+        `${styles.container} ${
+          entry.isIntersecting && prefersMotion ? styles.animate : styles.static
+        }`
+      );
+    };
+
     const intersectionOptions = {
       threshold: 0,
     };
@@ -55,7 +57,7 @@ export default function AnimatedElement({
         observer.unobserve(containerElement);
       }
     };
-  }, [showPromise, visible]);
+  }, [showPromise, prefersMotion]);
 
   return (
     <>
