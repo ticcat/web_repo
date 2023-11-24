@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getSetting } from "../../utils/userConfig";
-import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 export type Page = {
   label: string;
@@ -29,15 +29,12 @@ export default function NavManager() {
   const [pageToLoad, setPageToLoad] = useState<Page>(
     path === "/" ? welcomePage : getPageByHref(path)
   );
+
+  const [isSoftNav, setIsSoftNav] = useState(false);
   const [isLoading, setIsLoading] = useState(pageToLoad.href !== path);
 
   const prefersMotion = getSetting("prefers-motion", "true") === "true";
   const pushDelay = prefersMotion ? 1000 : 0;
-
-  if (isLoading) {
-    setTimeout(() => isLoading && router.push(pageToLoad.href), pushDelay);
-    setTimeout(() => setIsLoading(false), pushDelay + 100);
-  }
 
   const handleNavEvent = (e: Event) => {
     let pageToLoad = pages[0];
@@ -48,15 +45,27 @@ export default function NavManager() {
       console.log("Avoided custom event creation");
     }
 
+    setIsSoftNav(true);
     setPageToLoad(pageToLoad);
   };
 
+  if (isLoading) {
+    setTimeout(() => isSoftNav && router.push(pageToLoad.href), pushDelay);
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsSoftNav(false);
+    }, pushDelay + 100);
+  }
+
   useEffect(() => {
-    if (pageToLoad.href !== path) setIsLoading(true);
-  }, [pageToLoad, path]);
+    if (pageToLoad.href !== path) {
+      setIsLoading(isSoftNav);
+    }
+  }, [pageToLoad, path, isSoftNav]);
 
   useEffect(() => {
     document.addEventListener("navigation", handleNavEvent);
+    return () => document.removeEventListener("navigation", handleNavEvent);
   });
 
   return (
