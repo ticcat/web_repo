@@ -16,17 +16,25 @@ export default function AnimatedElement({
   const prefersMotion = getSetting("prefers-motion", "true") === "true";
 
   const [visible, setVisible] = useState(false);
+  const [contentClass, setContentClass] = useState(
+    `${styles.container} ${styles.static}`
+  );
+
   const container = useRef(null);
 
   const intersectionCallback = (entries: Array<IntersectionObserverEntry>) => {
     const [entry] = entries;
     setVisible(entry.isIntersecting);
-  };
-  const intersectionOptions = {
-    threshold: 0,
+    setContentClass(
+      `${styles.container} ${entry.isIntersecting && styles.animate}`
+    );
   };
 
   useEffect(() => {
+    const intersectionOptions = {
+      threshold: 0,
+    };
+
     const observer = new IntersectionObserver(
       intersectionCallback,
       intersectionOptions
@@ -34,7 +42,10 @@ export default function AnimatedElement({
     const containerElement = container.current;
 
     if (showPromise) {
-      showPromise?.then((show) => show && !visible && setVisible(true));
+      showPromise?.then(
+        (show) =>
+          show && setContentClass(`${styles.container} ${styles.animate}`)
+      );
     } else {
       if (containerElement) observer.observe(containerElement);
     }
@@ -44,7 +55,7 @@ export default function AnimatedElement({
         observer.unobserve(containerElement);
       }
     };
-  });
+  }, [showPromise, visible]);
 
   return (
     <>
@@ -57,10 +68,7 @@ export default function AnimatedElement({
               );
             })
           ) : (
-            <span
-              className={`${styles.container} ${visible && styles.animate}`}
-              ref={container}
-            >
+            <span className={contentClass} ref={container}>
               <span className={styles.child}>{children}</span>
             </span>
           )}
@@ -68,17 +76,11 @@ export default function AnimatedElement({
       ) : (
         <>
           {text ? (
-            <span
-              className={`${styles.container} ${styles.static}`}
-              ref={container}
-            >
+            <span className={contentClass} ref={container}>
               <span className={styles.child}>{text}</span>
             </span>
           ) : (
-            <span
-              className={`${styles.container} ${styles.static}`}
-              ref={container}
-            >
+            <span className={contentClass} ref={container}>
               <span className={styles.child}>{children}</span>
             </span>
           )}
