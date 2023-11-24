@@ -22,6 +22,7 @@ export default function NavManager() {
 
   const [isSoftNav, setIsSoftNav] = useState(false);
   const [isLoading, setIsLoading] = useState(pageToLoad.href !== path);
+  const isReload = pageToLoad.href === path;
 
   const prefersMotion = getSetting("prefers-motion", "true") === "true";
   const pushDelay = prefersMotion ? 1000 : 0;
@@ -60,7 +61,7 @@ export default function NavManager() {
 
   return (
     <>
-      {prefersMotion ? (
+      {prefersMotion || isReload ? (
         <LoadingScreen
           loading={isLoading}
           title={pageToLoad.label}
