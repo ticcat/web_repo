@@ -22,7 +22,7 @@ export default function NavManager() {
 
   const [isSoftNav, setIsSoftNav] = useState(false);
   const [isLoading, setIsLoading] = useState(pageToLoad.href !== path);
-  const isReload = pageToLoad.href === path;
+  const [isReload, setIsReload] = useState(pageToLoad.href === path);
 
   const prefersMotion = getSetting("prefers-motion", "true") === "true";
   const pushDelay = prefersMotion ? 1000 : 0;
@@ -51,6 +51,7 @@ export default function NavManager() {
   useEffect(() => {
     if (pageToLoad.href !== path) {
       setIsLoading(isSoftNav);
+      setIsReload(false);
     }
   }, [pageToLoad, path, isSoftNav]);
 
