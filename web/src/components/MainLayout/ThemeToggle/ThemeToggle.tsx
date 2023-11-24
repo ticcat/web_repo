@@ -35,9 +35,9 @@ export default function ThemeToggle() {
   const [currentTheme, setCurrentTheme] = useState<string>(
     getSetting("theme", "dark")
   );
-  const toggleClass = `${styles.toggleContainer} ${
-    currentTheme === "light" ? styles.light : styles.dark
-  }`;
+  const [toggleClass, setToggleClass] = useState(
+    `${styles.toggleContainer} ${styles.light}`
+  );
 
   function changeTheme() {
     const theme = currentTheme === "light" ? "dark" : "light";
@@ -45,6 +45,14 @@ export default function ThemeToggle() {
     setCurrentTheme(theme);
     setSetting("theme", theme);
   }
+
+  useEffect(() => {
+    setToggleClass(
+      `${styles.toggleContainer} ${
+        currentTheme === "light" ? styles.light : styles.dark
+      }`
+    );
+  }, [currentTheme]);
 
   useEffect(() => {
     document.documentElement.setAttribute("color-theme", currentTheme);
