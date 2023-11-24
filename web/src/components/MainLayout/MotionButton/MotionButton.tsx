@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./MotionButton.module.css";
 import Button from "@/components/Buttons/Button/Button";
 import { getSetting, setSetting } from "@/utils/userConfig";
@@ -36,12 +36,16 @@ function ButtonOffSVG() {
 export default function MotionButton() {
   const prefersMotion = getSetting("prefers-motion", "true") === "true";
 
-  const [motion, setMotion] = useState<boolean>(prefersMotion);
+  const [motion, setMotion] = useState<boolean>(false);
 
   const changeMotionSetting = () => {
     setMotion(!motion);
     setSetting("prefers-motion", `${motion ? "false" : "true"}`);
   };
+
+  useEffect(() => {
+    setMotion(prefersMotion);
+  }, [prefersMotion]);
 
   return (
     <Button
