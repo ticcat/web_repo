@@ -15,9 +15,7 @@ export default function AnimatedElement({
 }) {
   const prefersMotion = getSetting("prefers-motion", "true") === "true";
 
-  const [contentClass, setContentClass] = useState(
-    `${styles.container} ${styles.static}`
-  );
+  const [contentClass, setContentClass] = useState(`${styles.container}`);
 
   const container = useRef(null);
 
@@ -43,13 +41,17 @@ export default function AnimatedElement({
     );
     const containerElement = container.current;
 
-    if (showPromise) {
-      showPromise?.then(
-        (show) =>
-          show && setContentClass(`${styles.container} ${styles.animate}`)
-      );
+    if (!prefersMotion) {
+      setContentClass(`${styles.container} ${styles.static}`);
     } else {
-      if (containerElement) observer.observe(containerElement);
+      if (showPromise) {
+        showPromise?.then(
+          (show) =>
+            show && setContentClass(`${styles.container} ${styles.animate}`)
+        );
+      } else {
+        if (containerElement) observer.observe(containerElement);
+      }
     }
 
     return () => {

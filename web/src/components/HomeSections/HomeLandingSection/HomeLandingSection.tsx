@@ -1,10 +1,12 @@
+"use client";
+
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import Image from "next/image";
 import styles from "./HomeLanding.module.css";
 
 const showElementTimeout = (
   resolve: (value: boolean | PromiseLike<boolean>) => void
-) => setTimeout(() => resolve(true), 1750);
+) => setTimeout(() => resolve(true), 1500);
 
 function Logo() {
   return (
