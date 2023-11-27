@@ -46,7 +46,7 @@ export default function StudiesWorkLanding() {
                   scroller.scrollTo("work", { smooth: true, duration: 500 });
                 }}
               >
-                <div className={styles.goToBtnText}>Go to experience</div>
+                <div className={styles.goToBtnText}>Go to experiences</div>
               </Button>
             </div>
           </AnimatedElement>
