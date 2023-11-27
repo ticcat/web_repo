@@ -114,6 +114,7 @@
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  z-index: 50;
 }
 .container .content {
   width: 100%;
@@ -158,8 +159,38 @@
   -webkit-transform: translateX(-12px);
           transform: translateX(-12px);
 }
-.container .authorNTheme {
+.container .cornerHub {
   position: fixed;
   top: var(--root-layout-padding);
   left: var(--root-layout-padding);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+}
+.container .cornerHub .settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
 }/*# sourceMappingURL=MainLayout.module.css.map */

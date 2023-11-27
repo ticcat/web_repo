@@ -1,5 +1,5 @@
 import StudyEntryInfo from "@/dbClasses/StudyEntry";
-import clientPromise from "@/utils/mongodb";
+import clientPromise from "@/utils/mongodbConnection";
 
 export async function GET() {
   const client = await clientPromise;

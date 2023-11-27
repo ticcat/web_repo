@@ -2,24 +2,19 @@
 
 import Button from "@/components/Buttons/Button/Button";
 import styles from "./NavBar.module.css";
-import Link from "next/link";
+import LinkButton from "@/components/Buttons/LinkButton/LinkButton";
 import { usePathname } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
+import { pages } from "@/utils/pages";
 
 export default function NavBar() {
   const pathname = usePathname();
-  const buttons = [
-    { name: "Home", url: "/" },
-    { name: "Studies & Exp", url: "/studiesnexp" },
-    { name: "Contact", url: "/contact" },
-  ];
-
-  const [compressed, setCompressed] = useState(
-    typeof window !== "undefined"
-      ? window.innerWidth <= window.innerHeight
-      : true
-  );
+  const [compressed, setCompressed] = useState(false);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setCompressed(window.innerWidth <= window.innerHeight);
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -35,19 +30,14 @@ export default function NavBar() {
     <>
       {!compressed ? (
         <div className={`${styles.links} ${styles.flexRow}`}>
-          {buttons.map((button) => {
+          {pages.map((page) => {
             return (
-              <Fragment key={button.name}>
+              <Fragment key={page.label}>
                 <div className={`${styles.navLink} ${styles.visible}`}>
                   <span className={styles.separator}>&nbsp;//</span>
-                  <Button
-                    clickHandler={() => {}}
-                    isActive={pathname === button.url}
-                  >
-                    <Link className={styles.navText} href={button.url}>
-                      <div>{button.name}</div>
-                    </Link>
-                  </Button>
+                  <LinkButton page={page} isActive={pathname === page.href}>
+                    <div className={styles.navText}>{page.label}</div>
+                  </LinkButton>
                 </div>
               </Fragment>
             );
@@ -64,9 +54,9 @@ export default function NavBar() {
               <span className={styles.separator}>//&nbsp;</span>
             </div>
           </Fragment>
-          {buttons.map((button) => {
+          {pages.map((page) => {
             return (
-              <Fragment key={button.name}>
+              <Fragment key={page.label}>
                 <div className={styles.navLinkContainer}>
                   <div
                     className={`${styles.navLink} ${
@@ -74,14 +64,9 @@ export default function NavBar() {
                     }`}
                   >
                     <span className={styles.separator}>&nbsp;//</span>
-                    <Button
-                      clickHandler={() => {}}
-                      isActive={pathname === button.url}
-                    >
-                      <Link className={styles.navText} href={button.url}>
-                        {button.name}
-                      </Link>
-                    </Button>
+                    <LinkButton page={page} isActive={pathname === page.href}>
+                      <div className={styles.navText}>{page.label}</div>
+                    </LinkButton>
                   </div>
                 </div>
               </Fragment>

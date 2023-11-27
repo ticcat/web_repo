@@ -72,6 +72,7 @@ $corner-square-separation: calc($corner-square-size * 3);
     gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
     height: max-content;
     width: max-content;
+    z-index: 50;
   }
 
   .content {
@@ -123,9 +124,22 @@ $corner-square-separation: calc($corner-square-size * 3);
     }
   }
 
-  .authorNTheme {
+  .cornerHub {
     position: fixed;
     top: var(--root-layout-padding);
     left: var(--root-layout-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+
+    .settings {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
   }
 }

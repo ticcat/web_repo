@@ -1,7 +1,9 @@
 "use client";
 
+import Tooltip from "@/components/Tooltip/Tooltip";
 import styles from "./ThemeToggle.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getSetting, setSetting } from "@/utils/userConfig";
 
 function LightIcon() {
   return (
@@ -30,24 +32,31 @@ function DarkIcon() {
 }
 
 export default function ThemeToggle() {
-  const [currentTheme, setCurrentTheme] = useState("dark");
-  const toggleClass = `${styles.toggleContainer} ${
-    currentTheme === "light" ? styles.light : styles.dark
-  }`;
+  const [currentTheme, setCurrentTheme] = useState<string>(
+    getSetting("theme", "dark")
+  );
+  const [toggleClass, setToggleClass] = useState(
+    `${styles.toggleContainer} ${styles.light}`
+  );
 
-  function changeTheme(newTheme?: string) {
-    const theme = newTheme
-      ? newTheme
-      : currentTheme === "light"
-      ? "dark"
-      : "light";
+  function changeTheme() {
+    const theme = currentTheme === "light" ? "dark" : "light";
 
-    document.documentElement.setAttribute("color-theme", theme);
     setCurrentTheme(theme);
+    setSetting("theme", theme);
   }
 
+  useEffect(() => {
+    setToggleClass(
+      `${styles.toggleContainer} ${
+        currentTheme === "light" ? styles.light : styles.dark
+      }`
+    );
+    document.documentElement.setAttribute("color-theme", currentTheme);
+  }, [currentTheme]);
+
   return (
-    <>
+    <Tooltip text="Change theme">
       <div className={toggleClass} onClick={() => changeTheme()}>
         <span className={styles.light}>
           <LightIcon></LightIcon>
@@ -56,6 +65,6 @@ export default function ThemeToggle() {
           <DarkIcon></DarkIcon>
         </span>
       </div>
-    </>
+    </Tooltip>
   );
 }

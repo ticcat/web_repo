@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./AnimatedElement.module.css";
+import { getSetting } from "@/utils/userConfig";
 
 export default function AnimatedElement({
   children,
@@ -12,18 +13,30 @@ export default function AnimatedElement({
   text?: string;
   showPromise?: Promise<boolean>;
 }) {
-  const [visible, setVisible] = useState(false);
+  const prefersMotion = getSetting("prefers-motion", "true") === "true";
+
+  const [contentClass, setContentClass] = useState(
+    `${styles.container} ${styles.static}`
+  );
+
   const container = useRef(null);
 
-  const intersectionCallback = (entries: Array<IntersectionObserverEntry>) => {
-    const [entry] = entries;
-    setVisible(entry.isIntersecting);
-  };
-  const intersectionOptions = {
-    threshold: 0,
-  };
-
   useEffect(() => {
+    const intersectionCallback = (
+      entries: Array<IntersectionObserverEntry>
+    ) => {
+      const [entry] = entries;
+      setContentClass(
+        `${styles.container} ${
+          entry.isIntersecting && prefersMotion ? styles.animate : styles.static
+        }`
+      );
+    };
+
+    const intersectionOptions = {
+      threshold: 0,
+    };
+
     const observer = new IntersectionObserver(
       intersectionCallback,
       intersectionOptions
@@ -31,7 +44,10 @@ export default function AnimatedElement({
     const containerElement = container.current;
 
     if (showPromise) {
-      showPromise?.then((show) => show && !visible && setVisible(true));
+      showPromise?.then(
+        (show) =>
+          show && setContentClass(`${styles.container} ${styles.animate}`)
+      );
     } else {
       if (containerElement) observer.observe(containerElement);
     }
@@ -41,21 +57,36 @@ export default function AnimatedElement({
         observer.unobserve(containerElement);
       }
     };
-  });
+  }, [showPromise, prefersMotion]);
 
   return (
     <>
-      {text ? (
-        text.split(" ").map((word, index) => {
-          return <AnimatedElement key={index}>{word}&nbsp;</AnimatedElement>;
-        })
+      {prefersMotion ? (
+        <>
+          {text ? (
+            text.split(" ").map((word, index) => {
+              return (
+                <AnimatedElement key={index}>{word}&nbsp;</AnimatedElement>
+              );
+            })
+          ) : (
+            <span className={contentClass} ref={container}>
+              <span className={styles.child}>{children}</span>
+            </span>
+          )}
+        </>
       ) : (
-        <span
-          className={`${styles.container} ${visible && styles.animate}`}
-          ref={container}
-        >
-          <span className={styles.child}>{children}</span>
-        </span>
+        <>
+          {text ? (
+            <span className={contentClass} ref={container}>
+              <span className={styles.child}>{text}</span>
+            </span>
+          ) : (
+            <span className={contentClass} ref={container}>
+              <span className={styles.child}>{children}</span>
+            </span>
+          )}
+        </>
       )}
     </>
   );

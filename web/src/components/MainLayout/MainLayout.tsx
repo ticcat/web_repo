@@ -1,9 +1,11 @@
 import styles from "./MainLayout.module.css";
 import AuthorRefButton from "./AuthorRefButton/AuthorRefButton";
-import ThemeToggle from "./ThemeToggle/ThemeButton";
+import ThemeToggle from "./ThemeToggle/ThemeToggle";
 import ToTopButton from "../Buttons/ToTopButton/ToTopButton";
 import NavBar from "./NavBar/NavBar";
 import SideLine from "./SideLine/SideLine";
+import MotionButton from "./MotionButton/MotionButton";
+import NavManager from "@/components/NavManager/NavManager";
 
 export default function MainLayout({
   children,
@@ -12,6 +14,7 @@ export default function MainLayout({
 }) {
   return (
     <div className={styles.container}>
+      <NavManager></NavManager>
       {/* <LoadingScreen loading={false} title={"welcome"}></LoadingScreen> */}
       <div className={styles.topLine}></div>
       <main className={styles.content}>
@@ -23,9 +26,12 @@ export default function MainLayout({
       <div className={styles.topNavBar}>
         <NavBar></NavBar>
       </div>
-      <div className={styles.authorNTheme}>
+      <div className={styles.cornerHub}>
         <AuthorRefButton></AuthorRefButton>
-        <ThemeToggle></ThemeToggle>
+        <div className={styles.settings}>
+          <ThemeToggle></ThemeToggle>
+          <MotionButton></MotionButton>
+        </div>
       </div>
       <ToTopButton></ToTopButton>
     </div>

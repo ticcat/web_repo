@@ -2,30 +2,36 @@
 
 import { useRouter } from "next/navigation";
 import Button from "../Button/Button";
+import { useEffect } from "react";
+import { Page } from "@/utils/pages";
 
 export default function LinkButton({
-  href,
-  setLoading,
-  setNextPageName,
+  page,
   children,
+  isActive,
 }: {
-  href: string;
-  setLoading: (state: boolean) => void;
-  setNextPageName: (pageName: string) => void;
+  page: Page;
   children: React.ReactNode;
+  isActive?: boolean;
 }) {
   const router = useRouter();
+  useEffect(() => {
+    router.prefetch(page.href);
+  });
 
-  const clickHandler = () => {
-    setLoading(true);
-    setNextPageName(href.substring(1));
-    setTimeout(() => router.push(href), 500);
-    setTimeout(() => setLoading(false), 750);
-  };
+  try {
+    const navEvent = new CustomEvent("navigation", { detail: page });
 
-  return (
-    <div onMouseEnter={() => router.prefetch(href)}>
-      <Button clickHandler={clickHandler}>{children}</Button>
-    </div>
-  );
+    const clickHandler = () => {
+      document.dispatchEvent(navEvent);
+    };
+
+    return (
+      <Button clickHandler={clickHandler} isActive={isActive}>
+        {children}
+      </Button>
+    );
+  } catch (e) {
+    console.log("Avoided custom event creation");
+  }
 }
