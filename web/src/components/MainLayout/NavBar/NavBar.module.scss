@@ -1,0 +1,88 @@
+@use "../../../globalStyles/globalClasses";
+
+.links {
+  display: flex;
+  gap: 5px;
+  z-index: 5;
+
+  .navItem {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .navText {
+      @extend .sub2;
+      text-decoration: none;
+      color: rgb(var(--head-sub-rgb));
+    }
+
+    .separator {
+      @extend .sub2;
+    }
+  }
+
+  .navLinkContainer {
+    overflow: hidden;
+    height: max-content;
+  }
+
+  .navLink {
+    @extend .navItem;
+  }
+
+  .navMenuButton {
+    @extend .navItem;
+    text-align: center;
+
+    .navText {
+      min-width: 100px;
+    }
+  }
+
+  .openAnim {
+    will-change: transform;
+    animation: showNavLink 0.25s var(--fill-anim-timing-func) forwards;
+  }
+
+  .closeAnim {
+    will-change: transform;
+    animation: hideNavLink 0.25s var(--fill-anim-timing-func) forwards;
+  }
+
+  .visible {
+    display: flex;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+.flexRow {
+  flex-direction: row;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+@keyframes showNavLink {
+  0% {
+    transform: translateY(-100%);
+  }
+  75% {
+    transform: translateY(0);
+  }
+  100% {
+  }
+}
+
+@keyframes hideNavLink {
+  0% {
+    transform: translateY(0);
+  }
+  75% {
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}

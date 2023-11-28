@@ -1,0 +1,98 @@
+.header, .h5, .h4, .h3, .h2, .h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.015rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.h1 {
+  font-size: 3.125rem;
+  font-size: clamp(3.125rem, 0.40625rem + 7.25vw, 6.75rem);
+}
+
+.h2 {
+  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 1.375rem + 3vw, 4.375rem);
+}
+
+.h3 {
+  font-size: 55px;
+}
+
+.h4 {
+  font-size: 1.875rem;
+  font-size: clamp(1.875rem, 1.64rem + 0.625vw, 2.1875rem);
+}
+
+.h5 {
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
+}
+
+.subtitle, .sub3, .sub2, .container .links .separator, .sub1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.sub1 {
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
+}
+
+.sub2, .container .links .separator {
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
+}
+
+.sub3 {
+  font-size: 18px;
+}
+
+.body, .b2, .b1 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: rgb(var(--body-rgb));
+}
+
+.b1 {
+  font-size: 0.8125rem;
+  font-size: clamp(0.8125rem, 0.671875rem + 0.375vw, 1rem);
+}
+
+.b2 {
+  font-size: 14px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+.container .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
+}
+.container .links .link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}/*# sourceMappingURL=ContactButtons.module.css.map */

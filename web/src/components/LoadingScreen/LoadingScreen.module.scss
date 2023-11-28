@@ -1,8 +1,8 @@
 @use "../../globalStyles/globalClasses";
 
 $fill-function: var(--fill-anim-timing-func);
-$hide-anim-params: hide 1s $fill-function forwards;
-$show-anim-params: show 0.5s $fill-function forwards;
+$show-anim-params: show 0.75s $fill-function forwards;
+$hide-anim-params: hide 0.75s $fill-function forwards;
 
 .container {
   position: fixed;
@@ -22,13 +22,8 @@ $show-anim-params: show 0.5s $fill-function forwards;
     }
 
     .screen {
-      animation-delay: 0.3s;
+      animation-delay: 0.35s;
       opacity: 0;
-
-      .title h1 {
-        transform: translateY(100%);
-        animation-delay: 0.75s;
-      }
     }
 
     .fill1 {
@@ -37,7 +32,7 @@ $show-anim-params: show 0.5s $fill-function forwards;
     }
 
     .fill2 {
-      animation-delay: 0.15s;
+      animation-delay: 0.2s;
       opacity: 0;
     }
   }
@@ -46,16 +41,33 @@ $show-anim-params: show 0.5s $fill-function forwards;
     * {
       will-change: transform;
       animation: $hide-anim-params;
-      animation-delay: 2.2s;
+      animation-delay: 0.7s;
       top: 0;
     }
 
     .fill1 {
-      animation-delay: 2.5s;
+      animation-delay: 0.9s;
     }
 
     .fill2 {
-      animation-delay: 2.6s;
+      animation-delay: 0.95s;
+    }
+  }
+
+  &.slowHide {
+    * {
+      will-change: transform;
+      animation: $hide-anim-params;
+      animation-delay: 1.7s;
+      top: 0;
+    }
+
+    .fill1 {
+      animation-delay: 2s;
+    }
+
+    .fill2 {
+      animation-delay: 2.1s;
     }
   }
 
@@ -66,17 +78,22 @@ $show-anim-params: show 0.5s $fill-function forwards;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(var(--background-rgb));
+    background-color: rgb(var(--dark-background-rgb));
+
     z-index: 10;
 
     .title {
       overflow: hidden;
+      width: 100%;
 
       h1 {
         @extend .h1;
-        letter-spacing: clamp(1rem, -3.5rem + 12vw, 7rem);
+        position: relative;
+        letter-spacing: clamp(1rem, -1.25rem + 6vw, 4rem);
         margin-right: calc(clamp(1rem, -3.5rem + 12vw, 7rem) * -1);
-        animation: showTitle 2s $fill-function forwards;
+        animation: showTitle 1s $fill-function forwards;
+        text-align: center;
+        color: rgb(var(--dark-head-sub-rgb));
       }
     }
   }

@@ -5,7 +5,6 @@ $fill-function: var(--fill-anim-timing-func);
   position: relative;
   width: calc($icon-size * 2.25);
   height: $icon-size;
-  margin-top: 15px;
   cursor: pointer;
 
   &::before,

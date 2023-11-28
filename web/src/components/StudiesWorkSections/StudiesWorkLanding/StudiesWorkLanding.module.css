@@ -1,0 +1,141 @@
+.header, .h5, .h4, .h3, .h2, .h1, .container .title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.015rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.h1, .container .title {
+  font-size: 3.125rem;
+  font-size: clamp(3.125rem, 0.40625rem + 7.25vw, 6.75rem);
+}
+
+.h2 {
+  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 1.375rem + 3vw, 4.375rem);
+}
+
+.h3 {
+  font-size: 55px;
+}
+
+.h4 {
+  font-size: 1.875rem;
+  font-size: clamp(1.875rem, 1.64rem + 0.625vw, 2.1875rem);
+}
+
+.h5 {
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
+}
+
+.subtitle, .sub3, .sub2, .container .textContainer .text .goToBtnContainer .goToBtnText, .sub1, .toTopBtn .toTopBtnText {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.sub1, .toTopBtn .toTopBtnText {
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
+}
+
+.sub2, .container .textContainer .text .goToBtnContainer .goToBtnText {
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
+}
+
+.sub3 {
+  font-size: 18px;
+}
+
+.body, .b2, .b1, .container .textContainer .text {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: rgb(var(--body-rgb));
+}
+
+.b1, .container .textContainer .text {
+  font-size: 0.8125rem;
+  font-size: clamp(0.8125rem, 0.671875rem + 0.375vw, 1rem);
+}
+
+.b2 {
+  font-size: 14px;
+}
+
+.toTopBtn {
+  position: fixed;
+  bottom: 50px;
+  left: 75px;
+}
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 45px;
+  height: 100vh;
+  margin: var(--page-section-margin);
+  padding: var(--page-section-padding);
+  padding-top: calc(var(--root-layout-padding) * 10);
+  overflow: visible;
+}
+.container .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.container .textContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 30px;
+  width: 70%;
+}
+.container .textContainer .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  width: 50%;
+}
+@media screen and (max-width: 600px) {
+  .container .title {
+    font-size: 2.5rem;
+  }
+  .container .textContainer {
+    width: 100%;
+    gap: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .container .textContainer .text {
+    gap: 10px;
+    width: 100%;
+  }
+}/*# sourceMappingURL=StudiesWorkLanding.module.css.map */

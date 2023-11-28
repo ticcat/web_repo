@@ -104,17 +104,6 @@ $home-background-rgb: 137 137 137;
     gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
     height: max-content;
     width: max-content;
-
-    .links {
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-      z-index: 1;
-
-      .separator {
-        @extend .sub2;
-      }
-    }
   }
 
   .botInfo {
@@ -130,14 +119,6 @@ $home-background-rgb: 137 137 137;
       font-size: clamp(1.375rem, 0.53125rem + 2.25vw, 2.5rem);
       align-self: flex-start;
       margin-bottom: clamp(1vh, 70px, 5vh);
-    }
-
-    .workInProgress {
-      @extend .sub1;
-      font-size: 1.375rem;
-      font-size: clamp(1.375rem, 0.53125rem + 2.25vw, 2.5rem);
-      align-self: flex-end;
-      margin-bottom: 50px;
     }
 
     @media screen and (max-width: 600px) {

@@ -8,12 +8,13 @@
 .h1 {
   @extend .header;
   font-size: 3.125rem;
-  font-size: clamp(3.125rem, 0.40625rem + 7.249999999999999vw, 6.75rem);
+  font-size: clamp(3.125rem, 0.40625rem + 7.25vw, 6.75rem);
 }
 
 .h2 {
   @extend .header;
-  font-size: 70px;
+  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 1.375rem + 3vw, 4.375rem);
 }
 
 .h3 {
@@ -23,12 +24,14 @@
 
 .h4 {
   @extend .header;
-  font-size: 35px;
+  font-size: 1.875rem;
+  font-size: clamp(1.875rem, 1.64rem + 0.625vw, 2.1875rem);
 }
 
 .h5 {
   @extend .header;
-  font-size: 25px;
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
 .subtitle {
@@ -63,7 +66,8 @@
 
 .b1 {
   @extend .body;
-  font-size: 16px;
+  font-size: 0.8125rem;
+  font-size: clamp(0.8125rem, 0.671875rem + 0.375vw, 1rem);
 }
 
 .b2 {

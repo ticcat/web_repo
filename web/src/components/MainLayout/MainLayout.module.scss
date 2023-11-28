@@ -63,26 +63,35 @@ $corner-square-separation: calc($corner-square-size * 3);
   width: 100%;
   height: 100%;
 
+  .topNavBar {
+    position: fixed;
+    right: calc(var(--root-layout-padding) * 2);
+    top: calc(var(--root-layout-padding) * 2);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
+    height: max-content;
+    width: max-content;
+    z-index: 50;
+  }
+
   .content {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-  }
+    width: 100%;
 
-  &::before {
-    @extend .side-line;
-    content: "";
-    transform: translateY(calc($corner-square-separation * -1));
-    left: var(--root-layout-padding);
-    bottom: var(--root-layout-padding);
-  }
+    .leftLine {
+      @extend .side-line;
+      transform: translateY(calc($corner-square-separation * -1));
+      left: var(--root-layout-padding);
+      bottom: var(--root-layout-padding);
+    }
 
-  &::after {
-    @extend .side-line;
-    content: "";
-    transform: translateY($corner-square-separation);
-    right: var(--root-layout-padding);
-    top: var(--root-layout-padding);
+    .rightLine {
+      @extend .side-line;
+      transform-origin: top;
+      transform: scaleY(0.1);
+      right: var(--root-layout-padding);
+      top: calc(var(--root-layout-padding) + $corner-square-separation);
+    }
   }
 
   .topLine {
@@ -115,9 +124,22 @@ $corner-square-separation: calc($corner-square-size * 3);
     }
   }
 
-  .authorNTheme {
+  .cornerHub {
     position: fixed;
     top: var(--root-layout-padding);
     left: var(--root-layout-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+
+    .settings {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
   }
 }

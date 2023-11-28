@@ -1,13 +1,12 @@
+"use client";
+
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import Image from "next/image";
 import styles from "./HomeLanding.module.css";
-import EmailButton from "@/components/Buttons/EmailButton/EmailButton";
-import SocialMediaButtons from "@/components/Buttons/SMNButtons/SMNButtons";
-import CVButton from "@/components/Buttons/CVButton/CVButton";
 
 const showElementTimeout = (
   resolve: (value: boolean | PromiseLike<boolean>) => void
-) => setTimeout(() => resolve(true), 2850);
+) => setTimeout(() => resolve(true), 1500);
 
 function Logo() {
   return (
@@ -67,29 +66,13 @@ export default function HomeLandingSection() {
           quality={100}
         ></Image>
       </div>
-      <div id="topInfo" className={styles.topInfo}>
-        <div className={styles.links}>
-          <span className={styles.separator}>//</span>
-          <EmailButton></EmailButton>
-          <span className={styles.separator}>//</span>
-          <CVButton></CVButton>
-          <span className={styles.separator}>//</span>
-        </div>
-        <SocialMediaButtons></SocialMediaButtons>
-      </div>
+      <div id="topInfo" className={styles.topInfo}></div>
       <div id="botInfo" className={styles.botInfo}>
         <div className={styles.locationRole}>
           <AnimatedElement
             showPromise={new Promise((resolve) => showElementTimeout(resolve))}
           >
             FRONT END DEVELOPER // <br></br> VALENCIA, SPAIN
-          </AnimatedElement>
-        </div>
-        <div className={styles.workInProgress}>
-          <AnimatedElement
-            showPromise={new Promise((resolve) => showElementTimeout(resolve))}
-          >
-            // WORK IN PROGRESS //
           </AnimatedElement>
         </div>
         <div>

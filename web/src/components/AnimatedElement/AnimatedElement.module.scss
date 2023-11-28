@@ -1,9 +1,18 @@
 .container {
+  position: relative;
   overflow: hidden;
+  display: inline-block;
 
   .child {
+    position: relative;
     display: block;
     transform: translateY(100%);
+  }
+}
+
+.static {
+  .child {
+    transform: translateY(0);
   }
 }
 

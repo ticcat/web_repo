@@ -1,0 +1,22 @@
+@use "../../../globalStyles/globalClasses";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 30px;
+  height: 100vh;
+  margin: var(--page-section-margin);
+  padding: calc(var(--root-layout-padding) * 2) 0;
+  padding-top: calc(var(--root-layout-padding) * 8);
+
+  .title {
+    @extend .h1;
+  }
+
+  .thanksText {
+    @extend .sub2;
+    align-self: center;
+  }
+}

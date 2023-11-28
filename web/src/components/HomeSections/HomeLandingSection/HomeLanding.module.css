@@ -11,7 +11,8 @@
 }
 
 .h2 {
-  font-size: 70px;
+  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 1.375rem + 3vw, 4.375rem);
 }
 
 .h3 {
@@ -19,26 +20,28 @@
 }
 
 .h4 {
-  font-size: 35px;
+  font-size: 1.875rem;
+  font-size: clamp(1.875rem, 1.64rem + 0.625vw, 2.1875rem);
 }
 
 .h5 {
-  font-size: 25px;
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.subtitle, .sub3, .sub2, .homeSection .topInfo .links .separator, .sub1, .homeSection .botInfo .locationRole, .homeSection .botInfo .workInProgress {
+.subtitle, .sub3, .sub2, .sub1, .homeSection .botInfo .locationRole {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
   color: rgb(var(--head-sub-rgb));
 }
 
-.sub1, .homeSection .botInfo .locationRole, .homeSection .botInfo .workInProgress {
+.sub1, .homeSection .botInfo .locationRole {
   font-size: 1.25rem;
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.sub2, .homeSection .topInfo .links .separator {
+.sub2 {
   font-size: 0.875rem;
   font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
 }
@@ -54,7 +57,8 @@
 }
 
 .b1 {
-  font-size: 16px;
+  font-size: 0.8125rem;
+  font-size: clamp(0.8125rem, 0.671875rem + 0.375vw, 1rem);
 }
 
 .b2 {
@@ -195,17 +199,6 @@
   width: -moz-max-content;
   width: max-content;
 }
-.homeSection .topInfo .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  gap: 5px;
-  z-index: 1;
-}
 .homeSection .botInfo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -226,13 +219,6 @@
   -ms-flex-item-align: start;
       align-self: flex-start;
   margin-bottom: clamp(1vh, 70px, 5vh);
-}
-.homeSection .botInfo .workInProgress {
-  font-size: 1.375rem;
-  font-size: clamp(1.375rem, 0.53125rem + 2.25vw, 2.5rem);
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin-bottom: 50px;
 }
 @media screen and (max-width: 600px) {
   .homeSection .botInfo .locationRole,

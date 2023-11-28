@@ -11,7 +11,8 @@
 }
 
 .h2 {
-  font-size: 70px;
+  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 1.375rem + 3vw, 4.375rem);
 }
 
 .h3 {
@@ -19,11 +20,13 @@
 }
 
 .h4 {
-  font-size: 35px;
+  font-size: 1.875rem;
+  font-size: clamp(1.875rem, 1.64rem + 0.625vw, 2.1875rem);
 }
 
 .h5 {
-  font-size: 25px;
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
 .subtitle, .sub3, .sub2, .sub1 {
@@ -54,14 +57,15 @@
 }
 
 .b1 {
-  font-size: 16px;
+  font-size: 0.8125rem;
+  font-size: clamp(0.8125rem, 0.671875rem + 0.375vw, 1rem);
 }
 
 .b2 {
   font-size: 14px;
 }
 
-.side-line, .container::after, .container::before {
+.side-line, .container .content .rightLine, .container .content .leftLine {
   display: block;
   position: fixed;
   height: 85vh;
@@ -92,24 +96,42 @@
   width: 100%;
   height: 100%;
 }
-.container .content {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
+.container .topNavBar {
+  position: fixed;
+  right: calc(var(--root-layout-padding) * 2);
+  top: calc(var(--root-layout-padding) * 2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: clamp(0.625rem, 0.390625rem + 0.625vw, 0.9375rem);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  z-index: 50;
 }
-.container::before {
-  content: "";
+.container .content {
+  width: 100%;
+}
+.container .content .leftLine {
   -webkit-transform: translateY(-12px);
           transform: translateY(-12px);
   left: var(--root-layout-padding);
   bottom: var(--root-layout-padding);
 }
-.container::after {
-  content: "";
-  -webkit-transform: translateY(12px);
-          transform: translateY(12px);
+.container .content .rightLine {
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: scaleY(0.1);
+          transform: scaleY(0.1);
   right: var(--root-layout-padding);
-  top: var(--root-layout-padding);
+  top: calc(var(--root-layout-padding) + 12px);
 }
 .container .topLine {
   top: var(--root-layout-padding);
@@ -137,8 +159,38 @@
   -webkit-transform: translateX(-12px);
           transform: translateX(-12px);
 }
-.container .authorNTheme {
+.container .cornerHub {
   position: fixed;
   top: var(--root-layout-padding);
   left: var(--root-layout-padding);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+}
+.container .cornerHub .settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
 }/*# sourceMappingURL=MainLayout.module.css.map */

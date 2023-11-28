@@ -1,0 +1,22 @@
+.side-line, .rightLine, .leftLine {
+  display: block;
+  position: fixed;
+  height: 80vh;
+  width: 1px;
+  background-color: rgb(var(--accent-1-rgb));
+  z-index: 15;
+}
+
+.leftLine {
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  left: var(--root-layout-padding);
+  bottom: calc(var(--root-layout-padding) + 12px);
+}
+
+.rightLine {
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  right: var(--root-layout-padding);
+  top: calc(var(--root-layout-padding) + 12px);
+}/*# sourceMappingURL=SideLine.module.css.map */

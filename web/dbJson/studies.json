@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Universitat Politècnica de València",
+    "subtitle": "Bachelors degree in computer science // Spec. Software Engineering",
+    "duration": "2016 - 2022",
+    "bullet-points": [
+      "Learnt several coding paradigms",
+      "Specialized in agile methodologies and project management",
+      "Developed fast learning and organizational skills",
+      "Harvested an engineer mindset to approach new challenges"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Korea University // 고려대학교",
+    "subtitle": "English studies // Artificial Intelligence class",
+    "duration": "Feb. 2020 - Aug. 2020",
+    "bullet-points": [
+      "Honed my written and spoken English skills",
+      "Worked in multicultural environment for different projects",
+      "Grounded my knowledge in the basics of artificial intelligence",
+      "Experienced how to adapt and perform in a completely different environment"
+    ]
+  }
+]

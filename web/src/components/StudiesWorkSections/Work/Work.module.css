@@ -1,0 +1,315 @@
+.header, .h5, .entryContainer .titleAndArrow .entryTitle, .h4, .entryContainer .titleAndArrow .arrowContainer .arrow, .h3, .h2, .container .title, .h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.015rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.h1 {
+  font-size: 3.125rem;
+  font-size: clamp(3.125rem, 0.40625rem + 7.25vw, 6.75rem);
+}
+
+.h2, .container .title {
+  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 1.375rem + 3vw, 4.375rem);
+}
+
+.h3 {
+  font-size: 55px;
+}
+
+.h4, .entryContainer .titleAndArrow .arrowContainer .arrow {
+  font-size: 1.875rem;
+  font-size: clamp(1.875rem, 1.64rem + 0.625vw, 2.1875rem);
+}
+
+.h5, .entryContainer .titleAndArrow .entryTitle {
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
+}
+
+.subtitle, .sub3, .sub2, .filters, .entryContainer .durationAndTech .techStack, .entryContainer .durationAndTech .duration, .sub1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: rgb(var(--head-sub-rgb));
+}
+
+.sub1 {
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
+}
+
+.sub2, .filters, .entryContainer .durationAndTech .techStack, .entryContainer .durationAndTech .duration {
+  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.59375rem + 0.75vw, 1.25rem);
+}
+
+.sub3 {
+  font-size: 18px;
+}
+
+.body, .b2, .b1 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  color: rgb(var(--body-rgb));
+}
+
+.b1 {
+  font-size: 0.8125rem;
+  font-size: clamp(0.8125rem, 0.671875rem + 0.375vw, 1rem);
+}
+
+.b2 {
+  font-size: 14px;
+}
+
+.filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  gap: 3rem;
+}
+
+.entryContainer {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 30px;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
+  padding: 0 0 10px;
+  margin-right: 20px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.entryContainer .navLink {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  pointer-events: all;
+}
+.entryContainer .borderContainer, .entryContainer .borderContainerSecond, .entryContainer .borderContainerFirst {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  z-index: 5;
+}
+.entryContainer .borderContainerFirst {
+  border-bottom: 1px solid rgb(var(--accent-1-rgb));
+}
+.entryContainer .borderContainerSecond {
+  border-bottom: 1px solid rgb(var(--accent-2-rgb));
+}
+.entryContainer .titleAndArrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+.entryContainer .titleAndArrow .arrowContainer {
+  overflow: hidden;
+  width: 3rem;
+}
+.entryContainer .titleAndArrow .arrowContainer .arrow {
+  opacity: 0;
+  -webkit-transform: scale(1.7, 1.5) translate(-1px, -3px);
+          transform: scale(1.7, 1.5) translate(-1px, -3px);
+}
+.entryContainer .durationAndTech {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+}
+.entryContainer .durationAndTech .techStack {
+  width: 100%;
+  text-align: end;
+}
+.entryContainer .durationAndTech .duration {
+  width: 100%;
+}
+.entryContainer:hover {
+  cursor: pointer;
+}
+.entryContainer:hover .borderContainer, .entryContainer:hover .borderContainerFirst, .entryContainer:hover .borderContainerSecond {
+  -webkit-animation: borderAnimation 0.6s var(--fill-anim-timing-func) forwards;
+          animation: borderAnimation 0.6s var(--fill-anim-timing-func) forwards;
+}
+.entryContainer:hover .borderContainerSecond {
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+.entryContainer:hover .arrowContainer .arrow {
+  -webkit-animation: arrowAnimation 0.2s var(--fill-anim-timing-func) 0.35s forwards;
+          animation: arrowAnimation 0.2s var(--fill-anim-timing-func) 0.35s forwards;
+}
+@media screen and (max-width: 600px) {
+  .entryContainer .arrowContainer {
+    overflow: visible;
+  }
+  .entryContainer .durationAndTech {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .entryContainer .durationAndTech .techStack {
+    text-align: start;
+  }
+}
+@-webkit-keyframes borderAnimation {
+  0% {
+    -webkit-transform: scaleX(1) translateX(0);
+            transform: scaleX(1) translateX(0);
+  }
+  49% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  50% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+@keyframes borderAnimation {
+  0% {
+    -webkit-transform: scaleX(1) translateX(0);
+            transform: scaleX(1) translateX(0);
+  }
+  49% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  50% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+@-webkit-keyframes arrowAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1.7, 1.5) translate(-100%, -3px);
+            transform: scale(1.7, 1.5) translate(-100%, -3px);
+  }
+  1% {
+    opacity: 1;
+    -webkit-transform: scale(1.7, 1.5) translate(-100%, -3px);
+            transform: scale(1.7, 1.5) translate(-100%, -3px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1.7, 1.5) translate(25%, -3px);
+            transform: scale(1.7, 1.5) translate(25%, -3px);
+  }
+}
+@keyframes arrowAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1.7, 1.5) translate(-100%, -3px);
+            transform: scale(1.7, 1.5) translate(-100%, -3px);
+  }
+  1% {
+    opacity: 1;
+    -webkit-transform: scale(1.7, 1.5) translate(-100%, -3px);
+            transform: scale(1.7, 1.5) translate(-100%, -3px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1.7, 1.5) translate(25%, -3px);
+            transform: scale(1.7, 1.5) translate(25%, -3px);
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-rows: -webkit-max-content 1fr;
+  grid-template-rows: max-content 1fr;
+  gap: 50px;
+  height: 100vh;
+  margin: var(--page-section-margin);
+  padding: var(--page-section-padding);
+  overflow: hidden;
+}
+.container .title {
+  white-space: nowrap;
+}
+.container .worksContainer {
+  display: grid;
+  grid-template-rows: -webkit-max-content 1fr;
+  grid-template-rows: max-content 1fr;
+  width: 100%;
+  height: 450px;
+}
+.container .worksContainer .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3rem;
+  margin: 2rem 0;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 600px) {
+  .container .worksContainer {
+    height: 550px;
+  }
+}/*# sourceMappingURL=Work.module.css.map */

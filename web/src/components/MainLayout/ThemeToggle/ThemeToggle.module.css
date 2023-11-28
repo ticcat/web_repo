@@ -2,7 +2,6 @@
   position: relative;
   width: 4.05rem;
   height: 1.8rem;
-  margin-top: 15px;
   cursor: pointer;
 }
 .toggleContainer::before, .toggleContainer::after {

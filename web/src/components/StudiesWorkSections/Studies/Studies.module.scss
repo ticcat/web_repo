@@ -1,0 +1,80 @@
+@use "../../../globalStyles/globalClasses";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  height: 100%;
+  margin: var(--page-section-margin);
+  padding: var(--page-section-padding);
+
+  .title {
+    @extend .h2;
+  }
+
+  .entries {
+    display: flex;
+    flex-direction: column;
+    gap: 115px;
+
+    .studyEntry {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      width: 100%;
+      height: max-content;
+
+      .entryHeader {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 45%;
+        gap: 10px;
+
+        @media screen and (max-width: 1050px) {
+          width: 100%;
+        }
+
+        .studyTitle {
+          @extend .h4;
+        }
+
+        .studySubtitle {
+          @extend .sub2;
+        }
+      }
+
+      .entryPoints {
+        @extend .b1;
+        width: 50%;
+
+        .entryPointsList {
+          list-style-type: none;
+
+          & li {
+            display: flex;
+            flex-direction: row;
+            margin: 15px 0;
+
+            &::before {
+              content: "→";
+              display: inline-block;
+              padding: 0 10px 0 0;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 1050px) {
+        .entryHeader {
+          width: 100%;
+        }
+        .entryPoints {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
