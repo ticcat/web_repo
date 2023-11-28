@@ -22,7 +22,7 @@ function StudyEntry({ entry }: { entry: StudyEntryInfo }) {
         <ul className={styles.entryPointsList}>
           {entry.bulletPoints.map((bP) => (
             <li key={bP}>
-              <AnimatedElement text={bP}></AnimatedElement>
+              <AnimatedElement>{bP}</AnimatedElement>
             </li>
           ))}
         </ul>
