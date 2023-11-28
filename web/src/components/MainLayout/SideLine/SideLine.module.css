@@ -1,7 +1,7 @@
 .side-line, .rightLine, .leftLine {
   display: block;
   position: fixed;
-  height: 85vh;
+  height: 80vh;
   width: 1px;
   background-color: rgb(var(--accent-1-rgb));
   z-index: 15;

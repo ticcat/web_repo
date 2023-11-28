@@ -5,7 +5,7 @@ $corner-square-separation: calc($corner-square-size * 3);
 .side-line {
   display: block;
   position: fixed;
-  height: 85vh;
+  height: 80vh;
   width: $line-width;
   background-color: rgb(var(--accent-1-rgb));
   z-index: 15;
