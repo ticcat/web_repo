@@ -46,16 +46,32 @@
         }
       }
 
-      .entryText {
+      .entryPoints {
         @extend .b1;
         width: 50%;
+
+        .entryPointsList {
+          list-style-type: none;
+
+          & li {
+            display: flex;
+            flex-direction: row;
+            margin: 15px 0;
+
+            &::before {
+              content: "→";
+              display: inline-block;
+              padding: 0 10px 0 0;
+            }
+          }
+        }
       }
 
       @media screen and (max-width: 1050px) {
         .entryHeader {
           width: 100%;
         }
-        .entryText {
+        .entryPoints {
           width: 100%;
         }
       }

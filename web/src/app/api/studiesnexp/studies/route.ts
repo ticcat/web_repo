@@ -13,7 +13,7 @@ export async function GET() {
         study.title,
         study.subtitle,
         study.duration,
-        study.text)
+        study.bulletPoints)
     );
 
     return Response.json(studyEntries, {status: 200});

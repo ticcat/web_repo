@@ -4,13 +4,23 @@
     "title": "Universitat Politècnica de València",
     "subtitle": "Bachelors degree in computer science // Spec. Software Engineering",
     "duration": "2016 - 2022",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet orci arcu. Curabitur et varius orci, eget vestibulum arcu. Ut eu dolor cursus, maximus ante a, lobortis nulla. Nullam eget nibh turpis. Donec id turpis iaculis, mollis eros nec, pharetra justo. Maecenas mollis gravida enim vel sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce pretium, mi sit amet facilisis ullamcorper, odio sem mollis ante, non elementum nulla ante a nunc. In non erat porttitor, vestibulum libero quis, efficitur diam. Praesent quis turpis in sapien cursus commodo quis non neque. Donec et orci non enim commodo pharetra ut sed ligula. Nullam sed varius lacus."
+    "bullet-points": [
+      "Learnt several coding paradigms",
+      "Specialized in agile methodologies and project management",
+      "Developed fast learning and organizational skills",
+      "Harvested an engineer mindset to approach new challenges"
+    ]
   },
   {
     "id": 2,
     "title": "Korea University // 고려대학교",
     "subtitle": "English studies // Artificial Intelligence class",
     "duration": "Feb. 2020 - Aug. 2020",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sit amet orci arcu. Curabitur et varius orci, eget vestibulum arcu. Ut eu dolor cursus, maximus ante a, lobortis nulla. Nullam eget nibh turpis. Donec id turpis iaculis, mollis eros nec, pharetra justo. Maecenas mollis gravida enim vel sagittis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce pretium, mi sit amet facilisis ullamcorper, odio sem mollis ante, non elementum nulla ante a nunc. In non erat porttitor, vestibulum libero quis, efficitur diam. Praesent quis turpis in sapien cursus commodo quis non neque. Donec et orci non enim commodo pharetra ut sed ligula. Nullam sed varius lacus."
+    "bullet-points": [
+      "Honed my written and spoken English skills",
+      "Worked in multicultural environment for different projects",
+      "Grounded my knowledge in the basics of artificial intelligence",
+      "Experienced how to adapt and perform in a completely different environment"
+    ]
   }
 ]

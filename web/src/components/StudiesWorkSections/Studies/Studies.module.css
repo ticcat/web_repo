@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .header, .h5, .h4, .container .entries .studyEntry .entryHeader .studyTitle, .h3, .h2, .container .title, .h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -50,13 +51,13 @@
   font-size: 18px;
 }
 
-.body, .b2, .b1, .container .entries .studyEntry .entryText {
+.body, .b2, .b1, .container .entries .studyEntry .entryPoints {
   font-family: "Manrope", sans-serif;
   font-weight: 400;
   color: rgb(var(--body-rgb));
 }
 
-.b1, .container .entries .studyEntry .entryText {
+.b1, .container .entries .studyEntry .entryPoints {
   font-size: 0.8125rem;
   font-size: clamp(0.8125rem, 0.671875rem + 0.375vw, 1rem);
 }
@@ -126,14 +127,32 @@
     width: 100%;
   }
 }
-.container .entries .studyEntry .entryText {
+.container .entries .studyEntry .entryPoints {
   width: 50%;
+}
+.container .entries .studyEntry .entryPoints .entryPointsList {
+  list-style-type: none;
+}
+.container .entries .studyEntry .entryPoints .entryPointsList li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 15px 0;
+}
+.container .entries .studyEntry .entryPoints .entryPointsList li::before {
+  content: "→";
+  display: inline-block;
+  padding: 0 10px 0 0;
 }
 @media screen and (max-width: 1050px) {
   .container .entries .studyEntry .entryHeader {
     width: 100%;
   }
-  .container .entries .studyEntry .entryText {
+  .container .entries .studyEntry .entryPoints {
     width: 100%;
   }
 }/*# sourceMappingURL=Studies.module.css.map */

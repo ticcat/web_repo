@@ -18,8 +18,14 @@ function StudyEntry({ entry }: { entry: StudyEntryInfo }) {
           <AnimatedElement>{entry.subtitle}</AnimatedElement>
         </div>
       </div>
-      <div className={styles.entryText}>
-        <AnimatedElement text={entry.text}></AnimatedElement>
+      <div className={styles.entryPoints}>
+        <ul className={styles.entryPointsList}>
+          {entry.bulletPoints.map((bP) => (
+            <li key={bP}>
+              <AnimatedElement text={bP}></AnimatedElement>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
