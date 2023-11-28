@@ -29,14 +29,14 @@
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
 
-.subtitle, .sub3, .sub2, .sub1, .homeSection .botInfo .locationRole, .homeSection .botInfo .workInProgress {
+.subtitle, .sub3, .sub2, .sub1, .homeSection .botInfo .locationRole {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   letter-spacing: 0.1rem;
   color: rgb(var(--head-sub-rgb));
 }
 
-.sub1, .homeSection .botInfo .locationRole, .homeSection .botInfo .workInProgress {
+.sub1, .homeSection .botInfo .locationRole {
   font-size: 1.25rem;
   font-size: clamp(1.25rem, 1.015625rem + 0.625vw, 1.5625rem);
 }
@@ -219,13 +219,6 @@
   -ms-flex-item-align: start;
       align-self: flex-start;
   margin-bottom: clamp(1vh, 70px, 5vh);
-}
-.homeSection .botInfo .workInProgress {
-  font-size: 1.375rem;
-  font-size: clamp(1.375rem, 0.53125rem + 2.25vw, 2.5rem);
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin-bottom: 50px;
 }
 @media screen and (max-width: 600px) {
   .homeSection .botInfo .locationRole,

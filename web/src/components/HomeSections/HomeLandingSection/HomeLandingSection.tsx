@@ -75,13 +75,6 @@ export default function HomeLandingSection() {
             FRONT END DEVELOPER // <br></br> VALENCIA, SPAIN
           </AnimatedElement>
         </div>
-        <div className={styles.workInProgress}>
-          <AnimatedElement
-            showPromise={new Promise((resolve) => showElementTimeout(resolve))}
-          >
-            // WORK IN PROGRESS //
-          </AnimatedElement>
-        </div>
         <div>
           <NameCarousel></NameCarousel>
           <Logo></Logo>
