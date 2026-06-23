@@ -2,11 +2,11 @@
 
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
 import Button from "@/components/Buttons/Button/Button";
-import Link from "next/link";
 import WorkEntryInfo from "@/dbClasses/WorkEntry";
-import styles from "./Work.module.css";
-import { useState } from "react";
 import useFetchState from "@/hooks/useFetchState";
+import Link from "next/link";
+import { useState } from "react";
+import styles from "./Work.module.css";
 
 function WorkEntry({ entryInfo }: { entryInfo: WorkEntryInfo }) {
   return (
@@ -55,7 +55,7 @@ function Filters({
 
   const [filters, setFilters] = useState<Filter[]>([
     { name: "All", selected: true, type: "" },
-    { name: "Company", selected: false, type: "work" },
+    { name: "Professional", selected: false, type: "work" },
     { name: "Personal", selected: false, type: "personal" },
   ]);
 
@@ -102,7 +102,7 @@ function Filters({
 
 export default function Work() {
   const [workEntries, setWorkEntries] = useFetchState<WorkEntryInfo>(
-    "/api/studiesnexp/experience/shortList"
+    "/api/studiesnexp/experience/shortList",
   );
 
   return (
