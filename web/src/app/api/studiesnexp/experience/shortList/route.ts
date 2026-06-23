@@ -5,42 +5,39 @@ export async function GET(request: Request) {
   const client = await clientPromise;
   const db = client.db("WebPortfolio");
 
-  const  {searchParams} = new URL(request.url);
+  const { searchParams } = new URL(request.url);
   const type = searchParams.get("type");
 
   try {
-    let allExp;
+    const allExp = await db
+      .collection("Experience")
+      .find(type ? { type: type } : {})
+      .sort({ order: 1 })
+      .toArray();
 
-    switch (type) {
-      case "work":
-      case "personal": {
-        allExp =  await db.collection("Experience").find({type: type}).toArray();
-        break;
-      }
-      default: {
-        allExp =  await db.collection("Experience").find({}).toArray();
-        break;
-      }
-    }
-    
+    console.log("allExp", allExp);
 
-    const workEntries = allExp.map((exp) => new WorkEntryInfo(
-      exp._id,
-      exp.title,
-      exp.role,
-      {
-        start_date: exp.duration.start_date,
-        end_date: exp.duration.end_date,
-        period: exp.duration.period
-      },
-      exp.stack,
-      exp.url)
+    const workEntries = allExp.map(
+      (exp) =>
+        new WorkEntryInfo(
+          exp._id,
+          exp.title,
+          exp.role,
+          {
+            start_date: exp.duration.start_date,
+            end_date: exp.duration.end_date,
+            period: exp.duration.period,
+          },
+          exp.stack,
+          exp.url,
+          exp.order,
+        ),
     );
 
     return Response.json(workEntries, {
       status: 200,
-    })
-  } catch(e) {
-    return Response.json(e, {status: 404});
+    });
+  } catch (e) {
+    return Response.json(e, { status: 404 });
   }
 }
