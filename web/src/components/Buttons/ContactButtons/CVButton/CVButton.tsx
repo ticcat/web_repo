@@ -1,20 +1,20 @@
 "use client";
 
-import Button from "../../Button/Button";
-import Link from "next/link";
-import styles from "./CVButton.module.css";
 import { getSetting } from "@/utils/userConfig";
+import Link from "next/link";
 import { useState } from "react";
+import Button from "../../Button/Button";
+import styles from "./CVButton.module.css";
 
 export default function CVButton() {
-  const [CVFilename, setCVFilename] = useState("SergioRicoCVEng2Dark.pdf");
+  const [CVFilename, setCVFilename] = useState("SergioRicoCVEngDark.pdf");
 
   return (
     <Button
       clickHandler={() => {
         getSetting("theme", "dark") === "dark"
-          ? setCVFilename("SergioRicoCVEng2Dark.pdf")
-          : setCVFilename("SergioRicoCVEng2Light.pdf");
+          ? setCVFilename("SergioRicoCVEngDark.pdf")
+          : setCVFilename("SergioRicoCVEngLight.pdf");
       }}
     >
       <Link
