@@ -1,15 +1,15 @@
 "use client";
 
 import AnimatedElement from "@/components/AnimatedElement/AnimatedElement";
-import styles from "./StudiesWorkLanding.module.css";
 import Button from "@/components/Buttons/Button/Button";
-import { scroller } from "react-scroll";
 import ShortTextEntry from "@/dbClasses/ShortTextEntry";
 import useFetchState from "@/hooks/useFetchState";
+import { scroller } from "react-scroll";
+import styles from "./StudiesWorkLanding.module.css";
 
 export default function StudiesWorkLanding() {
   const [shortTexts] = useFetchState<ShortTextEntry>(
-    "/api/studiesnexp/shortTexts"
+    "/api/studiesnexp/shortTexts",
   );
 
   return (
@@ -21,7 +21,9 @@ export default function StudiesWorkLanding() {
       <div className={styles.textContainer}>
         <div className={styles.text}>
           <p>
-            <AnimatedElement text={shortTexts[0]?.text}></AnimatedElement>
+            <AnimatedElement
+              text={shortTexts.find((t) => t.type === "studies")?.text}
+            ></AnimatedElement>
           </p>
           <AnimatedElement>
             <div className={styles.goToBtnContainer}>
@@ -37,7 +39,9 @@ export default function StudiesWorkLanding() {
         </div>
         <div className={styles.text}>
           <p>
-            <AnimatedElement text={shortTexts[1]?.text}></AnimatedElement>
+            <AnimatedElement
+              text={shortTexts.find((t) => t.type === "experience")?.text}
+            ></AnimatedElement>
           </p>
           <AnimatedElement>
             <div className={styles.goToBtnContainer}>

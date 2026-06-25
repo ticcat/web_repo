@@ -6,14 +6,18 @@ export async function GET() {
   const db = client.db("WebPortfolio");
 
   try {
-    const shortTexts = await db.collection("StudiesNExpShortTexts").find({}).toArray();
+    const shortTexts = await db
+      .collection("StudiesNExpShortTexts")
+      .find({})
+      .toArray();
 
-    const shortTextsEntries = shortTexts.map((shortText) => 
-      new ShortTextEntry(shortText._id, shortText.text)
+    const shortTextsEntries = shortTexts.map(
+      (shortText) =>
+        new ShortTextEntry(shortText._id, shortText.type, shortText.text),
     );
 
-    return Response.json(shortTextsEntries, {status: 200});
-  } catch(e) {
-    return Response.json(e, {status: 404});
+    return Response.json(shortTextsEntries, { status: 200 });
+  } catch (e) {
+    return Response.json(e, { status: 404 });
   }
 }
