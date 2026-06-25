@@ -12,7 +12,7 @@ export async function GET(request: Request) {
     const allExp = await db
       .collection("Experience")
       .find(type ? { type: type } : {})
-      .sort({ order: 1 })
+      .sort({ order: -1 })
       .toArray();
 
     console.log("allExp", allExp);
